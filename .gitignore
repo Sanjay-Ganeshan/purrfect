@@ -1,0 +1,46 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+.vs/*
+
+# ============== #
+#  BUILD SYSTEM  #
+# ============== #
+syncer.sh
+athena.json
+
+# ================ #
+# From Unity Store
+# ================ #
+Assets/Downloadable/*
+
+downloads.unitypackage
+Assets/ice_Particles.cs

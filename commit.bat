@@ -1,0 +1,1 @@
+.\prepush.bat && git add --all && git commit

@@ -5,9 +5,9 @@ using System.Text;
 
 using UnityEngine;
 
-public class DefaultReflector : LightObject
+public class DefaultReflector : MonoBehaviour, ILightObject
 {
-    public override List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 normal)
+    public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 normal)
     {
         List<Vector2> laterPoints = new List<Vector2>();
         //laterPoints.Add(destination);
@@ -17,7 +17,7 @@ public class DefaultReflector : LightObject
         Vector2 nextDestination = destination + incomingDirection - (2 * projection);
         Collider2D myCollider = this.GetComponent<Collider2D>();
         //myCollider.enabled = false;
-        laterPoints.AddRange(EmitLightTowards(type, Mathf.Max(intensity, 0), destination, nextDestination, myCollider));
+        laterPoints.AddRange(LightSim.EmitLightTowards(type, Mathf.Max(intensity, 0), destination, nextDestination, myCollider));
         //myCollider.enabled = true;
         Vector3[] debugPoints = new Vector3[] {
             destination.ToVector3(),
@@ -29,9 +29,13 @@ public class DefaultReflector : LightObject
         
     }
 
-    protected override LightObjectType GetLightObjectType()
+    public LightObjectType GetLightObjectType()
     {
         return LightObjectType.REFLECTOR;
     }
 
+    public MonoBehaviour GetMono()
+    {
+        return this;
+    }
 }

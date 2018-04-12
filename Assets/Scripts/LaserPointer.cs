@@ -10,7 +10,6 @@ public class LaserPointer : InventoryItem
     public LineRenderer LaserRenderer;
     public float MaxIntensity;
     List<Vector2> points = new List<Vector2>();
-    public LightObject Pointer;
     public LaserDot TargetDot;
 
     public void Start()
@@ -61,7 +60,7 @@ public class LaserPointer : InventoryItem
         points.Clear();
         //if (this.IsOn)
         //{
-        List<Vector2> emissionResults = Pointer.EmitLightTowards(LightType.KITTY_LASER, MaxIntensity, location);
+        List<Vector2> emissionResults = this.transform.EmitLightTowards(LightType.KITTY_LASER, MaxIntensity, location);
         points.AddRange(emissionResults);
         Vector2 endpoint = points.Last();
         TargetDot.transform.position = endpoint.ToVector3();

@@ -11,6 +11,7 @@ public class LaserPointer : InventoryItem
     public float MaxIntensity;
     List<Vector2> points = new List<Vector2>();
     public LightObject Pointer;
+    public LaserDot TargetDot;
 
     public void Start()
     {
@@ -49,23 +50,23 @@ public class LaserPointer : InventoryItem
     {
         this.IsOn = false;
         this.LaserRenderer.enabled = false;
+        points.Clear();
+        points.Add(this.transform.position.ToVector2());
+        points.Add(this.transform.position.ToVector2());
+        TargetDot.gameObject.SetActive(false); // Disable the target dot
     }
 
     public override void Using(Vector2 location)
     {
-
         points.Clear();
-        if (this.IsOn)
-        {
-            List<Vector2> emissionResults = Pointer.EmitLightTowards(LightType.KITTY_LASER, MaxIntensity, location);
-            points.AddRange(emissionResults);
-            
-        }
-        else
-        {
-            points.Add(this.transform.position.ToVector2());
-            points.Add(this.transform.position.ToVector2());
-        }
+        //if (this.IsOn)
+        //{
+        List<Vector2> emissionResults = Pointer.EmitLightTowards(LightType.KITTY_LASER, MaxIntensity, location);
+        points.AddRange(emissionResults);
+        Vector2 endpoint = points.Last();
+        TargetDot.transform.position = endpoint.ToVector3();
+        TargetDot.gameObject.SetActive(true); // enable the target dot
+        //}
     }
 
     protected override void OnEquip()

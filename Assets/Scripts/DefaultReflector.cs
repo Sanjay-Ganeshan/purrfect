@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class DefaultReflector : LightObject
 {
-    public LineRenderer debugLine;
     public override List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 normal)
     {
         List<Vector2> laterPoints = new List<Vector2>();
@@ -24,8 +23,6 @@ public class DefaultReflector : LightObject
             destination.ToVector3(),
             nextDestination.ToVector3()
         };
-        debugLine.positionCount = debugPoints.Length;
-        debugLine.SetPositions(debugPoints);
         //laterPoints.Add(destination);
         //laterPoints.Add(nextDestination);
         return laterPoints;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public static class GameAxes
+public static class GameConstants
 {
     public const string USE_CURRENTLY_EQUIPPED_ITEM = "UseItem";
     public const string DISPLAY_CHARACTER_INVENTORY = "ShowInventory";
@@ -12,4 +12,5 @@ public static class GameAxes
     public const string INTERACT = "Interact";
     public const string SELECT = "UseItem";
     public const string CAT = "Cat";
+    public const int LASER_PRIORITY = 10;
 }

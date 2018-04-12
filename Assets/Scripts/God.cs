@@ -9,10 +9,26 @@ public class God: MonoBehaviour
     private static God TheOnlyGod;
     private bool isPaused;
     private Optional<Cat[]> knownCats;
+    private bool initialized = false;
     private void Start()
     {
         TheOnlyGod = this;
+        InitIfNeeded();
+    }
+
+    private void DoInit()
+    {
         this.isPaused = false;
+        this.knownCats = Optional<Cat[]>.Empty();
+    }
+
+    private void InitIfNeeded()
+    {
+        if(!initialized)
+        {
+            DoInit();
+            initialized = true;
+        }
     }
 
     private void Smite(GameObject gameObject)
@@ -25,12 +41,13 @@ public class God: MonoBehaviour
     {
         if (forceRefresh || !this.knownCats.IsPresent())
         {
-            GameObject[] catsGO = GameObject.FindGameObjectsWithTag(GameAxes.CAT);
+            GameObject[] catsGO = GameObject.FindGameObjectsWithTag(GameConstants.CAT);
             Cat[] cats = new Cat[catsGO.Length];
             for (int i = 0; i < catsGO.Length; i++)
             {
                 cats[i] = catsGO[i].GetComponent<Cat>();
             }
+
             this.knownCats = Optional<Cat[]>.Of(cats);
         }
         return this.knownCats.Get();
@@ -39,7 +56,7 @@ public class God: MonoBehaviour
     public static Optional<Cat> GetCat(bool forceRefresh = false)
     {
         Cat[] cats = GetCats(forceRefresh);
-        if(cats.Length > 1)
+        if(cats.Length >= 1)
         {
             return Optional<Cat>.Of(cats[0]);
         }
@@ -60,6 +77,7 @@ public class God: MonoBehaviour
         if(TheOnlyGod == null)
         {
             TheOnlyGod = GameObject.FindGameObjectWithTag("God").GetComponent<God>();
+            TheOnlyGod.InitIfNeeded();
         }
     }
 

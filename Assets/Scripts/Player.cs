@@ -36,14 +36,14 @@ public class Player : MonoBehaviour {
 
     void HandleMotion()
     {
-        float horizontal = Input.GetAxis(GameAxes.AXIS_MOVE_HORIZONTAL);
-        float vertical = Input.GetAxis(GameAxes.AXIS_MOVE_VERTICAL);
+        float horizontal = Input.GetAxis(GameConstants.AXIS_MOVE_HORIZONTAL);
+        float vertical = Input.GetAxis(GameConstants.AXIS_MOVE_VERTICAL);
         rb.velocity = new Vector2(horizontal * maxSpeed.x, vertical * maxSpeed.y);
     }
 
     void HandleShowInventory()
     {
-        if(Input.GetButtonDown(GameAxes.DISPLAY_CHARACTER_INVENTORY))
+        if(Input.GetButtonDown(GameConstants.DISPLAY_CHARACTER_INVENTORY))
         {
             UIManager.ToggleInventory(this.PlayerInventory, OnInventorySelect);
         }
@@ -66,21 +66,21 @@ public class Player : MonoBehaviour {
 
     void HandleUsing()
     {
-        if(Input.GetButtonDown(GameAxes.USE_CURRENTLY_EQUIPPED_ITEM))
+        if(Input.GetButtonDown(GameConstants.USE_CURRENTLY_EQUIPPED_ITEM))
         {
             if(this.CurrentlyEquipped != null)
             {
                 this.CurrentlyEquipped.BeginUse(Common.GetMousePosition());
             }
         }
-        else if (Input.GetButton(GameAxes.USE_CURRENTLY_EQUIPPED_ITEM))
+        else if (Input.GetButton(GameConstants.USE_CURRENTLY_EQUIPPED_ITEM))
         {
             if(this.CurrentlyEquipped != null)
             {
                 this.CurrentlyEquipped.Using(Common.GetMousePosition());
             }
         }
-        else if (Input.GetButtonUp(GameAxes.USE_CURRENTLY_EQUIPPED_ITEM))
+        else if (Input.GetButtonUp(GameConstants.USE_CURRENTLY_EQUIPPED_ITEM))
         {
             if (this.CurrentlyEquipped != null)
             {

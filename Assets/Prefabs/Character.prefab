@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1576998048763088}
   m_IsPrefabParent: 1
+--- !u!1 &1209073068864726
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4636198200039536}
+  - component: {fileID: 114823830672981422}
+  m_Layer: 0
+  m_Name: LaserDot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1425324643476264
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +135,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4636198200039536
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209073068864726}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4753537120582316}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4753537120582316
 Transform:
   m_ObjectHideFlags: 1
@@ -130,6 +159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4180971262223590}
+  - {fileID: 4636198200039536}
   m_Father: {fileID: 4408612966811452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,6 +234,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbd120264627ff4695186eb008e43f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114823830672981422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209073068864726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6fe7339015ad644baff40f737f8133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114993976304655306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,6 +266,7 @@ MonoBehaviour:
   LaserRenderer: {fileID: 120134324079307662}
   MaxIntensity: 30
   Pointer: {fileID: 114568587680230946}
+  TargetDot: {fileID: 114823830672981422}
 --- !u!120 &120134324079307662
 LineRenderer:
   m_ObjectHideFlags: 1

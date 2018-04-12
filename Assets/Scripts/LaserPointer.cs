@@ -8,8 +8,9 @@ public class LaserPointer : InventoryItem
 {
     public bool IsOn;
     public LineRenderer LaserRenderer;
-    public float MaxRange;
+    public float MaxIntensity;
     List<Vector2> points = new List<Vector2>();
+    public LightObject Pointer;
 
     public void Start()
     {
@@ -18,7 +19,9 @@ public class LaserPointer : InventoryItem
 
     public void Update()
     {
-        this.LaserRenderer.SetPositions(GetLaserPositions());
+        Vector3[] laserPos = GetLaserPositions();
+        this.LaserRenderer.positionCount = laserPos.Length;
+        this.LaserRenderer.SetPositions(laserPos);
     }
 
     Vector3[] GetLaserPositions()
@@ -39,40 +42,29 @@ public class LaserPointer : InventoryItem
     public override void BeginUse(Vector2 location)
     {
         this.IsOn = true;
+        this.LaserRenderer.enabled = true;
     }
 
     public override void EndUse(Vector2 location)
     {
         this.IsOn = false;
+        this.LaserRenderer.enabled = false;
     }
 
     public override void Using(Vector2 location)
     {
+
+        points.Clear();
         if (this.IsOn)
         {
-            points.Clear();
-            Vector2 direction = (location - this.transform.position.ToVector2()).normalized;
-            Vector2 startPoint = this.transform.position.ToVector2();
-            points.Add(startPoint);
-            RaycastHit2D results = Physics2D.Raycast(
-                startPoint, 
-                direction, 
-                MaxRange, 
-                LayerMask.GetMask("Light"), 
-                0.0f);
-            if(results.collider == null)
-            {
-                // Nothing hit
-                points.Add(direction * MaxRange + startPoint);
-            }
-            else
-            {
-                points.Add(results.point);
-            }
+            List<Vector2> emissionResults = Pointer.EmitLightTowards(LightType.KITTY_LASER, MaxIntensity, location);
+            points.AddRange(emissionResults);
+            
         }
         else
         {
-            points.Clear();
+            points.Add(this.transform.position.ToVector2());
+            points.Add(this.transform.position.ToVector2());
         }
     }
 

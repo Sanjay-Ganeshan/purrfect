@@ -129,4 +129,14 @@ public static class Common {
         // Just take x,y and set z=0
         return new Vector3(v.x, v.y, 0);
     }
+
+    public static float ToWorldAngleRadians(this Vector2 direction)
+    {
+        return Mathf.Atan2(direction.y, direction.x);
+    }
+
+    public static Vector2 ToWorldVector(this float WorldAngle)
+    {
+        return new Vector2(Mathf.Cos(WorldAngle), Mathf.Sin(WorldAngle)).normalized;
+    }
 }

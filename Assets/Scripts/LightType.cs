@@ -5,9 +5,6 @@ using System.Text;
 
 public enum LightType
 {
-    EMITTER,
-    REFLECTOR,
-    REFRACTOR,
-    ABSORBER,
-
+    KITTY_LASER,
+    VISION
 }

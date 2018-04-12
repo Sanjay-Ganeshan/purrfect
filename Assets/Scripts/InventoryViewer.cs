@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,6 +48,9 @@ public class InventoryViewer : MonoBehaviour {
 
     private bool initialized = false;
 
+    private Optional<Action<InventoryItem>> callback;
+
+
 	// Use this for initialization
 	void Start () {
         InitIfNeeded();
@@ -55,14 +59,20 @@ public class InventoryViewer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // Update will only be called if the game object that this script is attached to is active.
+        HandleSelection();
+    }
+
+    private void HandleSelection()
+    {
         bool selectingItem = false;
         Vector3 screenSpaceMouse = Input.mousePosition;
-        foreach(InventoryDisplayEntry item in this.displayedItems)
+        InventoryItem hoveredItem = null;
+        foreach (InventoryDisplayEntry item in this.displayedItems)
         {
             RectTransform t = item.trans;
-            if(t.rect.Contains(t.InverseTransformPoint(screenSpaceMouse)))
+            if (t.rect.Contains(t.InverseTransformPoint(screenSpaceMouse)))
             {
-                InventoryItem hoveredItem = item.item;
+                hoveredItem = item.item;
                 if (hoveredItem != null)
                 {
                     NameText.text = hoveredItem.Name;
@@ -72,12 +82,21 @@ public class InventoryViewer : MonoBehaviour {
                 }
             }
         }
-        if(!selectingItem)
+        if (!selectingItem)
         {
             NameText.text = "";
             DescriptionText.text = "";
         }
-
+        else
+        {
+            if (Input.GetButtonDown(GameAxes.SELECT))
+            {
+                if(callback.IsPresent())
+                {
+                    callback.Get().Invoke(hoveredItem);
+                }
+            }
+        }
     }
 
     private void SetNameAndDescription(string Name, string Description)
@@ -123,6 +142,7 @@ public class InventoryViewer : MonoBehaviour {
     private void InitializeMe()
     {
         LayoutImages();
+        this.callback = Optional<Action<InventoryItem>>.Empty();
         initialized = true;
     }
 
@@ -131,7 +151,7 @@ public class InventoryViewer : MonoBehaviour {
         if (!initialized) InitializeMe();
     }
 
-    public void ShowInventory(Inventory inven)
+    public void ShowInventory(Inventory inven, Action<InventoryItem> onSelection = null)
     {
         InitIfNeeded();
         int currIndex = 0;
@@ -147,5 +167,6 @@ public class InventoryViewer : MonoBehaviour {
         {
             this.displayedItems[currIndex++].setItem(null).image.sprite = defaultSprite;
         }
+        this.callback = Optional<Action<InventoryItem>>.Of(onSelection);
     }
 }

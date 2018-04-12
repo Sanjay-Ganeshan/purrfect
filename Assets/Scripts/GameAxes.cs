@@ -10,4 +10,6 @@ public static class GameAxes
     public const string AXIS_MOVE_VERTICAL = "Vertical";
     public const string AXIS_MOVE_HORIZONTAL = "Horizontal";
     public const string INTERACT = "Interact";
+    public const string SELECT = "UseItem";
+    public const string CAT = "Cat";
 }

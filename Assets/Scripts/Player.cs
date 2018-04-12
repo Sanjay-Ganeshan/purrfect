@@ -29,7 +29,6 @@ public class Player : MonoBehaviour {
         HandleShowInventory();
         if (true || !God.IsPaused())
         {
-            HandleEquipping();
             HandleUsing();
             HandleMotion();
         }
@@ -46,26 +45,23 @@ public class Player : MonoBehaviour {
     {
         if(Input.GetButtonDown(GameAxes.DISPLAY_CHARACTER_INVENTORY))
         {
-            UIManager.ToggleInventory(this.PlayerInventory);
+            UIManager.ToggleInventory(this.PlayerInventory, OnInventorySelect);
         }
     }
 
-    void HandleEquipping()
+    void OnInventorySelect(InventoryItem item)
     {
-        if(Input.GetButtonDown("Equip1"))
+        if (this.CurrentlyEquipped != null)
         {
-            if(this.CurrentlyEquipped != null)
-            {
-                this.CurrentlyEquipped.Unequip();
-                this.CurrentlyEquipped = null;
-            }
-            else
-            {
-                InventoryItem toEquip = this.PlayerInventory.Items[0];
-                this.CurrentlyEquipped = toEquip;
-                this.CurrentlyEquipped.Equip();
-            }
+            this.CurrentlyEquipped.Unequip();
+            this.CurrentlyEquipped = null;
         }
+        else
+        {
+            this.CurrentlyEquipped = item;
+            this.CurrentlyEquipped.Equip();
+        }
+        UIManager.HideInventory();
     }
 
     void HandleUsing()

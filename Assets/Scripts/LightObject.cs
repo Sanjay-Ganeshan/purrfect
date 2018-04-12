@@ -47,7 +47,6 @@ public abstract class LightObject : MonoBehaviour {
         }
         else
         {
-            //Debug.Log("No hit");
             // No hit
             hitPoint = origin + direction * intensity;
             points.Add(hitPoint);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,10 +19,10 @@ public class UIManager : MonoBehaviour {
 		
 	}
 
-    private void ShowInventory_(Inventory inven)
+    private void ShowInventory_(Inventory inven, Action<InventoryItem> onSelection = null)
     {
         this.InventoryScreen.gameObject.SetActive(true);
-        this.InventoryScreen.ShowInventory(inven);
+        this.InventoryScreen.ShowInventory(inven, onSelection);
     }
 
     private void HideInventory_()
@@ -29,7 +30,7 @@ public class UIManager : MonoBehaviour {
         this.InventoryScreen.gameObject.SetActive(false);
     }
     
-    private void ToggleInventory_(Inventory inven)
+    private void ToggleInventory_(Inventory inven, Action<InventoryItem> onSelection = null)
     {
         if(this.InventoryScreen.gameObject.activeSelf)
         {
@@ -37,15 +38,15 @@ public class UIManager : MonoBehaviour {
         }
         else
         {
-            ShowInventory_(inven);
+            ShowInventory_(inven, onSelection);
         }
     }
 
-    public static void ShowInventory(Inventory inven)
+    public static void ShowInventory(Inventory inven, Action<InventoryItem> onSelection = null)
     {
         if(theManager != null)
         {
-            theManager.ShowInventory_(inven);
+            theManager.ShowInventory_(inven, onSelection);
             God.Pause();
         }
         else
@@ -63,10 +64,10 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    public static void ToggleInventory(Inventory inven)
+    public static void ToggleInventory(Inventory inven, Action<InventoryItem> onSelection = null)
     {
         if (theManager != null) {
-            theManager.ToggleInventory_(inven);
+            theManager.ToggleInventory_(inven, onSelection);
         }
     }
 

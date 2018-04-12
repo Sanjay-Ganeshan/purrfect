@@ -8,29 +8,65 @@ public class God: MonoBehaviour
     // Singleton instance
     private static God TheOnlyGod;
     private bool isPaused;
+    private Optional<Cat[]> knownCats;
     private void Start()
     {
         TheOnlyGod = this;
         this.isPaused = false;
     }
 
-    private void InternalKill(GameObject gameObject)
+    private void Smite(GameObject gameObject)
     {
         GameObject.Destroy(gameObject);
     }
 
 
-    public static bool IsPaused()
+    private Cat[] GetCats_(bool forceRefresh = false)
     {
-        if(TheOnlyGod != null)
+        if (forceRefresh || !this.knownCats.IsPresent())
         {
-            return TheOnlyGod.isPaused;
+            GameObject[] catsGO = GameObject.FindGameObjectsWithTag(GameAxes.CAT);
+            Cat[] cats = new Cat[catsGO.Length];
+            for (int i = 0; i < catsGO.Length; i++)
+            {
+                cats[i] = catsGO[i].GetComponent<Cat>();
+            }
+            this.knownCats = Optional<Cat[]>.Of(cats);
+        }
+        return this.knownCats.Get();
+    }
+
+    public static Optional<Cat> GetCat(bool forceRefresh = false)
+    {
+        Cat[] cats = GetCats(forceRefresh);
+        if(cats.Length > 1)
+        {
+            return Optional<Cat>.Of(cats[0]);
         }
         else
         {
-            // If God isn't initialized yet, we should probably wait
-            return true;
+            return Optional<Cat>.Empty();
         }
+    }
+
+    public static Cat[] GetCats(bool forceRefresh = false)
+    {
+        FindGod();
+        return TheOnlyGod.GetCats_(forceRefresh);
+    }
+
+    private static void FindGod()
+    {
+        if(TheOnlyGod == null)
+        {
+            TheOnlyGod = GameObject.FindGameObjectWithTag("God").GetComponent<God>();
+        }
+    }
+
+    public static bool IsPaused()
+    {
+        FindGod();
+        return TheOnlyGod.isPaused;
     }
 
     public static void TogglePause()
@@ -50,17 +86,13 @@ public class God: MonoBehaviour
 
     public static void SetPause(bool newVal)
     {
-        if(TheOnlyGod != null)
-        {
-            TheOnlyGod.isPaused = newVal;
-        }
+        FindGod();
+        TheOnlyGod.isPaused = newVal;
     }
 
     public static void Kill(GameObject gameObject) {
-        if(TheOnlyGod != null)
-        {
-            TheOnlyGod.InternalKill(gameObject);
-        }
+        FindGod();
+        TheOnlyGod.Smite(gameObject);
     }
 
 

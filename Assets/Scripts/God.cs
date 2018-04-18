@@ -41,7 +41,7 @@ public class God: MonoBehaviour
     {
         if (forceRefresh || !this.knownCats.IsPresent())
         {
-            GameObject[] catsGO = GameObject.FindGameObjectsWithTag(GameConstants.CAT);
+            GameObject[] catsGO = GameObject.FindGameObjectsWithTag(GameConstants.LBL_CAT);
             Cat[] cats = new Cat[catsGO.Length];
             for (int i = 0; i < catsGO.Length; i++)
             {

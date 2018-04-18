@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class DefaultReflector : MonoBehaviour, ILightObject
 {
-    public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 normal)
+    public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Collider2D collider, Vector2 normal, float refractiveIndex)
     {
         List<Vector2> laterPoints = new List<Vector2>();
         //laterPoints.Add(destination);
@@ -15,10 +15,7 @@ public class DefaultReflector : MonoBehaviour, ILightObject
         Vector2 vectorToOrigin = origin - destination;
         Vector2 projection = Vector2.Dot(normal.normalized, incomingDirection) * normal.normalized;
         Vector2 nextDestination = destination + incomingDirection - (2 * projection);
-        Collider2D myCollider = this.GetComponent<Collider2D>();
-        //myCollider.enabled = false;
-        laterPoints.AddRange(LightSim.EmitLightTowards(type, Mathf.Max(intensity, 0), destination, nextDestination, myCollider));
-        //myCollider.enabled = true;
+        laterPoints.AddRange(LightSim.EmitLightTowards(type, Mathf.Max(intensity, 0), destination, nextDestination));
         Vector3[] debugPoints = new Vector3[] {
             destination.ToVector3(),
             nextDestination.ToVector3()

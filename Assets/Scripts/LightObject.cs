@@ -12,21 +12,13 @@ public static class LightSim {
     /// </summary>
     public const float DEFAULT_INTENSITY = 1000f;
 
-    public static List<Vector2> EmitLight(LightType type, float intensity, Vector2 origin, Vector2 direction, Collider2D ignoreCollider = null)
+    public static List<Vector2> EmitLight(LightType type, float intensity, Vector2 origin, Vector2 direction, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX)
     {
 
         float dist = intensity * DISTANCE_PER_INTENSITY;
         List<Vector2> points = new List<Vector2>();
         points.Add(origin);
-        if(ignoreCollider != null)
-        {
-            ignoreCollider.enabled = false;
-        }
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, intensity, GetMask());
-        if(ignoreCollider != null)
-        {
-            ignoreCollider.enabled = true;
-        }
         Vector2 hitPoint;
         if (hit.collider != null)
         {
@@ -36,7 +28,7 @@ public static class LightSim {
             Vector2 hitNormal = hitObject.GetMono().transform.InverseTransformDirection(hit.normal);
             if(hitObject != null)
             {
-                List<Vector2> nextHits = hitObject.OnLightHit(type, intensity - (hitDistance * DISTANCE_PER_INTENSITY), origin, hitPoint, hitNormal);
+                List<Vector2> nextHits = hitObject.OnLightHit(type, intensity - (hitDistance * DISTANCE_PER_INTENSITY), origin, hitPoint, hit.collider, hitNormal, refractiveIndex);
                 points.AddRange(nextHits);
             }
         }
@@ -49,10 +41,10 @@ public static class LightSim {
         return points;
     }
 
-    public static List<Vector2> EmitLightTowards(LightType type, float intensity, Vector2 origin, Vector2 destination, Collider2D ignoreCollider = null)
+    public static List<Vector2> EmitLightTowards(LightType type, float intensity, Vector2 origin, Vector2 destination, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX)
     {
         Vector2 direction = (destination - origin).normalized;
-        return EmitLight(type, intensity, origin, direction, ignoreCollider);
+        return EmitLight(type, intensity, origin, direction, refractiveIndex);
     }
 
     public static List<Vector2> EmitLight(this Transform t, LightType type, float intensity, Vector2 direction)
@@ -83,7 +75,7 @@ public interface ILightObject
 {
     LightObjectType GetLightObjectType();
 
-    List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 normal);
+    List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Collider2D collider, Vector2 normal, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX);
 
     MonoBehaviour GetMono();
 }

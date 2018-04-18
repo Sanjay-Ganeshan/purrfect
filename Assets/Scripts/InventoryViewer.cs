@@ -89,7 +89,7 @@ public class InventoryViewer : MonoBehaviour {
         }
         else
         {
-            if (Input.GetButtonDown(GameConstants.SELECT))
+            if (Input.GetButtonDown(GameConstants.BTN_SELECT))
             {
                 if(callback.IsPresent())
                 {

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 
     void HandleShowInventory()
     {
-        if(Input.GetButtonDown(GameConstants.DISPLAY_CHARACTER_INVENTORY))
+        if(Input.GetButtonDown(GameConstants.BTN_DISPLAY_CHARACTER_INVENTORY))
         {
             UIManager.ToggleInventory(this.PlayerInventory, OnInventorySelect);
         }
@@ -66,21 +66,21 @@ public class Player : MonoBehaviour {
 
     void HandleUsing()
     {
-        if(Input.GetButtonDown(GameConstants.USE_CURRENTLY_EQUIPPED_ITEM))
+        if(Input.GetButtonDown(GameConstants.BTN_USE_CURRENTLY_EQUIPPED_ITEM))
         {
             if(this.CurrentlyEquipped != null)
             {
                 this.CurrentlyEquipped.BeginUse(Common.GetMousePosition());
             }
         }
-        else if (Input.GetButton(GameConstants.USE_CURRENTLY_EQUIPPED_ITEM))
+        else if (Input.GetButton(GameConstants.BTN_USE_CURRENTLY_EQUIPPED_ITEM))
         {
             if(this.CurrentlyEquipped != null)
             {
                 this.CurrentlyEquipped.Using(Common.GetMousePosition());
             }
         }
-        else if (Input.GetButtonUp(GameConstants.USE_CURRENTLY_EQUIPPED_ITEM))
+        else if (Input.GetButtonUp(GameConstants.BTN_USE_CURRENTLY_EQUIPPED_ITEM))
         {
             if (this.CurrentlyEquipped != null)
             {

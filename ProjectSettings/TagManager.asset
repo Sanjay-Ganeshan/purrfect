@@ -16,10 +16,10 @@ TagManager:
   - 
   - 
   - Lights
-  - 
-  - 
-  - 
-  - 
+  - Cat
+  - Human
+  - CatImpassable
+  - HumanImpassable
   - 
   - 
   - 

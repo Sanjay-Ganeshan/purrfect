@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public Inventory PlayerInventory;
+    public Collider2D ZoC;
 
     public InventoryItem[] toAddAtStart;
 
@@ -89,5 +90,9 @@ public class Player : MonoBehaviour {
         }
     }
 
+    void HandleInteraction()
+    {
+
+    }
 
 }

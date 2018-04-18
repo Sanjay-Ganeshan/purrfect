@@ -44,3 +44,5 @@ Assets/Downloadable/*
 
 downloads.unitypackage
 Assets/ice_Particles.cs
+*.sublime-project
+*.sublime-workspace

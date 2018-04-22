@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114099768017475104, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+        type: 2}
+      propertyPath: toAddAtStart.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4785466726789058, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.11
@@ -157,6 +162,11 @@ Prefab:
       propertyPath: toAddAtStart.Array.data[0]
       value: 
       objectReference: {fileID: 230609312}
+    - target: {fileID: 114099768017475104, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+        type: 2}
+      propertyPath: toAddAtStart.Array.data[1]
+      value: 
+      objectReference: {fileID: 1945361018}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
   m_IsPrefabParent: 0
@@ -904,6 +914,55 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 789cb6fd05a98124780edd5edfe0c23e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1945361017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1683005946530944, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1945361019}
+  - component: {fileID: 1945361018}
+  m_Layer: 0
+  m_Name: CatWhistle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1945361018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1945361017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b994a76ca2b8f49972adc7be3727fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 2
+  ItType: 1
+  Name: Cat Whistle
+  Description: Calls cats towards you
+  Icon: {fileID: 21300000, guid: 13c6e1fd588cc194cb9813e163c6348b, type: 3}
+  IsOn: 0
+--- !u!4 &1945361019
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4578560648615068, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1945361017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2108653755}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955947681
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,3 +1003,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2108653754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1478771070402630, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2108653755}
+  - component: {fileID: 2108653756}
+  m_Layer: 0
+  m_Name: LaserDot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2108653755
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4100851309821990, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108653754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1945361019}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2108653756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114004252873894402, guid: 3cab9dbc78f1b974c84eb61efdb4c32f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108653754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6fe7339015ad644baff40f737f8133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

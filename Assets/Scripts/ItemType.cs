@@ -5,5 +5,6 @@ using System.Text;
 
 public enum ItemType
 {
-    LASER_POINTER
+    LASER_POINTER,
+    CAT_WHISTLE
 }

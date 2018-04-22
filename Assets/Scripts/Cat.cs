@@ -5,49 +5,40 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Cat : MonoBehaviour {
-
+    // Controls the cat's behavior
     
-    float lastUpdateTime;
-    Optional<Vector3> target;
+    Optional<Vector3> currentTarget;      // Cat moves towards current target
     Optional<int> currentTargetPriority;
-    private bool shouldRepath = true;
+
+    // Constants should be PascalCase
     public float DISTANCE_THAT_COUNTS_AS_SAME_TARGET = 0.0f;
     public float DISTANCE_AT_TARGET = 0.1f;
-    private Rigidbody2D rb;
+
     public float catSpeed = 10.0f;
-    
-	// Use this for initialization
-	void Start () {
-        updateTime();
-        shouldRepath = true;
+    private Rigidbody2D rb;
+
+    void Awake() {
+
         rb = GetComponent<Rigidbody2D>();
+    }
+    
+	void Start() {
+
         ClearTarget();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update() {
+
+        // Since last frame, targets have been added
+
+        // If at current target, clear it
         ClearTargetIfArrived();
-	}
 
+        // Set velocity based on current target
+        SetVelocity();
 
-    void LateUpdate()
-    {
-        if(hasUpdatedThisFrame())
-        {
-            if(shouldRepath)
-            {
-                DoPath();
-            }
-        }
-        else
-        {
-            ClearTarget();
-        }
-    }
-
-    void ClearTargetIfArrived()
-    {
-        if (AtTarget()) ClearTarget();
+        // Clear targets for next frame addition
+        ClearTarget();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -55,92 +46,78 @@ public class Cat : MonoBehaviour {
         ClearTarget();
     }
 
-    Optional<Vector2> vectorToTarget()
+    // Set velocity toward target, 0 if none
+    private void SetVelocity()
     {
-        if(target.IsPresent())
+        if(currentTarget.IsPresent())
         {
-            return Optional<Vector2>.Of((target.Get() - this.transform.position).ToVector2());
+            rb.velocity = catSpeed * VectorToTarget().normalized;
+        } else {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    // Call clear target if cat is at target position
+    private void ClearTargetIfArrived()
+    {
+        if(AtTarget()) ClearTarget();
+    }
+
+    // Returns cat within distance of target
+    private bool AtTarget()
+    {
+        Vector2 diff = VectorToTarget();
+        return diff.magnitude <= DISTANCE_AT_TARGET;
+    }
+
+    // Get vector 2 from position to target
+    private Vector2 VectorToTarget()
+    {
+        if(currentTarget.IsPresent())
+        {
+            return (currentTarget.Get() - this.transform.position).ToVector2();
         }
         else
         {
-            return Optional<Vector2>.Empty();
+            return Vector2.zero;
         }
     }
 
-    void DoPath()
+    // Empty current target
+    private void ClearTarget()
     {
-        if(target.IsPresent())
-        {
-            rb.velocity = catSpeed * (target.Get() - this.transform.position).ToVector2().normalized;
-        }
-    }
-
-    void ClearTarget()
-    {
-        this.target = Optional<Vector3>.Empty();
+        this.currentTarget = Optional<Vector3>.Empty();
         this.currentTargetPriority = Optional<int>.Empty();
-        rb.velocity = Vector2.zero;
     }
 
-    bool AtTarget()
-    {
-        Optional<Vector2> diff = vectorToTarget();
-        if (diff.IsPresent())
-        {
-            if (Mathf.Approximately(DISTANCE_AT_TARGET, diff.Get().magnitude))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
+    // Try to add new target position, with priority priority (lower = importance)
+    //      Checks sight, and if already reached
     public void AddPossibleTarget(Vector3 position, int priority)
     {
-        int currPr = currentTargetPriority.IsPresent() ? currentTargetPriority.Get() : int.MaxValue;
-        if(priority <= currPr)
+        int currentPriority = currentTargetPriority.IsPresent() ? currentTargetPriority.Get() : int.MaxValue;
+
+        if(priority <= currentPriority)
         {
             // If it's more important, or it's equally important, but new, we'll update the target
-            bool shouldUpdate = false;
-            if(this.target.IsPresent())
-            {
-                float dist = (this.target.Get() - position).magnitude;
-                if (Mathf.Approximately(dist, DISTANCE_THAT_COUNTS_AS_SAME_TARGET) || dist <= DISTANCE_THAT_COUNTS_AS_SAME_TARGET)
-                {
-                    // The new target is basically the old target, do nothing
-                }
-                else
-                {
-                    // Basic sight - the cat can see 360 degrees. Will replace with vision cones later
-                    shouldUpdate = true;
-                }
-            }
-            else
-            {
-                shouldUpdate = true;
-            }
-            if (Mathf.Approximately(DISTANCE_AT_TARGET, (position - this.transform.position).ToVector2().magnitude) || (position - this.transform.position).ToVector2().magnitude <= DISTANCE_AT_TARGET)
+
+            // Check reasons to not update target
+            bool shouldUpdate = true;
+            
+            // Basic sight - the cat can see 360 degrees. Will replace with vision cones later
+
+            if (Mathf.Approximately(DISTANCE_AT_TARGET, (position - this.transform.position).ToVector2().magnitude)
+                || (position - this.transform.position).ToVector2().magnitude <= DISTANCE_AT_TARGET)
             {
                 // Already at this target.
                 shouldUpdate = false;
                 ClearTarget();
             }
+
             if (shouldUpdate)
             {
-                this.target = Optional<Vector3>.Of(position);
+                this.currentTarget = Optional<Vector3>.Of(position);
                 this.currentTargetPriority = Optional<int>.Of(priority);
-                this.shouldRepath = true;
             }
         }
-        updateTime();
-    }
-
-    private void updateTime()
-    {
-        lastUpdateTime = Time.time;
-    }
-    private bool hasUpdatedThisFrame()
-    {
-        return Time.time == lastUpdateTime;
     }
 }

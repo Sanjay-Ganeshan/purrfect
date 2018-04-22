@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 
     public InventoryItem[] toAddAtStart;
 
-    public InventoryItem CurrentlyEquipped;
+    public InventoryItem currentlyEquipped;
 
     private Rigidbody2D rb;
     public Vector2 maxSpeed = new Vector2(1,1);
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         PlayerInventory = new Inventory(this.transform);
-        this.CurrentlyEquipped = null;
+        this.currentlyEquipped = null;
         foreach(InventoryItem item in toAddAtStart)
         {
             PlayerInventory.AddToInventory(item);
@@ -54,17 +54,21 @@ public class Player : MonoBehaviour {
     }
 
     void OnInventorySelect(InventoryItem item)
-    {
-        if (this.CurrentlyEquipped != null)
+    {   
+        bool equippedItem = (this.currentlyEquipped == item);
+
+        if(this.currentlyEquipped != null)
         {
-            this.CurrentlyEquipped.Unequip();
-            this.CurrentlyEquipped = null;
+            this.currentlyEquipped.Unequip();
+            this.currentlyEquipped = null;
         }
-        else
+        
+        if(!equippedItem)
         {
-            this.CurrentlyEquipped = item;
-            this.CurrentlyEquipped.Equip();
+            this.currentlyEquipped = item;
+            this.currentlyEquipped.Equip();
         }
+
         UIManager.HideInventory();
     }
 
@@ -72,23 +76,23 @@ public class Player : MonoBehaviour {
     {
         if(Input.GetButtonDown(GameConstants.BTN_USE_CURRENTLY_EQUIPPED_ITEM))
         {
-            if(this.CurrentlyEquipped != null)
+            if(this.currentlyEquipped != null)
             {
-                this.CurrentlyEquipped.BeginUse(Common.GetMousePosition());
+                this.currentlyEquipped.BeginUse(Common.GetMousePosition());
             }
         }
         else if (Input.GetButton(GameConstants.BTN_USE_CURRENTLY_EQUIPPED_ITEM))
         {
-            if(this.CurrentlyEquipped != null)
+            if(this.currentlyEquipped != null)
             {
-                this.CurrentlyEquipped.Using(Common.GetMousePosition());
+                this.currentlyEquipped.Using(Common.GetMousePosition());
             }
         }
         else if (Input.GetButtonUp(GameConstants.BTN_USE_CURRENTLY_EQUIPPED_ITEM))
         {
-            if (this.CurrentlyEquipped != null)
+            if (this.currentlyEquipped != null)
             {
-                this.CurrentlyEquipped.EndUse(Common.GetMousePosition());
+                this.currentlyEquipped.EndUse(Common.GetMousePosition());
             }
         }
     }

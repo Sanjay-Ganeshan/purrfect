@@ -11,7 +11,10 @@ public abstract class InventoryItem : MonoBehaviour {
     public string Description;
     private bool isEquipped;
 
-    
+    public Collider2D ZoC;
+    public SpriteRenderer InventoryRenderer;
+    public SpriteRenderer WorldRenderer;
+
     private Inventory owner;
     public Sprite Icon;
 
@@ -24,12 +27,14 @@ public abstract class InventoryItem : MonoBehaviour {
     public void Equip()
     {
         this.isEquipped = true;
+        RenderInventory();
         OnEquip();
     }
 
     public void Unequip()
     {
         this.isEquipped = false;
+        RenderNone();
         OnUnequip();
     }
 
@@ -44,6 +49,60 @@ public abstract class InventoryItem : MonoBehaviour {
             Equip();
         }
     }
+
+    private void RenderWorld()
+    {
+        if (this.InventoryRenderer != null)
+        {
+            this.InventoryRenderer.enabled = false;
+        }
+        if (this.WorldRenderer != null)
+        {
+            this.WorldRenderer.enabled = true;
+        }
+    }
+
+    private void RenderInventory()
+    {
+        if (this.InventoryRenderer != null)
+        {
+            this.InventoryRenderer.enabled = true;
+        }
+        if (this.WorldRenderer != null)
+        {
+            this.WorldRenderer.enabled = false;
+        }
+    }
+    
+    private void RenderNone()
+    {
+        if (this.InventoryRenderer != null)
+        {
+            this.InventoryRenderer.enabled = false;
+        }
+        if (this.WorldRenderer != null)
+        {
+            this.WorldRenderer.enabled = false;
+        }
+    }
+
+    public virtual void OnDrop()
+    {
+        if (this.ZoC != null) {
+            this.ZoC.enabled = true;
+        }
+        RenderWorld();
+    }
+
+    public virtual void OnPickup()
+    {
+        if (this.ZoC != null)
+        {
+            this.ZoC.enabled = false;
+        }
+        RenderNone();
+    }
+
 
     public void SetOwner(Inventory inventory)
     {

@@ -46,6 +46,7 @@ public class Inventory: ICollection<InventoryItem>
             item.transform.localPosition = Vector3.zero;
             item.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
+        item.OnPickup();
     }
 
     public bool Drop(InventoryItem item)
@@ -54,6 +55,8 @@ public class Inventory: ICollection<InventoryItem>
         if(wasRemoved)
         {
             item.transform.SetParent(null, true);
+            item.SetOwner(null);
+            item.OnDrop();
         }
         return wasRemoved;
     }

@@ -157,6 +157,10 @@ Prefab:
       propertyPath: toAddAtStart.Array.data[0]
       value: 
       objectReference: {fileID: 230609312}
+    - target: {fileID: 1814078217405432, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
   m_IsPrefabParent: 0
@@ -309,6 +313,7 @@ MonoBehaviour:
   Name: Laser Pointer
   Description: Every cat's best friend - hours of endless fun! Chase it, pounce on
     it, chase it some more!
+  ZoC: {fileID: 0}
   Icon: {fileID: 21300000, guid: c4aae4c04306e6940af9a64e210e259f, type: 3}
   IsOn: 1
   LaserRenderer: {fileID: 230609314}

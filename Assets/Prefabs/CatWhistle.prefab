@@ -211,6 +211,7 @@ MonoBehaviour:
   ItType: 1
   Name: Cat Whistle
   Description: Calls cats towards you
+  isEquippable: 1
   ZoC: {fileID: 58227260765207390}
   InventoryRenderer: {fileID: 0}
   WorldRenderer: {fileID: 212978674753863558}

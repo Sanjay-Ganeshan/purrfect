@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IPersistantObject {
 
     public const int InteractablesToCheck = 6;
 
@@ -159,4 +159,39 @@ public class Player : MonoBehaviour {
         }
     }
 
+    void IPersistantObject.Load(Dictionary<string, string> saveData)
+    {
+        
+    }
+
+    Dictionary<string, string> IPersistantObject.Save()
+    {
+        Dictionary<string, string> ret = new Dictionary<string, string>();
+        return ret;
+    }
+
+    int IPersistantObject.getID()
+    {
+        return GameConstants.PLAYER_ID;
+    }
+
+    void IPersistantObject.Unload()
+    {
+        God.Kill(this.gameObject);
+    }
+
+    PersistanceType IPersistantObject.GetPType()
+    {
+        return PersistanceType.PLAYER;
+    }
+
+    void IPersistantObject.setID(int id)
+    {
+        
+    }
+
+    MonoBehaviour IPersistantObject.GetMono()
+    {
+        return this;
+    }
 }

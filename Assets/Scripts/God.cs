@@ -114,4 +114,10 @@ public class God: MonoBehaviour
     }
 
 
+    public void Reset()
+    {
+        Unpause();
+        this.knownCats = Optional<Cat[]>.Empty();
+    }
+
 }

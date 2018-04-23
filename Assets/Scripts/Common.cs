@@ -139,4 +139,20 @@ public static class Common {
     {
         return new Vector2(Mathf.Cos(WorldAngle), Mathf.Sin(WorldAngle)).normalized;
     }
+
+    public static string ToSavableString(this Transform t)
+    {
+        string stringRep = string.Format("{0},{1},{2}", t.position.x, t.position.y, t.rotation.eulerAngles.z);
+        return stringRep;
+    }
+
+    public static void UpdateToSaved(this Transform t, string savedTransform)
+    {
+        string[] split = savedTransform.Split(',');
+        float x = float.Parse(split[0]);
+        float y = float.Parse(split[1]);
+        float rot = float.Parse(split[2]);
+        t.position = new Vector2(x, y).ToVector3();
+        t.rotation = Quaternion.Euler(0, 0, rot);
+    }
 }

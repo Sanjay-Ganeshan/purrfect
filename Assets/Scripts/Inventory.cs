@@ -80,6 +80,33 @@ public class Inventory: ICollection<InventoryItem>
         }
     }
 
+    public Optional<InventoryItem> GetById(int id)
+    {
+        foreach(InventoryItem item in this)
+        {
+            if(item.ID == id)
+            {
+                return Optional<InventoryItem>.Of(item);
+            }
+        }
+        return Optional<InventoryItem>.Empty();
+    }
+
+    public bool Owns(int id)
+    {
+        return GetById(id).IsPresent();
+    }
+
+    public InventoryItem[] GetByType(ItemType itemType)
+    {
+        return this.Where(item => item.ItType == itemType).ToArray();
+    }
+
+    public E[] GetBySystemType<E>() where E : InventoryItem
+    {
+        return this.Where(item => item.GetType() == typeof(E)).Select(item => (E)item).ToArray();
+    }
+
     public bool Contains(InventoryItem item)
     {
         return this.Items.Contains(item);

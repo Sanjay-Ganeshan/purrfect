@@ -8,9 +8,12 @@ public class CatWhistle : InventoryItem, IInteractable
 {
     public bool IsOn;
 
+    public AudioSource whistleSound;
+
     public void Start()
     {
         IsOn = false;
+        whistleSound = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -25,11 +28,13 @@ public class CatWhistle : InventoryItem, IInteractable
     public override void BeginUse(Vector2 location)
     {
         this.IsOn = true;
+        whistleSound.Play();
     }
 
     public override void EndUse(Vector2 location)
     {
         this.IsOn = false;
+        whistleSound.Stop();
     }
 
     public override void Using(Vector2 location)

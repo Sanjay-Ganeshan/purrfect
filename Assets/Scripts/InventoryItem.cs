@@ -11,6 +11,8 @@ public abstract class InventoryItem : MonoBehaviour {
     public string Description;
     private bool isEquipped;
 
+    public bool isEquippable;
+
     public Collider2D ZoC;
     public SpriteRenderer InventoryRenderer;
     public SpriteRenderer WorldRenderer;

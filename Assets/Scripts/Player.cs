@@ -60,22 +60,25 @@ public class Player : MonoBehaviour {
     }
 
     void OnInventorySelect(InventoryItem item)
-    {   
-        bool equippedItem = (this.currentlyEquipped == item);
-
-        if(this.currentlyEquipped != null)
+    {
+        if (item.isEquippable)
         {
-            this.currentlyEquipped.Unequip();
-            this.currentlyEquipped = null;
-        }
-        
-        if(!equippedItem)
-        {
-            this.currentlyEquipped = item;
-            this.currentlyEquipped.Equip();
-        }
+            bool equippedItem = (this.currentlyEquipped == item);
 
-        UIManager.HideInventory();
+            if (this.currentlyEquipped != null)
+            {
+                this.currentlyEquipped.Unequip();
+                this.currentlyEquipped = null;
+            }
+
+            if (!equippedItem)
+            {
+                this.currentlyEquipped = item;
+                this.currentlyEquipped.Equip();
+            }
+
+            UIManager.HideInventory();
+        }
     }
 
     void HandleUsing()

@@ -378,19 +378,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4315381883166258, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4315381883166258, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4315381883166258, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.3590918
       objectReference: {fileID: 0}
     - target: {fileID: 4315381883166258, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9333023
       objectReference: {fileID: 0}
     - target: {fileID: 4315381883166258, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
       propertyPath: m_RootOrder
@@ -399,6 +399,10 @@ Prefab:
     - target: {fileID: 1578784755552320, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
       propertyPath: m_Name
       value: Mirror (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315381883166258, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 42.089
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
@@ -775,11 +779,6 @@ Prefab:
     - target: {fileID: 1220046001567932, guid: 464cf40eed1a94149ab8af0d8704433c, type: 2}
       propertyPath: m_Name
       value: YellowDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 114979585701682422, guid: 464cf40eed1a94149ab8af0d8704433c,
-        type: 2}
-      propertyPath: LockCombo
-      value: 777
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 464cf40eed1a94149ab8af0d8704433c, type: 2}

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 
     public const int InteractablesToCheck = 6;
 
-    public Inventory PlayerInventory;
+    public Inventory Bag;
     public Collider2D ZoC;
 
     public InventoryItem[] toAddAtStart;
@@ -24,11 +24,11 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
 	void Start () {
-        PlayerInventory = new Inventory(this.transform);
+        Bag = new Inventory(this.transform);
         this.currentlyEquipped = null;
         foreach(InventoryItem item in toAddAtStart)
         {
-            PlayerInventory.AddToInventory(item);
+            Bag.AddToInventory(item);
         }
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
     {
         if(Input.GetButtonDown(GameConstants.BTN_DISPLAY_CHARACTER_INVENTORY))
         {
-            UIManager.ToggleInventory(this.PlayerInventory, OnInventorySelect);
+            UIManager.ToggleInventory(this.Bag, OnInventorySelect);
         }
     }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class CatWhistle : InventoryItem
+public class CatWhistle : InventoryItem, IInteractable
 {
     public bool IsOn;
 
@@ -49,5 +49,11 @@ public class CatWhistle : InventoryItem
     protected override void OnUnequip()
     {
         
+    }
+
+    public bool Interact(Player p)
+    {
+        p.Bag.Add(this);
+        return this;
     }
 }

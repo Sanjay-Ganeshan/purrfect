@@ -80,7 +80,7 @@ public class LaserPointer : InventoryItem, IInteractable
 
     public bool Interact(Player p)
     {
-        p.PlayerInventory.AddToInventory(this);
+        p.Bag.AddToInventory(this);
         return true;
     }
 }

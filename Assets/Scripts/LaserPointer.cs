@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class LaserPointer : InventoryItem
+public class LaserPointer : InventoryItem, IInteractable
 {
     public bool IsOn;
     public LineRenderer LaserRenderer;
@@ -76,5 +76,11 @@ public class LaserPointer : InventoryItem
     protected override void OnUnequip()
     {
         
+    }
+
+    public bool Interact(Player p)
+    {
+        p.PlayerInventory.AddToInventory(this);
+        return true;
     }
 }

@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4978291518651644}
   - component: {fileID: 58334699945093750}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ZoC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa2cfc454152da48871d1e00b9d6e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZoC: {fileID: 0}
+  ZoC: {fileID: 58334699945093750}
   toAddAtStart:
   - {fileID: 0}
   - {fileID: 0}

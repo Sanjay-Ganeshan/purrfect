@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D rb;
     public Vector2 maxSpeed = new Vector2(1,1);
+
+    private Collider2D[] overlappingColliders = new Collider2D[InteractablesToCheck];
+    private Optional<ContactFilter2D> ZoCFilter = Optional<ContactFilter2D>.Empty();
+    
 
     // Use this for initialization
 	void Start () {
@@ -36,6 +41,7 @@ public class Player : MonoBehaviour {
             HandleUsing();
             HandleMotion();
         }
+        HandleInteraction();
 	}
 
     void HandleMotion()
@@ -99,16 +105,54 @@ public class Player : MonoBehaviour {
 
     void HandleInteraction()
     {
-        Collider2D[] results = new Collider2D[InteractablesToCheck];
-        ZoC.OverlapCollider(new ContactFilter2D().NoFilter(), results);
-        IEnumerable<int> en;
+        if (Input.GetButtonDown(GameConstants.BTN_INTERACT))
+        {
+            InteractWithSurroundings();
+        }
+    }
 
+    void InteractWithSurroundings()
+    {
+        MakeContactFilter();
+        Collider2D[] results = new Collider2D[InteractablesToCheck];
+        ZoC.OverlapCollider(ZoCFilter.Get(), results);
         foreach(Collider2D res in results)
         {
             if (res != null)
             {
-
+                IInteractable collidedInteracter;
+                try
+                {
+                     collidedInteracter = res.transform.parent.GetComponent<IInteractable>();
+                }
+                catch(NullReferenceException e)
+                {
+                    Debug.Log("ZoC does not have parent!");
+                    continue;
+                }
+                if(collidedInteracter != null)
+                {
+                    bool worked = collidedInteracter.Interact(this);
+                    Debug.Log("Interacting with" + collidedInteracter);
+                    if(worked) break;
+                }
+                else
+                {
+                    Debug.Log("Collided with non interactable " + collidedInteracter);
+                }
             }
+        }
+    }
+
+    void MakeContactFilter()
+    {
+        if(!ZoCFilter.IsPresent())
+        {
+            ContactFilter2D filt;
+            filt = new ContactFilter2D();
+            filt.NoFilter();
+            filt.SetLayerMask(LayerMask.GetMask(GameConstants.ZOC_LAYER));
+            ZoCFilter = Optional<ContactFilter2D>.Of(filt);
         }
     }
 

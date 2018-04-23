@@ -108,6 +108,10 @@ public abstract class InventoryItem : MonoBehaviour {
 
     public void SetOwner(Inventory inventory)
     {
+        if(this.owner != null)
+        {
+            this.owner.Drop(this);
+        }
         this.owner = inventory;
     }
 

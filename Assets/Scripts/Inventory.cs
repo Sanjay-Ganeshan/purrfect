@@ -45,6 +45,7 @@ public class Inventory: ICollection<InventoryItem>
         {
             item.transform.localPosition = Vector3.zero;
             item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            item.SetOwner(this);
         }
         item.OnPickup();
     }

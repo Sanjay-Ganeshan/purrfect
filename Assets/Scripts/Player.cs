@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+
+    public const int InteractablesToCheck = 6;
 
     public Inventory PlayerInventory;
     public Collider2D ZoC;
@@ -96,7 +99,17 @@ public class Player : MonoBehaviour {
 
     void HandleInteraction()
     {
+        Collider2D[] results = new Collider2D[InteractablesToCheck];
+        ZoC.OverlapCollider(new ContactFilter2D().NoFilter(), results);
+        IEnumerable<int> en;
 
+        foreach(Collider2D res in results)
+        {
+            if (res != null)
+            {
+
+            }
+        }
     }
 
 }

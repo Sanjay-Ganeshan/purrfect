@@ -6,23 +6,25 @@ using UnityEngine;
 public class Door : MonoBehaviour, IInteractable {
 
     public bool IsOpen;
-    private bool doorClosed; // tracks true state of the door
     public int LockCombo;  // Number that encodes the type of door this is. Keys with this combo can open this doors 
     public Inventory Lock;
 
-    public GameObject ColliderObject;
+    public Collider2D DoorCollider;
+
+    private bool shouldCheck = true;
 
 	// Use this for initialization
 	void Start () {
         IsOpen = false;
-        doorClosed = true;
         Lock = new Inventory(this.transform);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        CheckState();
-
+        if(shouldCheck)
+        {
+            CheckState();
+        }
     }
 
     public bool Interact(Player p) {
@@ -46,29 +48,27 @@ public class Door : MonoBehaviour, IInteractable {
     }
 
     public void ToggleDoorState() {
-        IsOpen = !IsOpen;
-        CheckState();
+        if (IsOpen) CloseDoor();
+        else OpenDoor();
     }
 
     private void OpenDoor() {
-        if (doorClosed)
-        {
-            // Open the door
-            ColliderObject.GetComponent<BoxCollider2D>().enabled = false;
-            doorClosed = false;
-        }
+        // Open the door
+        DoorCollider.enabled = false;
+        this.IsOpen = true;
     }
 
     private void CloseDoor() {
-        if (!doorClosed)
-        {
-            //Close the door
-            ColliderObject.GetComponent<BoxCollider2D>().enabled = true;
-            doorClosed = true;
-        }
+        //Close the door
+        DoorCollider.enabled = true;
+        this.IsOpen = false;
     }
 
     private void CheckState() {
+        if(DoorCollider == null)
+        {
+            return;
+        }
         if (IsOpen)
         {
             // Door is supposed to be open
@@ -78,5 +78,6 @@ public class Door : MonoBehaviour, IInteractable {
             // Door is supposed to be closed
             CloseDoor();
         }
+        shouldCheck = false;
     }
 }

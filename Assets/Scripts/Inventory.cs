@@ -104,7 +104,12 @@ public class Inventory: ICollection<InventoryItem>
 
     public E[] GetBySystemType<E>() where E : InventoryItem
     {
-        return this.Where(item => item.GetType() == typeof(E)).Select(item => (E)item).ToArray();
+        return GetStreamBySystemType<E>().ToArray();
+    }
+
+    public IEnumerable<E> GetStreamBySystemType<E>() where E: InventoryItem
+    {
+        return this.Where(item => item.GetType() == typeof(E)).Select(item => (E)item);
     }
 
     public bool Contains(InventoryItem item)

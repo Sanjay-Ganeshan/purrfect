@@ -16,5 +16,5 @@ public static class GameConstants
     public const int LASER_PRIORITY = 10;
     public const int WHISTLE_PRIORITY = 5;
     public const float DEFAULT_REFRACTIVE_INDEX = 1.0f;
-    public const int PLAYER_ID = 0;
+    public const string PLAYER_ID = "player";
 }

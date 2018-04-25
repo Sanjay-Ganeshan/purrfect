@@ -12,7 +12,6 @@ public static class Common {
     /// </summary>
     public const float DestroyTime = 0.001f;
 
-
     /// <summary>
     /// Turn this transform such that it's right vector faces a given target in 2D world space
     /// </summary>
@@ -154,5 +153,14 @@ public static class Common {
         float rot = float.Parse(split[2]);
         t.position = new Vector2(x, y).ToVector3();
         t.rotation = Quaternion.Euler(0, 0, rot);
+    }
+
+    public static void GenerateIDIfNeeded(this IIdentifiable ident)
+    {
+        if(ident.getID().Length == 0)
+        {
+            // Empty string, reassign
+            ident.setID(System.Guid.NewGuid().ToString());
+        }
     }
 }

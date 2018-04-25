@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37456c4f410eb88499201dfb56d82208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 1
+  ID: 
   ItType: 0
   Name: Laser Pointer
   Description: Every cat's best friend - hours of endless fun! Chase it, pounce on

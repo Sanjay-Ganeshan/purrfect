@@ -41,7 +41,7 @@ public class Savior: MonoBehaviour
     {
         IPersistantObject[] mapObjects;
         mapObjects = GetMapPersistantObjects();
-        Dictionary<int, Dictionary<string, string>> output = new Dictionary<int, Dictionary<string, string>>(); 
+        Dictionary<string, Dictionary<string, string>> output = new Dictionary<string, Dictionary<string, string>>(); 
         foreach(IPersistantObject o in mapObjects)
         {
             output.Add(o.getID(), o.Save());
@@ -66,8 +66,8 @@ public class Savior: MonoBehaviour
         {
             json = reader.ReadToEnd();
         }
-        Dictionary<int, Dictionary<string, string>> output = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<string, string>>>(json);
-        foreach(int id in output.Keys)
+        Dictionary<string, Dictionary<string, string>> output = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json);
+        foreach(string id in output.Keys)
         {
             Dictionary<string, string> dict = output[id];
             GameObject template = _Templates[(PersistanceType)int.Parse(dict["type"])];

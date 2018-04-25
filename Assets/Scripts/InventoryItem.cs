@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InventoryItem : MonoBehaviour {
+public abstract class InventoryItem : MonoBehaviour, IIdentifiable {
 
-    public int ID;
+    public string ID = "";
     public ItemType ItType;
     public string Name;
     public string Description;
@@ -25,6 +25,11 @@ public abstract class InventoryItem : MonoBehaviour {
     public abstract void Using(Vector2 location);
     public abstract void BeginUse(Vector2 location);
     public abstract void EndUse(Vector2 location);
+
+    public virtual void LateUpdate()
+    {
+        this.GenerateIDIfNeeded();
+    }
 
     public void Equip()
     {
@@ -127,7 +132,7 @@ public abstract class InventoryItem : MonoBehaviour {
 
     public override int GetHashCode()
     {
-        return this.ID;
+        return this.ID.GetHashCode();
     }
 
     public override string ToString()
@@ -150,5 +155,15 @@ public abstract class InventoryItem : MonoBehaviour {
         {
             return IfNotFound;
         }
+    }
+
+    public string getID()
+    {
+        return this.ID;
+    }
+
+    public void setID(string id)
+    {
+        this.ID = id;
     }
 }

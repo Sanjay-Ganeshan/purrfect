@@ -85,6 +85,8 @@ MonoBehaviour:
   Templates:
   - PType: 0
     Template: {fileID: 1372436940086902, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
+  - PType: 9
+    Template: {fileID: 1767674621604636, guid: 022aca6c929cb114abd0963b623b4073, type: 2}
   SaveMode: 0
 --- !u!114 &114339709708565852
 MonoBehaviour:

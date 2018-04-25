@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class LaserPointer : InventoryItem, IInteractable
+public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
 {
     public bool IsOn;
     public LineRenderer LaserRenderer;
@@ -82,5 +82,36 @@ public class LaserPointer : InventoryItem, IInteractable
     {
         p.Bag.AddToInventory(this);
         return true;
+    }
+
+    void IPersistantObject.Load(Dictionary<string, string> saveData)
+    {
+        
+    }
+
+    Dictionary<string, string> IPersistantObject.Save()
+    {
+        Dictionary<string, string> r = new Dictionary<string, string>();
+        return r;
+    }
+
+    void IPersistantObject.Unload()
+    {
+        God.Kill(this.gameObject);
+    }
+
+    PersistanceType IPersistantObject.GetPType()
+    {
+        return PersistanceType.LASER_POINTER;
+    }
+
+    bool IPersistantObject.PersistThroughLoad()
+    {
+        return false;
+    }
+
+    MonoBehaviour IPersistantObject.GetMono()
+    {
+        return this;
     }
 }

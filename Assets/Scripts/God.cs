@@ -10,6 +10,7 @@ public class God: MonoBehaviour
     private bool isPaused;
     private Optional<Cat[]> knownCats;
     private bool initialized = false;
+    
     private void Start()
     {
         TheOnlyGod = this;
@@ -21,6 +22,7 @@ public class God: MonoBehaviour
         this.isPaused = false;
         this.knownCats = Optional<Cat[]>.Empty();
     }
+
 
     private void InitIfNeeded()
     {
@@ -112,7 +114,6 @@ public class God: MonoBehaviour
         FindGod();
         TheOnlyGod.Smite(gameObject);
     }
-
 
     public void Reset()
     {

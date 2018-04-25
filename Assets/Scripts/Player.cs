@@ -159,6 +159,11 @@ public class Player : MonoBehaviour, IPersistantObject {
         }
     }
 
+    public virtual void LateUpdate()
+    {
+        this.GenerateIDIfNeeded();
+    }
+
     void IPersistantObject.Load(Dictionary<string, string> saveData)
     {
         
@@ -170,7 +175,7 @@ public class Player : MonoBehaviour, IPersistantObject {
         return ret;
     }
 
-    int IPersistantObject.getID()
+    public string getID()
     {
         return GameConstants.PLAYER_ID;
     }
@@ -185,7 +190,7 @@ public class Player : MonoBehaviour, IPersistantObject {
         return PersistanceType.PLAYER;
     }
 
-    void IPersistantObject.setID(int id)
+    public void setID(string id)
     {
         
     }

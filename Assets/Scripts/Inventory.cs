@@ -81,11 +81,11 @@ public class Inventory: ICollection<InventoryItem>
         }
     }
 
-    public Optional<InventoryItem> GetById(int id)
+    public Optional<InventoryItem> GetById(string id)
     {
         foreach(InventoryItem item in this)
         {
-            if(item.ID == id)
+            if(item.getID().Equals(id))
             {
                 return Optional<InventoryItem>.Of(item);
             }
@@ -93,7 +93,7 @@ public class Inventory: ICollection<InventoryItem>
         return Optional<InventoryItem>.Empty();
     }
 
-    public bool Owns(int id)
+    public bool Owns(string id)
     {
         return GetById(id).IsPresent();
     }

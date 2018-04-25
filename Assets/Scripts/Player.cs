@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IPersistantObject {
 
-    public Inventory PlayerInventory;
+    public const int InteractablesToCheck = 6;
+
+    public Inventory Bag;
     public Collider2D ZoC;
 
     public InventoryItem[] toAddAtStart;
@@ -14,13 +18,17 @@ public class Player : MonoBehaviour {
     private Rigidbody2D rb;
     public Vector2 maxSpeed = new Vector2(1,1);
 
+    private Collider2D[] overlappingColliders = new Collider2D[InteractablesToCheck];
+    private Optional<ContactFilter2D> ZoCFilter = Optional<ContactFilter2D>.Empty();
+    
+
     // Use this for initialization
 	void Start () {
-        PlayerInventory = new Inventory(this.transform);
+        Bag = new Inventory(this.transform);
         this.currentlyEquipped = null;
         foreach(InventoryItem item in toAddAtStart)
         {
-            PlayerInventory.AddToInventory(item);
+            Bag.AddToInventory(item);
         }
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -33,6 +41,7 @@ public class Player : MonoBehaviour {
             HandleUsing();
             HandleMotion();
         }
+        HandleInteraction();
 	}
 
     void HandleMotion()
@@ -46,27 +55,30 @@ public class Player : MonoBehaviour {
     {
         if(Input.GetButtonDown(GameConstants.BTN_DISPLAY_CHARACTER_INVENTORY))
         {
-            UIManager.ToggleInventory(this.PlayerInventory, OnInventorySelect);
+            UIManager.ToggleInventory(this.Bag, OnInventorySelect);
         }
     }
 
     void OnInventorySelect(InventoryItem item)
-    {   
-        bool equippedItem = (this.currentlyEquipped == item);
-
-        if(this.currentlyEquipped != null)
+    {
+        if (item.isEquippable)
         {
-            this.currentlyEquipped.Unequip();
-            this.currentlyEquipped = null;
-        }
-        
-        if(!equippedItem)
-        {
-            this.currentlyEquipped = item;
-            this.currentlyEquipped.Equip();
-        }
+            bool equippedItem = (this.currentlyEquipped == item);
 
-        UIManager.HideInventory();
+            if (this.currentlyEquipped != null)
+            {
+                this.currentlyEquipped.Unequip();
+                this.currentlyEquipped = null;
+            }
+
+            if (!equippedItem)
+            {
+                this.currentlyEquipped = item;
+                this.currentlyEquipped.Equip();
+            }
+
+            UIManager.HideInventory();
+        }
     }
 
     void HandleUsing()
@@ -96,7 +108,105 @@ public class Player : MonoBehaviour {
 
     void HandleInteraction()
     {
-
+        if (Input.GetButtonDown(GameConstants.BTN_INTERACT))
+        {
+            InteractWithSurroundings();
+        }
     }
 
+    void InteractWithSurroundings()
+    {
+        MakeContactFilter();
+        Collider2D[] results = new Collider2D[InteractablesToCheck];
+        ZoC.OverlapCollider(ZoCFilter.Get(), results);
+        foreach(Collider2D res in results)
+        {
+            if (res != null)
+            {
+                IInteractable collidedInteracter;
+                try
+                {
+                     collidedInteracter = res.transform.parent.GetComponent<IInteractable>();
+                }
+                catch(NullReferenceException e)
+                {
+                    Debug.Log("ZoC does not have parent!");
+                    continue;
+                }
+                if(collidedInteracter != null)
+                {
+                    bool worked = collidedInteracter.Interact(this);
+                    Debug.Log("Interacting with" + collidedInteracter);
+                    if(worked) break;
+                }
+                else
+                {
+                    Debug.Log("Collided with non interactable " + collidedInteracter);
+                }
+            }
+        }
+    }
+
+    void MakeContactFilter()
+    {
+        if(!ZoCFilter.IsPresent())
+        {
+            ContactFilter2D filt;
+            filt = new ContactFilter2D();
+            filt.NoFilter();
+            filt.SetLayerMask(LayerMask.GetMask(GameConstants.ZOC_LAYER));
+            ZoCFilter = Optional<ContactFilter2D>.Of(filt);
+        }
+    }
+
+    public virtual void LateUpdate()
+    {
+        this.GenerateIDIfNeeded();
+    }
+
+    void IPersistantObject.Load(Dictionary<string, string> saveData)
+    {
+        
+    }
+
+    Dictionary<string, string> IPersistantObject.Save()
+    {
+        Dictionary<string, string> ret = new Dictionary<string, string>();
+        return ret;
+    }
+
+    public string getID()
+    {
+        return GameConstants.PLAYER_ID;
+    }
+
+    void IPersistantObject.Unload()
+    {
+        God.Kill(this.gameObject);
+    }
+
+    PersistanceType IPersistantObject.GetPType()
+    {
+        return PersistanceType.PLAYER;
+    }
+
+    public void setID(string id)
+    {
+        
+    }
+
+    MonoBehaviour IPersistantObject.GetMono()
+    {
+        return this;
+    }
+
+    public bool PersistThroughLoad()
+    {
+        return true;
+    }
+
+    public void PostLoad()
+    {
+        
+    }
 }

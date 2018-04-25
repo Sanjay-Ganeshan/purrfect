@@ -3,15 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InventoryItem : MonoBehaviour {
+public abstract class InventoryItem : MonoBehaviour, IIdentifiable {
 
-    public int ID;
+    public string ID = "";
     public ItemType ItType;
     public string Name;
     public string Description;
     private bool isEquipped;
 
-    
+    public bool isEquippable;
+
+    public Collider2D ZoC;
+    public SpriteRenderer InventoryRenderer;
+    public SpriteRenderer WorldRenderer;
+
     private Inventory owner;
     public Sprite Icon;
 
@@ -21,15 +26,22 @@ public abstract class InventoryItem : MonoBehaviour {
     public abstract void BeginUse(Vector2 location);
     public abstract void EndUse(Vector2 location);
 
+    public virtual void LateUpdate()
+    {
+        this.GenerateIDIfNeeded();
+    }
+
     public void Equip()
     {
         this.isEquipped = true;
+        RenderInventory();
         OnEquip();
     }
 
     public void Unequip()
     {
         this.isEquipped = false;
+        RenderNone();
         OnUnequip();
     }
 
@@ -45,8 +57,66 @@ public abstract class InventoryItem : MonoBehaviour {
         }
     }
 
+    private void RenderWorld()
+    {
+        if (this.InventoryRenderer != null)
+        {
+            this.InventoryRenderer.enabled = false;
+        }
+        if (this.WorldRenderer != null)
+        {
+            this.WorldRenderer.enabled = true;
+        }
+    }
+
+    private void RenderInventory()
+    {
+        if (this.InventoryRenderer != null)
+        {
+            this.InventoryRenderer.enabled = true;
+        }
+        if (this.WorldRenderer != null)
+        {
+            this.WorldRenderer.enabled = false;
+        }
+    }
+    
+    private void RenderNone()
+    {
+        if (this.InventoryRenderer != null)
+        {
+            this.InventoryRenderer.enabled = false;
+        }
+        if (this.WorldRenderer != null)
+        {
+            this.WorldRenderer.enabled = false;
+        }
+    }
+
+    public virtual void OnDrop()
+    {
+        if (this.ZoC != null) {
+            this.ZoC.enabled = true;
+        }
+        RenderWorld();
+    }
+
+    public virtual void OnPickup()
+    {
+        if (this.ZoC != null)
+        {
+            this.ZoC.enabled = false;
+        }
+        RenderNone();
+    }
+
+
     public void SetOwner(Inventory inventory)
     {
+        if(this.owner != null)
+        {
+            this.owner.Drop(this);
+        }
         this.owner = inventory;
     }
 
@@ -62,7 +132,7 @@ public abstract class InventoryItem : MonoBehaviour {
 
     public override int GetHashCode()
     {
-        return this.ID;
+        return this.ID.GetHashCode();
     }
 
     public override string ToString()
@@ -85,5 +155,15 @@ public abstract class InventoryItem : MonoBehaviour {
         {
             return IfNotFound;
         }
+    }
+
+    public string getID()
+    {
+        return this.ID;
+    }
+
+    public void setID(string id)
+    {
+        this.ID = id;
     }
 }

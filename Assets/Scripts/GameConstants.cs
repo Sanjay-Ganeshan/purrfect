@@ -12,7 +12,9 @@ public static class GameConstants
     public const string BTN_INTERACT = "Interact";
     public const string BTN_SELECT = "UseItem";
     public const string LBL_CAT = "Cat";
+    public const string ZOC_LAYER = "Interactable";
     public const int LASER_PRIORITY = 10;
     public const int WHISTLE_PRIORITY = 5;
     public const float DEFAULT_REFRACTIVE_INDEX = 1.0f;
+    public const string PLAYER_ID = "player";
 }

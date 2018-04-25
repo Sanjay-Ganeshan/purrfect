@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Interactable {
-
-    bool Interact();
+public interface IInteractable {
+    bool Interact(Player p);
 }

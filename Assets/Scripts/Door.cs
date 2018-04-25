@@ -1,48 +1,83 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+public class Door : MonoBehaviour, IInteractable {
 
-    public bool isOpen;
-    private bool doorClosed; // tracks true state of the door
+    public bool IsOpen;
+    public int LockCombo;  // Number that encodes the type of door this is. Keys with this combo can open this doors 
+    public Inventory Lock;
 
-    public GameObject ColliderObject;
+    public Collider2D DoorCollider;
+
+    private bool shouldCheck = true;
 
 	// Use this for initialization
 	void Start () {
-        isOpen = false;
-        doorClosed = true;
-
+        IsOpen = false;
+        Lock = new Inventory(this.transform);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        CheckState();
+        if(shouldCheck)
+        {
+            CheckState();
+        }
+    }
 
+    public bool Interact(Player p) {
+        if (!IsOpen)
+        {
+
+            Key k = p.Bag.GetStreamBySystemType<Key>().Where((key) => key.CanUnlock(this.LockCombo)).FirstOrDefault();
+
+            if (k != null)
+            {
+                bool ShouldAdd = k.Consume();
+                if (ShouldAdd)
+                {
+                    this.Lock.Add(k);
+                }
+                this.ToggleDoorState();
+                return true;
+            }
+        }
+        return false;
     }
 
     public void ToggleDoorState() {
-        isOpen = !isOpen;
-        CheckState();
+        if (IsOpen) CloseDoor();
+        else OpenDoor();
     }
+
+    private void OpenDoor() {
+        // Open the door
+        DoorCollider.enabled = false;
+        this.IsOpen = true;
+    }
+
+    private void CloseDoor() {
+        //Close the door
+        DoorCollider.enabled = true;
+        this.IsOpen = false;
+    }
+
     private void CheckState() {
-        if (isOpen)
+        if(DoorCollider == null)
+        {
+            return;
+        }
+        if (IsOpen)
         {
             // Door is supposed to be open
-            if (doorClosed) {
-                // Open the door
-                ColliderObject.GetComponent<BoxCollider2D>().enabled = false;
-                doorClosed = false;
-            }
+            OpenDoor();   
         }
         else {
             // Door is supposed to be closed
-            if (!doorClosed) {
-                //Close the door
-                ColliderObject.GetComponent<BoxCollider2D>().enabled = true;
-                doorClosed = true;
-            }
+            CloseDoor();
         }
+        shouldCheck = false;
     }
 }

@@ -45,7 +45,9 @@ public class Inventory: ICollection<InventoryItem>
         {
             item.transform.localPosition = Vector3.zero;
             item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            item.SetOwner(this);
         }
+        item.OnPickup();
     }
 
     public bool Drop(InventoryItem item)
@@ -54,6 +56,8 @@ public class Inventory: ICollection<InventoryItem>
         if(wasRemoved)
         {
             item.transform.SetParent(null, true);
+            item.SetOwner(null);
+            item.OnDrop();
         }
         return wasRemoved;
     }
@@ -75,6 +79,39 @@ public class Inventory: ICollection<InventoryItem>
         foreach (InventoryItem item in toRemove) {
             this.Delete(item);
         }
+    }
+
+    public Optional<InventoryItem> GetById(string id)
+    {
+        foreach(InventoryItem item in this)
+        {
+            if(item.getID().Equals(id))
+            {
+                return Optional<InventoryItem>.Of(item);
+            }
+        }
+        return Optional<InventoryItem>.Empty();
+    }
+
+    public bool Owns(string id)
+    {
+        return GetById(id).IsPresent();
+    }
+
+    public InventoryItem[] GetByType(ItemType itemType)
+    {
+        return this.Where(item => item.ItType == itemType).ToArray();
+    }
+
+    public E[] GetBySystemType<E>() where E : InventoryItem
+    {
+        return GetStreamBySystemType<E>().ToArray();
+    }
+
+    public IEnumerable<E> GetStreamBySystemType<E>() where E: InventoryItem
+    {
+        //return this.Where(item => item.GetType() == typeof(E)).Select(item => (E)item);
+        return this.OfType<E>();
     }
 
     public bool Contains(InventoryItem item)

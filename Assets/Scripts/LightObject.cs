@@ -25,7 +25,8 @@ public static class LightSim {
             hitPoint = hit.point;
             ILightObject hitObject = hit.collider.gameObject.GetComponent<ILightObject>();
             float hitDistance = hit.distance;
-            Vector2 hitNormal = hitObject.GetMono().transform.InverseTransformDirection(hit.normal);
+            //Vector2 hitNormal = hitObject.GetMono().transform.TransformDirection(hit.normal);
+            Vector2 hitNormal = hit.normal;
             if(hitObject != null)
             {
                 List<Vector2> nextHits = hitObject.OnLightHit(type, intensity - (hitDistance * DISTANCE_PER_INTENSITY), origin, hitPoint, hit.collider, hitNormal, refractiveIndex);

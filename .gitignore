@@ -17,6 +17,7 @@ obj/
 /*.sln
 *.user
 *.booproj
+*.vs
 
 # ============ #
 # OS generated #

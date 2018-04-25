@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class CatWhistle : InventoryItem
+public class CatWhistle : InventoryItem, IInteractable
 {
     public bool IsOn;
+
+    public AudioSource whistleSound;
 
     public void Start()
     {
         IsOn = false;
+        whistleSound = GetComponent<AudioSource>();
     }
 
     public void Update()
     {
+
     }
 
     void ToggleOn ()
@@ -25,11 +29,13 @@ public class CatWhistle : InventoryItem
     public override void BeginUse(Vector2 location)
     {
         this.IsOn = true;
+        whistleSound.Play();
     }
 
     public override void EndUse(Vector2 location)
     {
         this.IsOn = false;
+        whistleSound.Stop();
     }
 
     public override void Using(Vector2 location)
@@ -49,5 +55,11 @@ public class CatWhistle : InventoryItem
     protected override void OnUnequip()
     {
         
+    }
+
+    public bool Interact(Player p)
+    {
+        p.Bag.Add(this);
+        return this;
     }
 }

@@ -6,5 +6,6 @@ using System.Text;
 public enum ItemType
 {
     LASER_POINTER,
-    CAT_WHISTLE
+    CAT_WHISTLE,
+    KEY
 }

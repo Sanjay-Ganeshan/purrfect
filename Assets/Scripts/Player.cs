@@ -194,4 +194,9 @@ public class Player : MonoBehaviour, IPersistantObject {
     {
         return this;
     }
+
+    public bool PersistThroughLoad()
+    {
+        return true;
+    }
 }

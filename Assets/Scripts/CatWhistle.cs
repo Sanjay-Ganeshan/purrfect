@@ -18,6 +18,7 @@ public class CatWhistle : InventoryItem, IInteractable
 
     public void Update()
     {
+
     }
 
     void ToggleOn ()

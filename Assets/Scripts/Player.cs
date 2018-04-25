@@ -204,4 +204,9 @@ public class Player : MonoBehaviour, IPersistantObject {
     {
         return true;
     }
+
+    public void PostLoad()
+    {
+        
+    }
 }

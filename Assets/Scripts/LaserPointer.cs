@@ -114,4 +114,9 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
     {
         return this;
     }
+
+    public void PostLoad()
+    {
+
+    }
 }

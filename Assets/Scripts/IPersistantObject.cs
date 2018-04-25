@@ -7,6 +7,7 @@ using UnityEngine;
 public interface IPersistantObject: IIdentifiable
 {
     void Load(Dictionary<string, string> saveData);
+    void PostLoad();
     Dictionary<string, string> Save();
     void Unload();
     PersistanceType GetPType();

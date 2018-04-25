@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4201635971372776}
+  - component: {fileID: 114462219431541374}
   m_Layer: 0
   m_Name: Bars
   m_TagString: Untagged
@@ -124,6 +125,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114462219431541374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059579559592896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c78229c6d60af14da56a9cf2e43e27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  PType: 2
 --- !u!212 &212046680233274294
 SpriteRenderer:
   m_ObjectHideFlags: 1

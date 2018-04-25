@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4602552000823136}
   - component: {fileID: 114145363231222502}
+  - component: {fileID: 114279890027629550}
   m_Layer: 0
   m_Name: YellowKey
   m_TagString: Untagged
@@ -137,6 +138,19 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: a48b7d6e90ed1b5498e1325ff9d6f41e, type: 3}
   NumberOfUses: 1
   Combo: 777
+--- !u!114 &114279890027629550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880136466028504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c78229c6d60af14da56a9cf2e43e27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  PType: 10
 --- !u!212 &212315566203026150
 SpriteRenderer:
   m_ObjectHideFlags: 1

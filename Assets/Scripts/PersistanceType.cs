@@ -5,6 +5,16 @@ using System.Text;
 
 public enum PersistanceType
 {
-    PLAYER
+    PLAYER,
+    DOOR,
+    BARS,
+    WINDOW,
+    WALL,
+    EXIT,
+    MIRROR,
+    CAT,
+    CAT_WHISTLE,
+    LASER_POINTER,
+    KEY
 }
 

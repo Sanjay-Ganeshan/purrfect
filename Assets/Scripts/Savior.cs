@@ -67,6 +67,7 @@ public class Savior: MonoBehaviour
             json = reader.ReadToEnd();
         }
         Dictionary<string, Dictionary<string, string>> output = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json);
+        List<IPersistantObject> generatedObjects = new List<IPersistantObject>();
         foreach(string id in output.Keys)
         {
             Dictionary<string, string> dict = output[id];
@@ -76,7 +77,12 @@ public class Savior: MonoBehaviour
             persistance.setID(id);
             persistance.GetMono().transform.UpdateToSaved(dict["transform"]);
             persistance.Load(dict);
+            generatedObjects.Add(persistance);
         }
+        generatedObjects.ForEach(obj => obj.PostLoad());
+        List<IIdentifiable> identif = new List<IIdentifiable>();
+        generatedObjects.ForEach(obj => identif.Add(obj));
+        God.UpdateIDLookup(identif);
         Debug.Log("Loaded from " + filepath + "!");
     }
 

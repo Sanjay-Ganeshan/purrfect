@@ -80,6 +80,9 @@ public class Savior: MonoBehaviour
             generatedObjects.Add(persistance);
         }
         generatedObjects.ForEach(obj => obj.PostLoad());
+        List<IIdentifiable> identif = new List<IIdentifiable>();
+        generatedObjects.ForEach(obj => identif.Add(obj));
+        God.UpdateIDLookup(identif);
         Debug.Log("Loaded from " + filepath + "!");
     }
 

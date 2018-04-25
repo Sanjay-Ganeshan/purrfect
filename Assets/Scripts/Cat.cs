@@ -27,6 +27,7 @@ public class Cat : MonoBehaviour {
         ClearTarget();
 	}
 	
+    // TODO: CHANGE TO LATE UPDATE
 	void Update() {
 
         // Since last frame, targets have been added

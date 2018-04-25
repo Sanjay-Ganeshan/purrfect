@@ -12,5 +12,6 @@ public interface IPersistantObject
     void Unload();
     PersistanceType GetPType();
     void setID(int id);
+    bool PersistThroughLoad();
     MonoBehaviour GetMono();
 }

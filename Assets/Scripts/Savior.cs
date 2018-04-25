@@ -10,6 +10,7 @@ public class Savior: MonoBehaviour
     public string filepath;
     public PersistantEntry[] Templates;
     private Dictionary<PersistanceType, GameObject> _Templates;
+    
 
     public bool SaveMode = true;
 

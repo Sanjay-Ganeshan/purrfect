@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 
 public class Savior: MonoBehaviour
@@ -10,9 +11,12 @@ public class Savior: MonoBehaviour
     public string filepath;
     public PersistantEntry[] Templates;
     private Dictionary<PersistanceType, GameObject> _Templates;
-    
 
+    public bool activated = true;
     public bool SaveMode = true;
+    public bool SaveToScene = false;
+    public string SceneFolder;
+    public string SceneOutputName;
 
     void Start()
     {
@@ -22,19 +26,33 @@ public class Savior: MonoBehaviour
             _Templates.Add(temp.PType, temp.Template);
         }
         Debug.Log("Persistance has activated. Please wait a few moments...");
-        if (SaveMode)
+        if (activated)
         {
-            Invoke("SaveAll", 1.0f);
-        }
-        else
-        {
-            Invoke("LoadAll", 1.0f);
+            if (SaveMode)
+            {
+                Invoke("SaveAll", 1.0f);
+            }
+            else
+            {
+                Invoke("LoadAll", 1.0f);
+            }
         }
     }
 
     void Update()
     {
         
+    }
+
+
+
+    void DoSaveToScene()
+    {
+        #if UNITY_EDITOR
+        this.activated = false;
+        UnityEditor.SceneManagement.EditorSceneManager.SaveScene(SceneManager.GetActiveScene(), Path.Combine(SceneFolder, SceneOutputName + ".unity"), true);
+        this.activated = true;
+        #endif
     }
 
     void SaveAll()
@@ -56,6 +74,10 @@ public class Savior: MonoBehaviour
             writer.Write(jsonOutput);
         }
         Debug.Log("Saved to " + filepath +"!");
+        if(SaveToScene)
+        {
+            DoSaveToScene();
+        }
     }
 
     void LoadAll()

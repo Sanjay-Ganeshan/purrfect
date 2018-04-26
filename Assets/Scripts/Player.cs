@@ -36,7 +36,7 @@ public class Player : MonoBehaviour, IPersistantObject {
 	// Update is called once per frame
 	void Update () {
         HandleShowInventory();
-        if (true || !God.IsPaused())
+        if (!God.IsPaused())
         {
             HandleUsing();
             HandleMotion();

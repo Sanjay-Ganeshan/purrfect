@@ -286,11 +286,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.size
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4199799701286522, guid: d0af5f3a251ac8744a11b8c81fe26c06, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.3620373
@@ -325,112 +320,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
-      propertyPath: Templates.Array.data[2].PType
+      propertyPath: SaveToScene
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
-      propertyPath: Templates.Array.data[2].Template
-      value: 
-      objectReference: {fileID: 1220046001567932, guid: 464cf40eed1a94149ab8af0d8704433c,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[3].PType
-      value: 2
+      propertyPath: SceneFolder
+      value: Assets/Scenes/
       objectReference: {fileID: 0}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
-      propertyPath: Templates.Array.data[3].Template
-      value: 
-      objectReference: {fileID: 1059579559592896, guid: cb985153083ce3b44ab90c84c5c9453c,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[4].PType
-      value: 3
+      propertyPath: SceneOutputName
+      value: shit_level2
       objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[4].Template
-      value: 
-      objectReference: {fileID: 1873950285082562, guid: 705ec06e1396cd14791619e22fcfb872,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[5].PType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[5].Template
-      value: 
-      objectReference: {fileID: 1480317331653782, guid: 81287977f0790d841b5e424f6dd5c306,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[6].PType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[6].Template
-      value: 
-      objectReference: {fileID: 1975903972404796, guid: 268e635ec6ea25b4ab471a399642ccac,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[7].PType
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[7].Template
-      value: 
-      objectReference: {fileID: 1578784755552320, guid: 1e8fd567f632c0b41bfe136788ac452e,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[8].PType
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[8].Template
-      value: 
-      objectReference: {fileID: 1624326209946424, guid: 0f92034674f22af48bec84e038106340,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[9].PType
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[9].Template
-      value: 
-      objectReference: {fileID: 1131620328161428, guid: a862ae4d4e7051b4f9a7f393bb58c7e8,
-        type: 2}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[10].PType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: Templates.Array.data[10].Template
-      value: 
-      objectReference: {fileID: 1880136466028504, guid: ba387842950d149478aeed0b610e99e5,
-        type: 2}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
       propertyPath: SaveMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
       propertyPath: filepath
-      value: Assets/Levels/shit_level.json
+      value: Assets/Levels/shit_level2.json
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0af5f3a251ac8744a11b8c81fe26c06, type: 2}

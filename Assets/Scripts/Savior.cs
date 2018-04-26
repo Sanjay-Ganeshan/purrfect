@@ -50,7 +50,7 @@ public class Savior: MonoBehaviour
     {
         #if UNITY_EDITOR
         this.activated = false;
-        UnityEditor.SceneManagement.EditorSceneManager.SaveScene(SceneManager.GetActiveScene(), Path.Combine(SceneFolder, SceneOutputName + ".unity"), true);
+        //UnityEditor.SceneManagement.EditorSceneManager.SaveScene(SceneManager.GetActiveScene(), Path.Combine(SceneFolder, SceneOutputName + ".unity"), true);
         this.activated = true;
         #endif
     }
@@ -106,6 +106,10 @@ public class Savior: MonoBehaviour
         generatedObjects.ForEach(obj => identif.Add(obj));
         God.UpdateIDLookup(identif);
         Debug.Log("Loaded from " + filepath + "!");
+        if (SaveToScene)
+        {
+            DoSaveToScene();
+        }
     }
 
     void Unload()

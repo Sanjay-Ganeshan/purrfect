@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Cat : MonoBehaviour {
+public class Cat : MonoBehaviour, IPersistantObject {
     // Controls the cat's behavior
     
     Optional<Vector3> currentTarget;      // Cat moves towards current target
@@ -13,7 +13,7 @@ public class Cat : MonoBehaviour {
     // Constants should be PascalCase
     public float DISTANCE_THAT_COUNTS_AS_SAME_TARGET = 0.0f;
     public float DISTANCE_AT_TARGET = 0.1f;
-
+    public string id;
     public float catSpeed = 10.0f;
     private Rigidbody2D rb;
 
@@ -120,5 +120,55 @@ public class Cat : MonoBehaviour {
                 this.currentTargetPriority = Optional<int>.Of(priority);
             }
         }
+    }
+
+    void IPersistantObject.Load(Dictionary<string, string> saveData)
+    {
+
+    }
+
+    void IPersistantObject.PostLoad()
+    {
+
+    }
+
+    Dictionary<string, string> IPersistantObject.Save()
+    {
+        return new Dictionary<string, string>();
+    }
+
+    void IPersistantObject.Unload()
+    {
+
+    }
+
+    PersistanceType IPersistantObject.GetPType()
+    {
+        return PersistanceType.CAT;
+    }
+
+    bool IPersistantObject.PersistThroughLoad()
+    {
+        return true;
+    }
+
+    MonoBehaviour IPersistantObject.GetMono()
+    {
+        return this;
+    }
+
+    public virtual void LateUpdate()
+    {
+        this.GenerateIDIfNeeded();
+    }
+
+    string IIdentifiable.getID()
+    {
+        return this.id;
+    }
+
+    void IIdentifiable.setID(string id)
+    {
+        this.id = id;
     }
 }

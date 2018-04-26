@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4315381883166258}
   - component: {fileID: 61289985485749540}
+  - component: {fileID: 114782916998619712}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -217,6 +218,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337da90e38ea887469bc35cb880455db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114782916998619712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578784755552320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c78229c6d60af14da56a9cf2e43e27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  PType: 6
 --- !u!212 &212766522216111586
 SpriteRenderer:
   m_ObjectHideFlags: 1

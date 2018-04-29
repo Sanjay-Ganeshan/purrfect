@@ -11,11 +11,16 @@ public class Cat : MonoBehaviour, IPersistantObject {
     Optional<int> currentTargetPriority;
 
     // Constants should be PascalCase
-    public float DISTANCE_THAT_COUNTS_AS_SAME_TARGET = 0.0f;
-    public float DISTANCE_AT_TARGET = 0.1f;
+    public const float DISTANCE_THAT_COUNTS_AS_SAME_TARGET = 1f;
+    public const float DISTANCE_AT_TARGET = 0.1f;
     public string id;
+
+    private const float MaxVisionRange = 100f;
+
     public float catSpeed = 10.0f;
     private Rigidbody2D rb;
+
+    public LineRenderer debugVision;
 
     void Awake() {
 
@@ -27,8 +32,10 @@ public class Cat : MonoBehaviour, IPersistantObject {
         ClearTarget();
 	}
 	
-    // TODO: CHANGE TO LATE UPDATE
 	void Update() {
+
+        // Updates are done in a single thread so
+        //  don't use late update for this type of thing.
 
         // Since last frame, targets have been added
 
@@ -104,12 +111,30 @@ public class Cat : MonoBehaviour, IPersistantObject {
             // Check reasons to not update target
             bool shouldUpdate = true;
             
+            // Don't update if target cannot be seen
             // Basic sight - the cat can see 360 degrees. Will replace with vision cones later
+            Vector2 direction = position - this.transform.position;
+            float range = Mathf.Min(MaxVisionRange, direction.magnitude);
 
+            List<Vector2> emissionResults = this.transform.EmitLightTowards(LightType.KITTY_VISION, range, position);
+            Vector2 endpoint = emissionResults[emissionResults.Count - 1];
+
+            Vector3[] pos = new Vector3[emissionResults.Count];
+            for(int i = 0; i < emissionResults.Count; i++)
+                pos[i] = emissionResults[i].ToVector3();
+            debugVision.positionCount = pos.Length;
+            debugVision.SetPositions(pos);
+
+            float sightDelta = (endpoint - (Vector2)position).magnitude;
+            if (sightDelta > DISTANCE_THAT_COUNTS_AS_SAME_TARGET)
+            {
+                shouldUpdate = false;
+            }
+
+            // Don't update if already at this target.
             if (Mathf.Approximately(DISTANCE_AT_TARGET, (position - this.transform.position).ToVector2().magnitude)
                 || (position - this.transform.position).ToVector2().magnitude <= DISTANCE_AT_TARGET)
             {
-                // Already at this target.
                 shouldUpdate = false;
                 ClearTarget();
             }

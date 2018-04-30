@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &253627512
+--- !u!1001 &131353927
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -150,17 +150,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4199799701286522, guid: d0af5f3a251ac8744a11b8c81fe26c06, type: 2}
       propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: LevelName
-      value: level2
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
       propertyPath: SaveMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
+        type: 2}
+      propertyPath: LevelName
+      value: level2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0af5f3a251ac8744a11b8c81fe26c06, type: 2}
@@ -202,7 +202,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4422314934324646, guid: 0f92034674f22af48bec84e038106340, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f92034674f22af48bec84e038106340, type: 2}
@@ -854,7 +854,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4602552000823136, guid: ba387842950d149478aeed0b610e99e5, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba387842950d149478aeed0b610e99e5, type: 2}

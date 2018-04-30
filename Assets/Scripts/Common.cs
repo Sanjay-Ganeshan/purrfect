@@ -141,7 +141,7 @@ public static class Common {
 
     public static string ToSavableString(this Transform t)
     {
-        string stringRep = string.Format("{0},{1},{2}", t.position.x, t.position.y, t.rotation.eulerAngles.z, t.localScale.x, t.localScale.y);
+        string stringRep = string.Format("{0},{1},{2},{3},{4}", t.position.x, t.position.y, t.rotation.eulerAngles.z, t.localScale.x, t.localScale.y);
         return stringRep;
     }
 

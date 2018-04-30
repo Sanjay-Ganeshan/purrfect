@@ -62,4 +62,9 @@ public class CatWhistle : InventoryItem, IInteractable
         p.Bag.Add(this);
         return this;
     }
+
+    public bool Interact(Cat c)
+    {
+        return false;
+    }
 }

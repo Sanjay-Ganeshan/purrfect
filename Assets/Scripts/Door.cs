@@ -47,6 +47,11 @@ public class Door : MonoBehaviour, IInteractable {
         return false;
     }
 
+    public bool Interact(Cat c)
+    {
+        return false;
+    }
+
     public void ToggleDoorState() {
         if (IsOpen) CloseDoor();
         else OpenDoor();

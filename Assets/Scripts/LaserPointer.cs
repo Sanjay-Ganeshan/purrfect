@@ -84,6 +84,11 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
         return true;
     }
 
+    public bool Interact(Cat c)
+    {
+        return false;
+    }
+
     void IPersistantObject.Load(Dictionary<string, string> saveData)
     {
         

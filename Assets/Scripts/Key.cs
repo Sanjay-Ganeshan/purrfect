@@ -36,6 +36,12 @@ class Key : InventoryItem, IInteractable
         return true;
     }
 
+    public bool Interact(Cat c)
+    {
+        c.catInventory.Add(this);
+        return true;
+    }
+
     public override void Using(Vector2 location)
     {
         throw new NotImplementedException();

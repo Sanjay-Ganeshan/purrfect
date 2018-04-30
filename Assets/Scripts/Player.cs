@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IPersistantObject {
+public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     public const int InteractablesToCheck = 6;
 
@@ -178,6 +178,27 @@ public class Player : MonoBehaviour, IPersistantObject {
     public string getID()
     {
         return GameConstants.PLAYER_ID;
+    }
+
+    public bool Interact(Player p)
+    {
+        return false;
+    }
+
+    public bool Interact(Cat c)
+    {   
+        // Take items from cat
+        List<InventoryItem> toTake = new List<InventoryItem>();
+        foreach(InventoryItem item in c.catInventory)
+        {
+            toTake.Add(item);
+        }
+        foreach(InventoryItem item in toTake)
+        {
+            c.catInventory.Drop(item);
+            Bag.Add(item);
+        }
+        return true;
     }
 
     void IPersistantObject.Unload()

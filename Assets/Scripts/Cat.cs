@@ -7,11 +7,12 @@ using UnityEngine.AI;
 public class Cat : MonoBehaviour, IPersistantObject {
     // Controls the cat's behavior
     
+    // == Movement Behavior ==
     Optional<Vector3> currentTarget;      // Cat moves towards current target
     Optional<int> currentTargetPriority;
 
     // Constants should be PascalCase
-    public const float DISTANCE_THAT_COUNTS_AS_SAME_TARGET = 1f;
+    public const float DISTANCE_THAT_COUNTS_AS_SAME_TARGET = 0.01f;
     public const float DISTANCE_AT_TARGET = 0.1f;
     public string id;
 
@@ -22,6 +23,14 @@ public class Cat : MonoBehaviour, IPersistantObject {
 
     public LineRenderer debugVision;
 
+    // == Inventory Behavior ==
+    public const int InteractablesToCheck = 6;
+
+    public Inventory catInventory;
+
+    public Collider2D ZoC;
+    private Optional<ContactFilter2D> ZoCFilter = Optional<ContactFilter2D>.Empty();
+
     void Awake() {
 
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +38,7 @@ public class Cat : MonoBehaviour, IPersistantObject {
     
 	void Start() {
 
+        catInventory = new Inventory(this.transform);
         ClearTarget();
 	}
 	
@@ -47,6 +57,9 @@ public class Cat : MonoBehaviour, IPersistantObject {
 
         // Clear targets for next frame addition
         ClearTarget();
+
+        // Interact with surrounding items
+        InteractWithSurroundings();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -144,6 +157,54 @@ public class Cat : MonoBehaviour, IPersistantObject {
                 this.currentTarget = Optional<Vector3>.Of(position);
                 this.currentTargetPriority = Optional<int>.Of(priority);
             }
+        }
+    }
+
+    // Interact with surroundings
+    //  Pick up items and give items to player
+    private void InteractWithSurroundings()
+    {
+        MakeContactFilter();
+        Collider2D[] results = new Collider2D[InteractablesToCheck];
+        ZoC.OverlapCollider(ZoCFilter.Get(), results);
+        foreach(Collider2D res in results)
+        {
+            if (res != null)
+            {
+                IInteractable collidedInteracter;
+                try
+                {
+                    collidedInteracter = res.transform.parent.GetComponent<IInteractable>();
+                }
+                catch(NullReferenceException e)
+                {
+                    Debug.Log("ZoC does not have parent! e:"+e);
+                    continue;
+                }
+                
+                if(collidedInteracter != null)
+                {
+                    bool worked = collidedInteracter.Interact(this);
+                    // Debug.Log("Cat interacting with" + collidedInteracter);
+                    if(worked) break;
+                }
+                else
+                {
+                    // Debug.Log("Collided with non interactable " + collidedInteracter);
+                }
+            }
+        }
+    }
+
+    private void MakeContactFilter()
+    {
+        if(!ZoCFilter.IsPresent())
+        {
+            ContactFilter2D filt;
+            filt = new ContactFilter2D();
+            filt.NoFilter();
+            filt.SetLayerMask(LayerMask.GetMask(GameConstants.ZOC_LAYER));
+            ZoCFilter = Optional<ContactFilter2D>.Of(filt);
         }
     }
 

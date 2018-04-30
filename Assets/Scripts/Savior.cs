@@ -98,7 +98,18 @@ public class Savior: MonoBehaviour
         foreach(string id in output.Keys)
         {
             Dictionary<string, string> dict = output[id];
-            GameObject template = _Templates[typeLookup[dict["type"]]];
+            string t = dict["type"];
+            int num;
+            GameObject template;
+            if (int.TryParse(t, out num))
+            {
+                // Allow numbers for backwards compatibility
+                template = _Templates[(PersistanceType) num];
+            }
+            else
+            {
+                template = _Templates[typeLookup[dict["type"]]];
+            }
             GameObject loaded = GameObject.Instantiate(template);
             IPersistantObject persistance = loaded.GetComponent<IPersistantObject>();
             persistance.setID(id);

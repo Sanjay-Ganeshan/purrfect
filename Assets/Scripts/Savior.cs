@@ -53,8 +53,8 @@ public class Savior: MonoBehaviour
             output[o.getID()].Add("transform", o.GetMono().transform.ToSavableString());      
         }
         Level lvl = new Level(LevelName);
-        lvl.SetContents(output).Save();
-        Debug.Log("Saved to " + lvl.GetFilepath() +"!");
+        lvl.SetContents(output).SaveToMaster();
+        Debug.Log("Saved to " + lvl.GetMasterFilepath() +"!");
     }
 
     void LoadAll()
@@ -65,7 +65,7 @@ public class Savior: MonoBehaviour
         {
             typeLookup.Add(t.ToString(), t);
         }
-        Level lvl = new Level(LevelName).Load();
+        Level lvl = new Level(LevelName).LoadFromMaster();
         Dictionary<string, Dictionary<string, string>> output = lvl.Contents;
         List<IPersistantObject> generatedObjects = new List<IPersistantObject>();
         bool usingCompatibility = false;
@@ -100,7 +100,7 @@ public class Savior: MonoBehaviour
         {
             Debug.Log("WARNING: Using compatibility mode to load level...things may not load as expected");
         }
-        Debug.Log("Loaded from " + lvl.GetFilepath() + "!");
+        Debug.Log("Loaded from " + lvl.GetMasterFilepath() + "!");
     }
 
     void Unload()
@@ -111,6 +111,8 @@ public class Savior: MonoBehaviour
             ip.Unload();
         }
     }
+
+    
 
     IPersistantObject[] GetMapPersistantObjects()
     {

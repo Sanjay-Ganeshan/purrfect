@@ -233,9 +233,9 @@ public class Cat : MonoBehaviour, IPersistantObject {
         return PersistanceType.CAT;
     }
 
-    bool IPersistantObject.PersistThroughLoad()
+    IEnumerable<string> IPersistantObject.PersistThroughLoad()
     {
-        return true;
+        return new string[] { };
     }
 
     MonoBehaviour IPersistantObject.GetMono()

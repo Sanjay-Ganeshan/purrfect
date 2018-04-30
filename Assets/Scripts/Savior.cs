@@ -63,7 +63,7 @@ public class Savior: MonoBehaviour
         foreach(IPersistantObject o in mapObjects)
         {
             output.Add(o.getID(), o.Save());
-            output[o.getID()].Add("type", ((int)(o.GetPType())).ToString());
+            output[o.getID()].Add("type", o.GetPType().ToString());
             output[o.getID()].Add("transform", o.GetMono().transform.ToSavableString());      
         }
         string jsonOutput;
@@ -83,6 +83,11 @@ public class Savior: MonoBehaviour
     void LoadAll()
     {
         Unload();
+        Dictionary<string, PersistanceType> typeLookup = new Dictionary<string, PersistanceType>();
+        foreach(PersistanceType t in System.Enum.GetValues(typeof(PersistanceType)))
+        {
+            typeLookup.Add(t.ToString(), t);
+        }
         string json;
         using (var reader = new StreamReader(filepath))
         {
@@ -93,7 +98,7 @@ public class Savior: MonoBehaviour
         foreach(string id in output.Keys)
         {
             Dictionary<string, string> dict = output[id];
-            GameObject template = _Templates[(PersistanceType)int.Parse(dict["type"])];
+            GameObject template = _Templates[typeLookup[dict["type"]]];
             GameObject loaded = GameObject.Instantiate(template);
             IPersistantObject persistance = loaded.GetComponent<IPersistantObject>();
             persistance.setID(id);

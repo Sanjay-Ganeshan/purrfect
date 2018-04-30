@@ -39,10 +39,10 @@ public class Level
         return this;
     }
 
-    public Level SaveToMaster()
+    public Level SaveToPath(string path)
     {
         string jsonOutput;
-        jsonOutput = JsonConvert.SerializeObject(this);
+        jsonOutput = JsonConvert.SerializeObject(this,Formatting.Indented);
         using (var writer = new StreamWriter(this.GetMasterFilepath()))
         {
             writer.Write(jsonOutput);
@@ -50,7 +50,7 @@ public class Level
         return this;
     }
 
-    public Level LoadFromMaster()
+    public Level LoadFromPath(string path)
     {
         string json;
         using (var reader = new StreamReader(this.GetMasterFilepath()))
@@ -63,29 +63,23 @@ public class Level
         return this;
     }
 
+    public Level SaveToMaster()
+    {
+        return SaveToPath(GetMasterFilepath());
+    }
+
+    public Level LoadFromMaster()
+    {
+        return LoadFromPath(GetMasterFilepath());   
+    }
+
     public Level SaveToPlaythrough()
     {
-        string json;
-        using (var reader = new StreamReader(this.GetPlaythroughFilepath()))
-        {
-            json = reader.ReadToEnd();
-        }
-        Level output = JsonConvert.DeserializeObject<Level>(json);
-        this.Contents = output.Contents;
-        this.Name = output.Name;
-        return this;
+        return SaveToPath(GetPlaythroughFilepath());
     }
 
     public Level LoadFromPlaythrough()
     {
-        string json;
-        using (var reader = new StreamReader(this.GetPlaythroughFilepath()))
-        {
-            json = reader.ReadToEnd();
-        }
-        Level output = JsonConvert.DeserializeObject<Level>(json);
-        this.Contents = output.Contents;
-        this.Name = output.Name;
-        return this;
+        return LoadFromPath(GetPlaythroughFilepath());
     }
 }

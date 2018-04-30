@@ -1,15 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultSavable : MonoBehaviour, IPersistantObject {
-
-    public string id = "";
-    public PersistanceType PType;
-
+public class CameraScript : MonoBehaviour, IPersistantObject {
     string IIdentifiable.getID()
     {
-        return this.id;
+        return GameConstants.CAMERA_ID;
     }
 
     MonoBehaviour IPersistantObject.GetMono()
@@ -19,17 +16,18 @@ public class DefaultSavable : MonoBehaviour, IPersistantObject {
 
     PersistanceType IPersistantObject.GetPType()
     {
-        return this.PType;
+        return PersistanceType.CAMERA;
     }
 
     void IPersistantObject.Load(Dictionary<string, string> saveData)
     {
-        
+        this.GetComponent<Camera>().orthographicSize = float.Parse(saveData["size"]);
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, float.Parse(saveData["z"]));
     }
 
     IEnumerable<string> IPersistantObject.PersistThroughLoad()
     {
-        return new string[]{};
+        return new string[] { };
     }
 
     void IPersistantObject.PostLoad()
@@ -39,12 +37,15 @@ public class DefaultSavable : MonoBehaviour, IPersistantObject {
 
     Dictionary<string, string> IPersistantObject.Save()
     {
-        return new Dictionary<string, string>();
+        Dictionary<string, string> o = new Dictionary<string, string>();
+        o.Add("size", this.GetComponent<Camera>().orthographicSize.ToString());
+        o.Add("z", this.transform.position.z.ToString());
+        return o;
     }
 
     void IIdentifiable.setID(string id)
     {
-        this.id = id;
+        
     }
 
     // Use this for initialization
@@ -55,11 +56,6 @@ public class DefaultSavable : MonoBehaviour, IPersistantObject {
     void IPersistantObject.Unload()
     {
         God.Kill(this.gameObject);
-    }
-
-    public virtual void LateUpdate()
-    {
-        this.GenerateIDIfNeeded();
     }
 
     // Update is called once per frame

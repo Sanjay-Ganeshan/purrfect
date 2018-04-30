@@ -15,6 +15,7 @@ public enum PersistanceType
     CAT,
     CAT_WHISTLE,
     LASER_POINTER,
-    KEY
+    KEY,
+    CAMERA
 }
 

@@ -130,18 +130,15 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
                 }
                 catch(NullReferenceException e)
                 {
-                    Debug.Log("ZoC does not have parent!");
                     continue;
                 }
                 if(collidedInteracter != null)
                 {
                     bool worked = collidedInteracter.Interact(this);
-                    Debug.Log("Interacting with" + collidedInteracter);
                     if(worked) break;
                 }
                 else
                 {
-                    Debug.Log("Collided with non interactable " + collidedInteracter);
                 }
             }
         }
@@ -221,9 +218,9 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         return this;
     }
 
-    public bool PersistThroughLoad()
+    IEnumerable<String> IPersistantObject.PersistThroughLoad()
     {
-        return true;
+        return new string[] { };
     }
 
     public void PostLoad()

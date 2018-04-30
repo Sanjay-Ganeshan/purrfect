@@ -110,9 +110,9 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
         return PersistanceType.LASER_POINTER;
     }
 
-    bool IPersistantObject.PersistThroughLoad()
+    IEnumerable<string> IPersistantObject.PersistThroughLoad()
     {
-        return false;
+        return new string[]{};
     }
 
     MonoBehaviour IPersistantObject.GetMono()

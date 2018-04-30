@@ -11,6 +11,6 @@ public interface IPersistantObject: IIdentifiable
     Dictionary<string, string> Save();
     void Unload();
     PersistanceType GetPType();
-    bool PersistThroughLoad();
+    IEnumerable<string> PersistThroughLoad();
     MonoBehaviour GetMono();
 }

@@ -17,4 +17,5 @@ public static class GameConstants
     public const int WHISTLE_PRIORITY = 5;
     public const float DEFAULT_REFRACTIVE_INDEX = 1.0f;
     public const string PLAYER_ID = "player";
+    public const string LEVEL_PATH = "Levels";
 }

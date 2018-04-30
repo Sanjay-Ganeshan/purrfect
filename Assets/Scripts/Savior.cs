@@ -8,15 +8,12 @@ using Newtonsoft.Json;
 
 public class Savior: MonoBehaviour
 {
-    public string filepath;
+    public string LevelName;
     public PersistantEntry[] Templates;
     private Dictionary<PersistanceType, GameObject> _Templates;
 
     public bool activated = true;
     public bool SaveMode = true;
-    public bool SaveToScene = false;
-    public string SceneFolder;
-    public string SceneOutputName;
 
     void Start()
     {
@@ -44,17 +41,6 @@ public class Savior: MonoBehaviour
         
     }
 
-
-
-    void DoSaveToScene()
-    {
-        #if UNITY_EDITOR
-        this.activated = false;
-        //UnityEditor.SceneManagement.EditorSceneManager.SaveScene(SceneManager.GetActiveScene(), Path.Combine(SceneFolder, SceneOutputName + ".unity"), true);
-        this.activated = true;
-        #endif
-    }
-
     void SaveAll()
     {
         IPersistantObject[] mapObjects;
@@ -66,18 +52,9 @@ public class Savior: MonoBehaviour
             output[o.getID()].Add("type", o.GetPType().ToString());
             output[o.getID()].Add("transform", o.GetMono().transform.ToSavableString());      
         }
-        string jsonOutput;
-        jsonOutput = JsonConvert.SerializeObject(output);
-        //Debug.Log(jsonOutput);
-        using (var writer = new StreamWriter(filepath))
-        {
-            writer.Write(jsonOutput);
-        }
-        Debug.Log("Saved to " + filepath +"!");
-        if(SaveToScene)
-        {
-            DoSaveToScene();
-        }
+        Level lvl = new Level(LevelName);
+        lvl.SetContents(output).Save();
+        Debug.Log("Saved to " + lvl.GetFilepath() +"!");
     }
 
     void LoadAll()
@@ -88,13 +65,10 @@ public class Savior: MonoBehaviour
         {
             typeLookup.Add(t.ToString(), t);
         }
-        string json;
-        using (var reader = new StreamReader(filepath))
-        {
-            json = reader.ReadToEnd();
-        }
-        Dictionary<string, Dictionary<string, string>> output = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json);
+        Level lvl = new Level(LevelName).Load();
+        Dictionary<string, Dictionary<string, string>> output = lvl.Contents;
         List<IPersistantObject> generatedObjects = new List<IPersistantObject>();
+        bool usingCompatibility = false;
         foreach(string id in output.Keys)
         {
             Dictionary<string, string> dict = output[id];
@@ -105,6 +79,7 @@ public class Savior: MonoBehaviour
             {
                 // Allow numbers for backwards compatibility
                 template = _Templates[(PersistanceType) num];
+                usingCompatibility = true;
             }
             else
             {
@@ -121,11 +96,11 @@ public class Savior: MonoBehaviour
         List<IIdentifiable> identif = new List<IIdentifiable>();
         generatedObjects.ForEach(obj => identif.Add(obj));
         God.UpdateIDLookup(identif);
-        Debug.Log("Loaded from " + filepath + "!");
-        if (SaveToScene)
+        if(usingCompatibility)
         {
-            DoSaveToScene();
+            Debug.Log("WARNING: Using compatibility mode to load level...things may not load as expected");
         }
+        Debug.Log("Loaded from " + lvl.GetFilepath() + "!");
     }
 
     void Unload()

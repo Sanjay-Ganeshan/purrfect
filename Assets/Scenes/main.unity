@@ -318,31 +318,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: SaveToScene
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: SceneFolder
-      value: Assets/Scenes/
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: SceneOutputName
-      value: shit_level2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: SaveMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
-        type: 2}
-      propertyPath: filepath
-      value: Assets/Levels/shit_level2.json
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0af5f3a251ac8744a11b8c81fe26c06, type: 2}
   m_IsPrefabParent: 0

@@ -141,7 +141,7 @@ public static class Common {
 
     public static string ToSavableString(this Transform t)
     {
-        string stringRep = string.Format("{0},{1},{2}", t.position.x, t.position.y, t.rotation.eulerAngles.z);
+        string stringRep = string.Format("{0},{1},{2}", t.position.x, t.position.y, t.rotation.eulerAngles.z, t.localScale.x, t.localScale.y);
         return stringRep;
     }
 
@@ -153,6 +153,17 @@ public static class Common {
         float rot = float.Parse(split[2]);
         t.position = new Vector2(x, y).ToVector3();
         t.rotation = Quaternion.Euler(0, 0, rot);
+
+        try
+        {
+            float scaleX = float.Parse(split[3]);
+            float scaleY = float.Parse(split[4]);
+            t.localScale = new Vector3(scaleX, scaleY, 1.0f);
+        }
+        catch(System.IndexOutOfRangeException)
+        {
+            Debug.Log("Using compatibility mode for transform loading..." + t.name + " may not be at the right scale.");
+        }
     }
 
     public static void GenerateIDIfNeeded(this IIdentifiable ident)

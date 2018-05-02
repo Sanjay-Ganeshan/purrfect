@@ -54,7 +54,7 @@ public class CatWhistle : InventoryItem, IInteractable
 
     protected override void OnUnequip()
     {
-        
+        whistleSound.Stop();
     }
 
     public bool Interact(Player p)

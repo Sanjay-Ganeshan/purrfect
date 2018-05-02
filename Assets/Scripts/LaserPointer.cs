@@ -11,10 +11,12 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
     public float MaxIntensity;
     List<Vector2> points = new List<Vector2>();
     public LaserDot TargetDot;
+    public AudioSource sound;
 
     public void Start()
     {
         IsOn = false;
+        sound = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -43,6 +45,7 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
     {
         this.IsOn = true;
         this.LaserRenderer.enabled = true;
+        sound.Play();
     }
 
     public override void EndUse(Vector2 location)
@@ -53,6 +56,7 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
         points.Add(this.transform.position.ToVector2());
         points.Add(this.transform.position.ToVector2());
         TargetDot.gameObject.SetActive(false); // Disable the target dot
+        sound.Stop();
     }
 
     public override void Using(Vector2 location)
@@ -75,7 +79,7 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
 
     protected override void OnUnequip()
     {
-        
+        sound.Stop();
     }
 
     public bool Interact(Player p)

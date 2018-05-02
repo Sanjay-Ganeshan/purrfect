@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Newtonsoft.Json;
 
 public class Statistics {
     private string urlBase = "https://3edgy6u.com/py/analytics?data=";
+    private Dictionary<string, string> data;
+    public Statistics() {
+        this.data = new Dictionary<string, string>();
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +23,7 @@ public class Statistics {
 
     public void SendData() {
         Debug.Log("STATISTICS DATA SENT.");
-        UnityWebRequest www = UnityWebRequest.Get(urlBase + "\"UNITY SENT DATA!!!\"");
+        UnityWebRequest www = UnityWebRequest.Get(urlBase + JsonConvert.SerializeObject(data));
         www.SendWebRequest();
     }
 }

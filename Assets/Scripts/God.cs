@@ -12,6 +12,7 @@ public class God: MonoBehaviour
     private Optional<Cat[]> knownCats;
     private bool initialized = false;
     private Savior MyChild;
+    private Statistics stats;
 
     private Dictionary<string, IIdentifiable> identityLookup;
 
@@ -27,6 +28,7 @@ public class God: MonoBehaviour
         this.knownCats = Optional<Cat[]>.Empty();
         this.identityLookup = new Dictionary<string, IIdentifiable>();
         this.MyChild = GetComponentInChildren<Savior>();
+        this.stats = new Statistics();
     }
 
 
@@ -179,6 +181,12 @@ public class God: MonoBehaviour
     {
         FindGod();
         return TheOnlyGod.MyChild;
+    }
+    
+    public static Statistics GetStats()
+    {
+        FindGod();
+        return TheOnlyGod.stats;
     }
 
 }

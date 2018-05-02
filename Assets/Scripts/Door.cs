@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInteractable {
+public class Door : MonoBehaviour, IInteractable, IPersistantObject {
 
     public bool IsOpen;
     public int LockCombo;  // Number that encodes the type of door this is. Keys with this combo can open this doors 
     public Inventory Lock;
+    public string id = "";
+    public PersistanceType PType;
 
     public Collider2D DoorCollider;
 
@@ -25,6 +27,11 @@ public class Door : MonoBehaviour, IInteractable {
         {
             CheckState();
         }
+    }
+
+    public virtual void LateUpdate()
+    {
+        this.GenerateIDIfNeeded();
     }
 
     public bool Interact(Player p) {
@@ -84,5 +91,62 @@ public class Door : MonoBehaviour, IInteractable {
             CloseDoor();
         }
         shouldCheck = false;
+    }
+
+    string IIdentifiable.getID()
+    {
+        return this.id;
+    }
+    
+    void IIdentifiable.setID(string id)
+    {
+        this.id = id;
+    }
+
+    void IPersistantObject.Load(Dictionary<string, string> saveData) {
+        // I want to set the combo from the save data
+        if (saveData.ContainsKey("IsOpen")) {
+            this.IsOpen = bool.Parse(saveData["IsOpen"]);
+        } else {
+            this.IsOpen = false;
+        }
+
+        if (saveData.ContainsKey("Combo")) {
+            // We have Combo Data in the level
+            this.LockCombo = int.Parse(saveData["Combo"]);
+        } else {
+            // Oh no, default to 0 combo
+            this.LockCombo = 0;
+        }
+        // want to check if i should be open, and my inventory eventually
+    }
+    
+    void IPersistantObject.PostLoad() {
+        // leave empty
+    }
+    
+    Dictionary<string, string> IPersistantObject.Save() {
+        // save my combo and if I am open
+        Dictionary<string, string> o = new Dictionary<string, string>();
+        o.Add("Combo", this.LockCombo.ToString());
+        o.Add("IsOpen",this.IsOpen.ToString());
+
+        return o;
+    }
+    
+    void IPersistantObject.Unload() {
+        God.Kill(this.gameObject);
+    }
+    
+    public PersistanceType GetPType() {
+        return PersistanceType.DOOR;
+    }
+    
+    IEnumerable<string> IPersistantObject.PersistThroughLoad() {
+        return new string[]{};
+    }
+    
+    MonoBehaviour IPersistantObject.GetMono() {
+        return this;
     }
 }

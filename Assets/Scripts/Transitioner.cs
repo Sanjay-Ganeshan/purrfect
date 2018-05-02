@@ -30,7 +30,7 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 
     public void PostLoad()
     {
-        
+
     }
 
     public Dictionary<string, string> Save()

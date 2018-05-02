@@ -64,6 +64,10 @@ public class Savior: MonoBehaviour
 
     public void LoadLevel(string name, bool keepCarried)
     {
+        // STATS
+        God.GetStats().SendData();
+        // ENDSTATS
+
         Dictionary<string, Dictionary<string, string>> toCarry = Unload();
         Debug.Log("Carrying " + toCarry.Count + " objects to next scene");
         Dictionary<string, PersistanceType> typeLookup = new Dictionary<string, PersistanceType>();

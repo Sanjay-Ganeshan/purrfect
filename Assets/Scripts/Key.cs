@@ -61,4 +61,27 @@ class Key : InventoryItem, IInteractable
     {
         return PersistanceType.KEY;
     }
+    public override void Load(Dictionary<string, string> saveData)
+    {
+        if (saveData.ContainsKey("Uses")) {
+            this.NumberOfUses = int.Parse(saveData["Uses"]);
+        } else {
+            this.NumberOfUses = 1;
+        }
+
+        if (saveData.ContainsKey("Combo")) {
+            // We have Combo Data in the level
+            this.Combo = int.Parse(saveData["Combo"]);
+        } else {
+            // Oh no, default to 0 combo
+            this.Combo = 0;
+        }
+    }
+    public override Dictionary<string, string> Save()
+    {
+        Dictionary<string, string> o =  new Dictionary<string, string>();
+        o.Add("Combo", this.Combo.ToString());
+        o.Add("Uses",  this.NumberOfUses.ToString());
+        return o;
+    }
 }

@@ -52,7 +52,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4602552000823136}
   - component: {fileID: 114145363231222502}
-  - component: {fileID: 114279890027629550}
   m_Layer: 0
   m_Name: YellowKey
   m_TagString: Untagged
@@ -80,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880136466028504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8232452, y: 0.3753944, z: 0.41618243}
+  m_LocalPosition: {x: 7, y: 2.5, z: 0.41618243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4368136936031542}
@@ -132,25 +131,13 @@ MonoBehaviour:
   Name: The Yellow Key
   Description: A bright yellow colored key
   isEquippable: 0
+  CarryToNextScene: 0
   ZoC: {fileID: 58438706002971086}
   InventoryRenderer: {fileID: 0}
   WorldRenderer: {fileID: 212315566203026150}
   Icon: {fileID: 21300000, guid: a48b7d6e90ed1b5498e1325ff9d6f41e, type: 3}
   NumberOfUses: 1
   Combo: 777
---- !u!114 &114279890027629550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880136466028504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c78229c6d60af14da56a9cf2e43e27b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 
-  PType: 10
 --- !u!212 &212315566203026150
 SpriteRenderer:
   m_ObjectHideFlags: 1

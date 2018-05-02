@@ -6,6 +6,7 @@ using UnityEngine;
 
 public interface IPersistantObject: IIdentifiable
 {
+    void PreSave();
     void Load(Dictionary<string, string> saveData);
     void PostLoad();
     Dictionary<string, string> Save();

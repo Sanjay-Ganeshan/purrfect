@@ -102,4 +102,9 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
     {
 
     }
+
+    public override Dictionary<string, string> Save()
+    {
+        return base.Save();
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
@@ -195,7 +196,9 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
     {
         if(CarryToNextScene)
         {
-            return this.Save().Keys;
+            string[] keys = this.Save().Keys.ToArray();
+            if(keys.Length == 0) { return new string[] { "persists" }; }
+            else { return keys; }
         }
         else
         {
@@ -205,5 +208,10 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
     public MonoBehaviour GetMono()
     {
         return this;
+    }
+
+    public virtual void PreSave()
+    {
+        
     }
 }

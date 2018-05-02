@@ -1,6 +1,6 @@
 {
   "Contents": {
-    "83aed0b9-142c-419e-aabd-d39da9c391fc": {
+    "a541e0a9-b3a4-46ca-89b6-0fbf8db5922b": {
       "type": "LASER_POINTER",
       "transform": "-0.9,0.1,0,1,1"
     },
@@ -15,7 +15,7 @@
       "type": "PLAYER",
       "transform": "-1.879529,-0.05370071,0,1,1"
     },
-    "3c4fedb7-5d45-4372-83f7-83fe11b6e075": {
+    "c887b606-c8e2-4803-8f72-76c86a3922b2": {
       "Level": "level1",
       "type": "EXIT",
       "transform": "0,0,0,1,1"

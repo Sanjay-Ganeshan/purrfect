@@ -20,23 +20,33 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     private Collider2D[] overlappingColliders = new Collider2D[InteractablesToCheck];
     private Optional<ContactFilter2D> ZoCFilter = Optional<ContactFilter2D>.Empty();
-
+    private bool initialized;
 
     private string inventoryItemsToAdd;
 
     // Use this for initialization
 	void Start () {
-        Bag = new Inventory(this.transform);
-        this.currentlyEquipped = null;
-        foreach(InventoryItem item in toAddAtStart)
-        {
-            Bag.AddToInventory(item);
-        }
-        rb = GetComponent<Rigidbody2D>();
+        DoInitIfNeeded();   
 	}
 	
+    private void DoInitIfNeeded()
+    {
+        if(!initialized)
+        {
+            Bag = new Inventory(this.transform);
+            this.currentlyEquipped = null;
+            foreach (InventoryItem item in toAddAtStart)
+            {
+                Bag.AddToInventory(item);
+            }
+            rb = GetComponent<Rigidbody2D>();
+            initialized = true;
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
+        DoInitIfNeeded();
         HandleShowInventory();
         if (!God.IsPaused())
         {
@@ -63,6 +73,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     void OnInventorySelect(InventoryItem item)
     {
+        DoInitIfNeeded();
         if (item.isEquippable)
         {
             bool equippedItem = (this.currentlyEquipped == item);
@@ -173,6 +184,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         {
             Debug.Log("Using compatibility mode to parse player...no inventory found.");
         }
+        DoInitIfNeeded();
     }
 
     Dictionary<string, string> IPersistantObject.Save()
@@ -181,7 +193,6 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         string carriedItems;
         if (this.Bag.Count > 0) { 
             carriedItems = this.Bag.Select((item) => item.getID()).Aggregate((string a, string b) => a + "," + b);
-            Debug.Log(carriedItems);
         }
         else {
             carriedItems = "";
@@ -243,6 +254,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     public void PostLoad()
     {
+        DoInitIfNeeded();
         string[] idsToAdd = this.inventoryItemsToAdd.Split(',');
         foreach (string id in idsToAdd)
         {
@@ -260,10 +272,23 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
                 }
                 if(toAdd.IsPresent())
                 {
-                    Debug.Log("Added " + toAdd.Get() + " to inventory from previous scene");
                     this.Bag.Add(toAdd.Get());
                 }
             }
+            else
+            {
+            }
+        }
+    }
+
+    public void PreSave()
+    {
+        //Debug.Log("Called player pre save");
+        InventoryItem[] itemsToSet = Bag.ToArray();
+        for(int i = 0; i < itemsToSet.Length; i++)
+        {
+            //i.SetCarryingToNextScene(true);
+            itemsToSet[i].CarryToNextScene = true;
         }
     }
 }

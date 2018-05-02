@@ -257,4 +257,9 @@ public class Cat : MonoBehaviour, IPersistantObject {
     {
         this.id = id;
     }
+
+    public void PreSave()
+    {
+        
+    }
 }

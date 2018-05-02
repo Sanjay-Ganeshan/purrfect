@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -66,4 +67,9 @@ public class DefaultSavable : MonoBehaviour, IPersistantObject {
     void Update () {
 		
 	}
+
+    public void PreSave()
+    {
+        
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -174,4 +175,15 @@ public static class Common {
             ident.setID(System.Guid.NewGuid().ToString());
         }
     }
+    //public static IEnumerable<TResult> SelectMany<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector);
+    public static void ForEach<T>(this IEnumerable<T> enumer, System.Action<T> act)
+    {
+        T[] all = enumer.ToArray();
+        for(int i = 0; i < all.Length; i++) { 
+            Debug.Log("Acting on " + all[i]);
+            act.Invoke(all[i]);
+            //act(t);
+        }
+    }
+
 }

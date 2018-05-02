@@ -75,4 +75,9 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
     {
         this.id = id;
     }
+
+    public void PreSave()
+    {
+        
+    }
 }

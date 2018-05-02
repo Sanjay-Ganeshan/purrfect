@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour, IPersistantObject {
+    public void PreSave()
+    {
+        
+    }
+
     string IIdentifiable.getID()
     {
         return GameConstants.CAMERA_ID;

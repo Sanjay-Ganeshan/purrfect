@@ -22,9 +22,9 @@ public class Savior: MonoBehaviour
         {
             _Templates.Add(temp.PType, temp.Template);
         }
-        Debug.Log("Persistance has activated. Please wait a few moments...");
         if (activated)
         {
+            Debug.Log("Persistance has activated. Please wait a few moments...");
             if (SaveMode)
             {
                 Invoke("SaveAll", 1.0f);
@@ -45,6 +45,7 @@ public class Savior: MonoBehaviour
     {
         IPersistantObject[] mapObjects;
         mapObjects = GetMapPersistantObjects();
+        PreSave(mapObjects);
         Dictionary<string, Dictionary<string, string>> output = new Dictionary<string, Dictionary<string, string>>(); 
         foreach(IPersistantObject o in mapObjects)
         {
@@ -64,6 +65,7 @@ public class Savior: MonoBehaviour
     public void LoadLevel(string name, bool keepCarried)
     {
         Dictionary<string, Dictionary<string, string>> toCarry = Unload();
+        Debug.Log("Carrying " + toCarry.Count + " objects to next scene");
         Dictionary<string, PersistanceType> typeLookup = new Dictionary<string, PersistanceType>();
         foreach (PersistanceType t in System.Enum.GetValues(typeof(PersistanceType)))
         {
@@ -115,14 +117,17 @@ public class Savior: MonoBehaviour
             GameObject loaded = GameObject.Instantiate(template);
             IPersistantObject persistance = loaded.GetComponent<IPersistantObject>();
             persistance.setID(id);
-            persistance.GetMono().transform.UpdateToSaved(dict["transform"]);
+            if (dict.ContainsKey("transform"))
+            {
+                persistance.GetMono().transform.UpdateToSaved(dict["transform"]);
+            }
             persistance.Load(dict);
             generatedObjects.Add(persistance);
         }
-        generatedObjects.ForEach(obj => obj.PostLoad());
         List<IIdentifiable> identif = new List<IIdentifiable>();
         generatedObjects.ForEach(obj => identif.Add(obj));
         God.UpdateIDLookup(identif);
+        generatedObjects.ForEach(obj => obj.PostLoad());
         if (usingCompatibility)
         {
             Debug.Log("WARNING: Using compatibility mode to load level...things may not load as expected");
@@ -135,22 +140,41 @@ public class Savior: MonoBehaviour
         LoadLevel(LevelName, false);
     }
 
+    void PreSave(IPersistantObject[] mapObjects)
+    {
+        foreach (IPersistantObject ip in mapObjects)
+        {
+            ip.PreSave();
+        }
+    }
+
     Dictionary<string, Dictionary<string,string>> Unload()
     {
         IPersistantObject[] mapObjects = GetMapPersistantObjects();
+        PreSave(mapObjects);
         Dictionary<string, Dictionary<string, string>> carrying = new Dictionary<string, Dictionary<string, string>>();
         foreach (IPersistantObject ip in mapObjects)
         {
             Dictionary<string, string> saved = ip.Save();
             Dictionary<string, string> carry = new Dictionary<string, string>();
-            foreach(string carriedKey in ip.PersistThroughLoad())
+            bool shouldAdd = false;
+            foreach (string carriedKey in ip.PersistThroughLoad())
             {
-                carry.Add(carriedKey, saved[carriedKey]);
+                if (saved.ContainsKey(carriedKey))
+                {
+                    carry.Add(carriedKey, saved[carriedKey]);
+                }
+                shouldAdd = true;
             }
-            if(carry.Keys.Count > 0)
+            carry.Add("type", ip.GetPType().ToString());
+            //carry.Add("transform", ip.GetMono().transform.ToSavableString());
+            if (shouldAdd)
             {
                 carrying.Add(ip.getID(), carry);
             }
+        }
+        foreach (IPersistantObject ip in mapObjects)
+        {
             ip.Unload();
         }
         return carrying;

@@ -67,4 +67,9 @@ public class CatWhistle : InventoryItem, IInteractable
     {
         return false;
     }
+
+    public override PersistanceType GetPType()
+    {
+        return PersistanceType.CAT_WHISTLE;
+    }
 }

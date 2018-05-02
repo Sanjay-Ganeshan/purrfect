@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InventoryItem : MonoBehaviour, IIdentifiable {
+public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
 
     public string ID = "";
     public ItemType ItType;
@@ -12,6 +12,8 @@ public abstract class InventoryItem : MonoBehaviour, IIdentifiable {
     private bool isEquipped;
 
     public bool isEquippable;
+
+    public bool CarryToNextScene = false;
 
     public Collider2D ZoC;
     public SpriteRenderer InventoryRenderer;
@@ -165,5 +167,43 @@ public abstract class InventoryItem : MonoBehaviour, IIdentifiable {
     public void setID(string id)
     {
         this.ID = id;
+    }
+
+    public void SetCarryingToNextScene(bool newVal)
+    {
+        this.CarryToNextScene = newVal;
+    }
+
+    public virtual void Load(Dictionary<string, string> saveData)
+    {
+
+    }
+    public virtual void PostLoad()
+    {
+
+    }
+    public virtual Dictionary<string, string> Save()
+    {
+        return new Dictionary<string, string>();
+    }
+    public virtual void Unload()
+    {
+        God.Kill(this.gameObject);
+    }
+    public abstract PersistanceType GetPType();
+    public virtual IEnumerable<string> PersistThroughLoad()
+    {
+        if(CarryToNextScene)
+        {
+            return this.Save().Keys;
+        }
+        else
+        {
+            return new string[0];
+        }
+    }
+    public MonoBehaviour GetMono()
+    {
+        return this;
     }
 }

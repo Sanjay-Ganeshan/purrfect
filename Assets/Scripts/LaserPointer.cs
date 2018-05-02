@@ -93,38 +93,12 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
         return false;
     }
 
-    void IPersistantObject.Load(Dictionary<string, string> saveData)
-    {
-        
-    }
-
-    Dictionary<string, string> IPersistantObject.Save()
-    {
-        Dictionary<string, string> r = new Dictionary<string, string>();
-        return r;
-    }
-
-    void IPersistantObject.Unload()
-    {
-        God.Kill(this.gameObject);
-    }
-
-    PersistanceType IPersistantObject.GetPType()
+    public override PersistanceType GetPType()
     {
         return PersistanceType.LASER_POINTER;
     }
 
-    IEnumerable<string> IPersistantObject.PersistThroughLoad()
-    {
-        return new string[]{};
-    }
-
-    MonoBehaviour IPersistantObject.GetMono()
-    {
-        return this;
-    }
-
-    public void PostLoad()
+    public override void PostLoad()
     {
 
     }

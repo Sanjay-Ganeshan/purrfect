@@ -177,7 +177,7 @@ MonoBehaviour:
   - PType: 4
     Template: {fileID: 1480317331653782, guid: 81287977f0790d841b5e424f6dd5c306, type: 2}
   - PType: 5
-    Template: {fileID: 1975903972404796, guid: 268e635ec6ea25b4ab471a399642ccac, type: 2}
+    Template: {fileID: 1634956631051272, guid: 19cdc7d589ffd8044b6cb6844f299ea4, type: 2}
   - PType: 6
     Template: {fileID: 1578784755552320, guid: 1e8fd567f632c0b41bfe136788ac452e, type: 2}
   - PType: 7

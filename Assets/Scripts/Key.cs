@@ -56,4 +56,9 @@ class Key : InventoryItem, IInteractable
     {
         throw new NotImplementedException();
     }
+
+    public override PersistanceType GetPType()
+    {
+        return PersistanceType.KEY;
+    }
 }

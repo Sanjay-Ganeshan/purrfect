@@ -1,0 +1,25 @@
+{
+  "Contents": {
+    "83aed0b9-142c-419e-aabd-d39da9c391fc": {
+      "type": "LASER_POINTER",
+      "transform": "-0.9,0.1,0,1,1"
+    },
+    "camera": {
+      "size": "2.35",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0.4296073,0.64441,0,1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-1.879529,-0.05370071,0,1,1"
+    },
+    "3c4fedb7-5d45-4372-83f7-83fe11b6e075": {
+      "Level": "level1",
+      "type": "EXIT",
+      "transform": "0,0,0,1,1"
+    }
+  },
+  "Name": "test_1"
+}

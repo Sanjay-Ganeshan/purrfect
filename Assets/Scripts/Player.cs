@@ -20,7 +20,9 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     private Collider2D[] overlappingColliders = new Collider2D[InteractablesToCheck];
     private Optional<ContactFilter2D> ZoCFilter = Optional<ContactFilter2D>.Empty();
-    
+
+
+    private string inventoryItemsToAdd;
 
     // Use this for initialization
 	void Start () {
@@ -163,12 +165,28 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     void IPersistantObject.Load(Dictionary<string, string> saveData)
     {
-        
+        if (saveData.ContainsKey("Inventory"))
+        {
+            this.inventoryItemsToAdd = saveData["Inventory"];
+        }
+        else
+        {
+            Debug.Log("Using compatibility mode to parse player...no inventory found.");
+        }
     }
 
     Dictionary<string, string> IPersistantObject.Save()
     {
         Dictionary<string, string> ret = new Dictionary<string, string>();
+        string carriedItems;
+        if (this.Bag.Count > 0) { 
+            carriedItems = this.Bag.Select((item) => item.getID()).Aggregate((string a, string b) => a + "," + b);
+            Debug.Log(carriedItems);
+        }
+        else {
+            carriedItems = "";
+        }
+        ret["Inventory"] = carriedItems;
         return ret;
     }
 
@@ -220,11 +238,32 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     IEnumerable<String> IPersistantObject.PersistThroughLoad()
     {
-        return new string[] { };
+        return new string[] { "Inventory" };
     }
 
     public void PostLoad()
     {
-        
+        string[] idsToAdd = this.inventoryItemsToAdd.Split(',');
+        foreach (string id in idsToAdd)
+        {
+            Optional<IIdentifiable> found = God.GetByID(id);
+            if(found.IsPresent())
+            {
+                Optional<InventoryItem> toAdd = Optional<InventoryItem>.Empty();
+                try
+                {
+                    toAdd = Optional<InventoryItem>.Of((InventoryItem) found.Get());
+                }
+                catch(InvalidCastException)
+                {
+                    Debug.Log("Failed to cast to inventory item: " + found.Get());
+                }
+                if(toAdd.IsPresent())
+                {
+                    Debug.Log("Added " + toAdd.Get() + " to inventory from previous scene");
+                    this.Bag.Add(toAdd.Get());
+                }
+            }
+        }
     }
 }

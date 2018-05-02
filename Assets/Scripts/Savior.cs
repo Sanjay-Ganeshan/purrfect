@@ -63,6 +63,10 @@ public class Savior: MonoBehaviour
 
     public void LoadLevel(string name, bool keepCarried)
     {
+        // STATS
+        God.GetStats().SendData();
+        // ENDSTATS
+
         Dictionary<string, Dictionary<string, string>> toCarry = Unload();
         Dictionary<string, PersistanceType> typeLookup = new Dictionary<string, PersistanceType>();
         foreach (PersistanceType t in System.Enum.GetValues(typeof(PersistanceType)))

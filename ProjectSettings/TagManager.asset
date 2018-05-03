@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cat
   - God
+  - HintManager
   layers:
   - Default
   - TransparentFX

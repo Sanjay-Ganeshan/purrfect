@@ -6,6 +6,7 @@ using UnityEngine;
 public class Transitioner : MonoBehaviour, IPersistantObject {
 
     public string LevelToLoad;
+	public Collider2D enteredPlayer = null;
 
 	// Use this for initialization
 	void Start () {
@@ -14,15 +15,35 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (enteredPlayer != null) 
+		{
+			TryMoveToNextLevel (enteredPlayer);
+		}
 	}
-
+		
     void OnTriggerEnter2D(Collider2D player)
     {
-        Optional<Player> collidedPlayer = Optional<Player>.Of(player.gameObject.GetComponent<Player>());
-        God.GetSavior().LoadLevel(LevelToLoad, true);
-		God.IncrementHintLevel();
+		enteredPlayer = player;
     }
+
+	void OnTriggerExit2D(Collider2D player)
+	{
+		enteredPlayer = null;
+	}
+
+	void TryMoveToNextLevel(Collider2D player)
+	{
+		Optional<Player> collidedPlayer = Optional<Player>.Of(player.gameObject.GetComponent<Player>());
+		Optional<Cat> theCat = God.GetCat(true);
+		if(theCat.IsPresent() && collidedPlayer.IsPresent())
+		{
+			Vector2 dist = theCat.Get ().transform.position - collidedPlayer.Get().transform.position;
+			if (dist.SqrMagnitude () < GameConstants.MAX_CAT_DIST_FOR_LEVEL_END) {
+				God.GetSavior().LoadLevel(LevelToLoad, true);
+				God.IncrementHintLevel();
+			}
+		}
+	}
 
     public void Load(Dictionary<string, string> saveData)
     {

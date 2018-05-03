@@ -40,8 +40,8 @@ public class CatWhistle : InventoryItem, IInteractable
 
     public override void Using(Vector2 location)
     {
-        Optional<Cat> theCat = God.GetCat();
-        if(theCat.IsPresent())
+        Optional<Cat> theCat = God.GetCat(true);
+		if(theCat.IsPresent() && theCat.Get() != null)
         {
             theCat.Get().AddPossibleTarget(this.transform.position, GameConstants.WHISTLE_PRIORITY);
         }

@@ -255,13 +255,14 @@ MonoBehaviour:
   Description: Every cat's best friend - hours of endless fun! Chase it, pounce on
     it, chase it some more!
   isEquippable: 1
+  CarryToNextScene: 0
   ZoC: {fileID: 58322781827886280}
   InventoryRenderer: {fileID: 0}
   WorldRenderer: {fileID: 212293798629864048}
   Icon: {fileID: 21300000, guid: c4aae4c04306e6940af9a64e210e259f, type: 3}
   IsOn: 1
   LaserRenderer: {fileID: 120936597461712060}
-  MaxIntensity: 30
+  MaxIntensity: 60
   TargetDot: {fileID: 114722436679014866}
   sound: {fileID: 0}
 --- !u!120 &120936597461712060

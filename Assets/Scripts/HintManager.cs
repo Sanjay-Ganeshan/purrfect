@@ -24,17 +24,21 @@ public class HintManager : MonoBehaviour {
 
 	void HintsButtonOnClick()
 	{
-		canGetHint = false;
-		if (nextHintNum < HintsList.HINTS_PER_LEVEL) 
+		if (canGetHint) 
 		{
-			DialogueBox.GetComponentInChildren<Text> ().text = HintsList.ALL_HINTS[level,nextHintNum];
-		} else 
-		{
-			DialogueBox.GetComponentInChildren<Text> ().text = HintsList.NO_MORE_HINTS;
+			canGetHint = false;
+			if (nextHintNum < HintsList.HINTS_PER_LEVEL) 
+			{
+				DialogueBox.GetComponentInChildren<Text> ().text = HintsList.ALL_HINTS [level, nextHintNum];
+			} 
+			else 
+			{
+				DialogueBox.GetComponentInChildren<Text> ().text = HintsList.NO_MORE_HINTS;
+			}
+			DialogueBox.gameObject.SetActive (true);
+			DialoguePortrait.gameObject.SetActive (true);
+			nextHintNum += 1;
 		}
-		DialogueBox.gameObject.SetActive (true);
-		DialoguePortrait.gameObject.SetActive (true);
-		nextHintNum += 1;
 	}
 
 	void DialogueBoxOnClick()

@@ -1,1 +1,59 @@
-{"Contents":{"343c3a76-da09-4966-ade0-feebca7b5cdd":{"type":"CAT","transform":"-5.120946,0.5859788,0,1,1"},"player":{"type":"PLAYER","transform":"-5.409136,2.109266,0,1,1"},"6d9e5515-33b4-417a-bf5c-27b7c86411b9":{"type":"BARS","transform":"-3.43,4.414766,90,0.1,2.625"},"68a78dce-3365-4727-8d04-acea0b3ff3ff":{"type":"WALL","transform":"1.06,8.16,90,0.1,6.137188"},"b3cc3453-d96b-41bd-af61-341385877875":{"type":"WALL","transform":"-6.757126,5.64,0,0.1,1.965625"},"5f83270b-5d9f-4189-bd9f-3657e4fac21b":{"type":"WALL","transform":"8.866596,1,0,0.1,5.534306"},"36728840-259f-4b65-a570-cd1bdf4124d5":{"type":"DOOR","transform":"-0.05537164,-4.88,0,1,1"},"01edd715-5da1-497a-8ebe-d24102520a29":{"type":"MIRROR","transform":"-0.59,-6.08,90,0.1,4.8125"},"71e01b51-c285-435e-b333-1072a4577993":{"type":"MIRROR","transform":"-6.757126,-2.87,0,0.1,2.5125"},"feb00583-1946-44cb-8467-dc5d19de93e9":{"type":"MIRROR","transform":"-0.05537164,0.38,0,0.1,3.162498"}},"Name":"level7"}
+{
+  "Contents": {
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-5.22,2.05,0,1,1"
+    },
+    "ae0db3b9-a8a5-42da-b20b-85245cbda334": {
+      "type": "BARS",
+      "transform": "-3.43,4.414766,90,0.1,2.625"
+    },
+    "cf9cd548-fa3b-46f7-9135-bf61385976e1": {
+      "Level": "level8",
+      "type": "EXIT",
+      "transform": "7.15,-6.53,0,3.175,1"
+    },
+    "8f809886-7316-422e-bfcd-85d98dfa17f4": {
+      "type": "CAT",
+      "transform": "-5.120946,0.5859788,0,1,1"
+    },
+    "214f35e9-76c6-42e1-b4e5-1f12267cb69b": {
+      "type": "WALL",
+      "transform": "8.866596,1,0,0.1,5.534306"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "1.079727,0.9237468,0,1,1"
+    },
+    "d4fbef23-682d-4e5f-9331-316181f0a6db": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "-0.05537164,-4.88,0,1,1"
+    },
+    "839c9e25-5054-4682-9397-522e5e5d3dd0": {
+      "type": "WALL",
+      "transform": "1.06,8.16,90,0.1,6.137188"
+    },
+    "cd3ba656-2d80-4bc8-a4d4-4858b63b3cf1": {
+      "type": "MIRROR",
+      "transform": "-0.59,-6.08,90,0.1,4.8125"
+    },
+    "412a819e-9e17-4bea-b05f-e3fbfac16284": {
+      "type": "MIRROR",
+      "transform": "-0.05537164,0.38,0,0.1,3.162498"
+    },
+    "5d714aae-c435-41f3-b2b4-a51ff3f36a2f": {
+      "type": "MIRROR",
+      "transform": "-6.757126,-2.87,0,0.1,2.5125"
+    },
+    "c9bff36f-e9dc-4370-9ff0-fed4390fe40d": {
+      "type": "WALL",
+      "transform": "-6.757126,5.64,0,0.1,1.965625"
+    }
+  },
+  "Name": "level7"
+}

@@ -1,1 +1,93 @@
-{"Contents":{"ef4d5588-3bdd-4e13-a55f-1eb191cccc57":{"type":"WINDOW","transform":"-1.6,1.2,0,0.1,1.9"},"3a184e4d-5d17-4d69-a9e1-79d81b7fcb70":{"type":"WALL","transform":"8,3.75,0,0.1,1.75"},"b35fd435-6b1b-486a-818b-b8be293da61c":{"type":"WALL","transform":"-8,3.75,0,0.1,1.75"},"2fffb883-5d85-4cc1-b473-33007d69f86e":{"type":"DOOR","transform":"-4,-4.7,0,1,1"},"a5c1e626-a29e-4eea-ad13-ade3bc65cee1":{"type":"WINDOW","transform":"-4,1.3,0,0.1,3.7"},"a7e1f0c0-04e1-44c9-9183-d3fdfe0c1c46":{"type":"WINDOW","transform":"3.1,0.1,0,0.1,1.1"},"87b7f1dc-f8b3-4140-8d56-dda05bd8c506":{"type":"WINDOW","transform":"1.9,3.6,90,0.1,2.7"},"player":{"type":"PLAYER","transform":"-6.9,0.5,0,1,1"},"5713f5c9-8bfc-40e0-bb05-549bc723e3de":{"type":"WINDOW","transform":"0.7,-3.5,90,0.1,3.7"},"1ae82cdf-3637-4b48-a13e-5dd9428df99a":{"type":"WALL","transform":"0,6,90,0.1,6.3"},"94d471af-1283-49f2-a54e-9dca65b57bc3":{"type":"WINDOW","transform":"0.7,-1.3,90,0.1,1.8"},"02b882d0-aad5-47ce-a9a4-ec4729e830fb":{"type":"WALL","transform":"8,-3.75,0,0.1,1.75"},"a35b6470-0968-41ce-a57e-921ac2597447":{"type":"KEY","transform":"1.5,0,0,1,1"},"4e20e7f2-9d2b-4eaa-90bb-94db82417d08":{"type":"CAT","transform":"-6.9,-0.5,0,1,1"},"baa510ab-8178-4fb6-a77a-9fa2863b7aa5":{"type":"WINDOW","transform":"1.8,1.5,90,0.1,1.1"},"7d5d5009-e097-4cc3-b202-224c672de844":{"type":"WINDOW","transform":"5.4,0.1,0,0.1,2.8"},"5a1b3203-97b1-4ad8-a1ca-1eba45e59b90":{"type":"WALL","transform":"0,-6,90,0.1,6.3"},"705b8189-9050-4d3f-9284-21169bad799b":{"type":"WALL","transform":"-8,-3.75,0,0.1,1.75"}},"Name":"level3"}
+{
+  "Contents": {
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0.6345472,0.08903283,0,1,1"
+    },
+    "0e78a1f5-5f87-48e5-b9b7-4828c4f7cdf7": {
+      "type": "WINDOW",
+      "transform": "-1.6,1.2,0,0.1,1.9"
+    },
+    "3550cd92-7c5b-4942-836b-d0ea120beb58": {
+      "type": "WALL",
+      "transform": "8,3.75,0,0.1,1.75"
+    },
+    "c0e24650-d03c-4870-a191-fe077e14aa19": {
+      "type": "WALL",
+      "transform": "-8,3.75,0,0.1,1.75"
+    },
+    "ae514908-400b-4f5e-b07c-b39257b6ef8b": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "-4,-4.7,0,1,1"
+    },
+    "f4eb0f3c-127d-45c9-aedc-6cea9ea7a007": {
+      "type": "WINDOW",
+      "transform": "-4,1.3,0,0.1,3.7"
+    },
+    "68a23887-b90e-4ab3-ae0f-cc6f3d09a19e": {
+      "type": "WINDOW",
+      "transform": "3.1,0.1,0,0.1,1.1"
+    },
+    "877b02f3-ea93-456f-ba99-3e44cfc788b8": {
+      "type": "WINDOW",
+      "transform": "1.9,3.6,90,0.1,2.7"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-6.86,0.53,0,1,1"
+    },
+    "ae6c1ef2-cbb7-40fc-821b-e326ae482d6b": {
+      "type": "WINDOW",
+      "transform": "0.7,-3.5,90,0.1,3.7"
+    },
+    "9c066080-76ae-4200-a379-b62d7a50691e": {
+      "type": "WALL",
+      "transform": "0,6,90,0.1,6.3"
+    },
+    "2695f85e-0bca-4269-8197-9b674d992852": {
+      "type": "WINDOW",
+      "transform": "0.7,-1.3,90,0.1,1.8"
+    },
+    "5fba6fe4-b6ce-45a2-b6ef-4eebfee11a68": {
+      "type": "WALL",
+      "transform": "8,-3.75,0,0.1,1.75"
+    },
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "1.5,0,0,1,1"
+    },
+    "57c851c5-9ea3-4a77-a4c5-f4a46560ac17": {
+      "type": "CAT",
+      "transform": "-6.9,-0.5,0,1,1"
+    },
+    "c368d2b6-f52c-4801-8d88-a90f3a3f2932": {
+      "type": "WINDOW",
+      "transform": "1.8,1.5,90,0.1,1.1"
+    },
+    "9526f63e-dcc1-4fa8-9acd-a3f643101b43": {
+      "type": "WINDOW",
+      "transform": "5.4,0.1,0,0.1,2.8"
+    },
+    "35723540-487a-4592-8252-3141a4fdd464": {
+      "Level": "level4",
+      "type": "EXIT",
+      "transform": "8.48,0.07,0,1,3.397809"
+    },
+    "9bfdedd9-390e-42ab-a71e-b5c7de1a6914": {
+      "type": "WALL",
+      "transform": "0,-6,90,0.1,6.3"
+    },
+    "acef0d58-88fc-4bf8-809c-0fcf82eacc97": {
+      "type": "WALL",
+      "transform": "-8,-3.75,0,0.1,1.75"
+    }
+  },
+  "Name": "level3"
+}

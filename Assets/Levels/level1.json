@@ -1,42 +1,56 @@
 {
   "Contents": {
-    "e7b7628b-f507-443f-9e70-8aaae7ce8358": {
+    "44981ca9-d8d1-4752-97ff-8c810d348115": {
+      "Level": "level2",
+      "type": "EXIT",
+      "transform": "8.42,0.04,0,1,2.687501"
+    },
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
       "type": "KEY",
       "transform": "7,2.5,0,1,1"
     },
-    "ce80a2ed-8609-4b57-a1c1-8e396fff4748": {
+    "1e1d59f3-00a9-436e-a514-a97158e641e3": {
       "type": "WALL",
       "transform": "-8,0,0,0.1,3"
     },
-    "a680d626-92de-4a22-b858-986f8c09d0b6": {
+    "923eb300-7428-4ed3-b48e-1c5ee9924393": {
       "type": "WALL",
       "transform": "0,3.75,90,0.1,6.3"
     },
-    "58cc4b42-911d-4cf4-af25-4b5107a7424a": {
+    "730e611d-0c94-4d14-81bb-8c98a7d6584e": {
       "type": "BARS",
       "transform": "-2,2.5,0,0.1,1"
     },
-    "e04e37a6-1996-4f17-84cd-21e62f67eea3": {
+    "d6a666b3-e78e-4104-a9a8-2f01b1169299": {
       "type": "LASER_POINTER",
       "transform": "-7,-1,0,1,1"
     },
-    "3215f1d3-d8aa-4052-a81a-a0b9961b1e13": {
+    "45921ff4-699c-4c83-919e-eddc662a7042": {
       "type": "BARS",
       "transform": "-2,-2.5,0,0.1,1"
     },
-    "4eb3df33-7c5e-4a20-9a82-a4a9571ba11c": {
+    "9f94719f-478c-4894-9bf1-51fcd9e0a46e": {
+      "Combo": "777",
+      "IsOpen": "False",
       "type": "DOOR",
       "transform": "-2,0,0,1,1"
     },
     "player": {
+      "Inventory": "",
       "type": "PLAYER",
-      "transform": "-3.11,-2.85,0,1,1"
+      "transform": "-6.76,-0.05,0,1,1"
     },
-    "50f25e11-17dc-4bde-914a-423252f66b0c": {
+    "c8c94e4e-59db-4121-8d34-3949c649b098": {
       "type": "WALL",
       "transform": "8,-2.5,0,0.1,1"
     },
-    "981bbb59-e314-420c-845e-d386f1585f05": {
+    "2": {
+      "type": "CAT_WHISTLE",
+      "transform": "-7,-1.5,0,1,1"
+    },
+    "6a1cedcf-b1ac-45bb-8a22-97ec7544b973": {
       "type": "CAT_WHISTLE",
       "transform": "-7,-1.5,0,1,1"
     },
@@ -46,15 +60,15 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "0178a0e3-ccb1-4511-bd2a-b50b2f6c63f6": {
+    "189bfd14-6d8b-441b-b88f-97b0c4eb5046": {
       "type": "CAT",
       "transform": "-5.5,0,0,1,1"
     },
-    "73276239-79ee-4299-a5a5-46fe5ba1df29": {
+    "6c7ee52e-0d2c-4b56-8b7a-25408c70b9c2": {
       "type": "WALL",
       "transform": "8,2.5,0,0.1,1"
     },
-    "151aeab6-ff55-49cd-9592-f16fd779e0da": {
+    "8edb664b-c76a-401f-9e02-34c4083cb6ba": {
       "type": "WALL",
       "transform": "0,-3.75,90,0.1,6.3"
     }

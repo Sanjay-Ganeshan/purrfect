@@ -1,1 +1,113 @@
-{"Contents":{"e4a9b691-fd37-45b0-ae02-98a8d2d2626d":{"type":"KEY","transform":"11.55025,-5.239138,0,1,1"},"a47c888b-83e0-4d65-bb30-d5859cd1988f":{"type":"KEY","transform":"-12.06795,-5.393505,0,1,1"},"e619588c-404f-4d28-b60b-78bfc1c28e5e":{"type":"MIRROR","transform":"-9.39,6.9,90,0.1,2.750836"},"94bde680-4088-4971-8033-b66c4468e153":{"type":"WALL","transform":"12.58,7.99,0,0.1,0.9499999"},"1ab861df-5b05-45a2-933f-982a1d171048":{"type":"WALL","transform":"5.89,9.07,90,0.1,5.173435"},"dfc162cc-84fb-41f8-8535-bdcc116b4cc5":{"type":"WINDOW","transform":"-6.82,9.07,90,0.1,4.810621"},"922cfa41-c32a-427d-8260-3eef7f82c7b3":{"type":"WINDOW","transform":"-12.89124,1.45,0,0.1,5.977414"},"cb20591e-2c20-4e09-860d-f69a2cf369d9":{"type":"WALL","transform":"4.65,6.9,90,0.1,4.2375"},"f443e708-41f0-469a-a742-b4cc7f33c19b":{"type":"BARS","transform":"-3.32,6.9,90,0.1,2.012499"},"b312676e-4930-424d-a911-ac0b1eeb0502":{"type":"BARS","transform":"11.34,6.904429,90,0.1,1"},"90b24e38-e405-43f8-9fa8-33e068837c58":{"type":"DOOR","transform":"-3.22,5.57,0,1,1"},"da91681b-a065-4cd8-8f9b-8ddd7beb3608":{"type":"DOOR","transform":"12.57937,5.52,0,1,1"},"f7e76ab5-a5fc-446f-bfd9-488fbe830b23":{"type":"CAT","transform":"-1.879706,-3.541097,0,1,1"},"player":{"type":"PLAYER","transform":"-1.982617,-5.239138,0,1,1"},"c883e174-8efe-4906-9429-77ef54a6a0a5":{"type":"WALL","transform":"12.58214,-1.06,0,0.1,4.136347"},"780b7d3f-5f19-49eb-bbfa-efb5db478270":{"type":"WALL","transform":"9.821809,0.83,0,0.1,2.7"},"676f873d-7fee-4a46-a74e-7fb736d8ade4":{"type":"MIRROR","transform":"10.11,0.83,0,0.1,2.7"},"8f41f51c-25fb-4bd4-8ea6-31acf34ee31f":{"type":"MIRROR","transform":"3.524753,0.83,0,0.1,2.7"},"c4af5024-eb97-41dd-9137-f77aeb12d57b":{"type":"WALL","transform":"3.236563,0.83,0,0.1,2.7"},"07f4b4e4-d3c4-4b44-bca2-bd45fe3b0bbe":{"type":"WALL","transform":"-3.227114,-0.94,0,0.1,4.114686"},"0ae18304-cfb9-41d4-aace-164995c4dfbd":{"type":"WINDOW","transform":"-8.09,-6.29,90,0.1,3.782626"},"c2c9b687-fb83-427a-b7a6-3d69e16db76e":{"type":"WALL","transform":"5.953777,-6.29,90,0.1,5.1875"}},"Name":"level8"}
+{
+  "Contents": {
+    "37240226-5d2b-45de-bbd9-cff88975db8f": {
+      "type": "CAT",
+      "transform": "-1.879706,-3.541097,0,1,1"
+    },
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "-12.06795,-5.393505,0,1,1"
+    },
+    "3d36d742-f5ec-4ead-9883-96e120677b6e": {
+      "type": "WALL",
+      "transform": "4.65,6.9,90,0.1,4.2375"
+    },
+    "ef4c4950-9637-4fb3-bf36-5b2c65263599": {
+      "Level": "level9",
+      "type": "EXIT",
+      "transform": "13.32,5.489222,0,1,2.612502"
+    },
+    "3894800d-6f5c-4454-a0b4-715249208e88": {
+      "type": "WINDOW",
+      "transform": "-6.82,9.07,90,0.1,4.810621"
+    },
+    "5d505704-6ea4-4dca-828a-61a1aa9d6fe9": {
+      "type": "BARS",
+      "transform": "-3.32,6.9,90,0.1,2.012499"
+    },
+    "070a88ae-0ed6-4243-b47c-d160eb300941": {
+      "type": "MIRROR",
+      "transform": "10.11,0.83,0,0.1,2.7"
+    },
+    "7ba6c325-81fe-49fd-a1bd-e1e7228e73ca": {
+      "type": "WALL",
+      "transform": "9.821809,0.83,0,0.1,2.7"
+    },
+    "183d0783-645d-411f-a1ad-c7e8c174e91b": {
+      "type": "WALL",
+      "transform": "5.89,9.07,90,0.1,5.173435"
+    },
+    "4d0cad5e-4c53-4a09-9241-8181a3c3d53d": {
+      "Combo": "778",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "-3.22,5.57,0,1,1"
+    },
+    "b506b508-69c9-419f-bbae-cc3802d12d17": {
+      "type": "MIRROR",
+      "transform": "3.524753,0.83,0,0.1,2.7"
+    },
+    "2c85abfd-69ca-428f-9647-9012f262bcf5": {
+      "type": "WINDOW",
+      "transform": "-8.09,-6.29,90,0.1,3.782626"
+    },
+    "784ca88e-3fb5-4a1b-be30-c852313ea6f8": {
+      "type": "WALL",
+      "transform": "12.58214,-1.06,0,0.1,4.136347"
+    },
+    "ac598db8-9859-43f1-9342-f5112dff564c": {
+      "type": "MIRROR",
+      "transform": "-9.39,6.9,90,0.1,2.750836"
+    },
+    "78c08a1b-a887-4445-81aa-7b25aa945b71": {
+      "type": "WALL",
+      "transform": "5.953777,-6.29,90,0.1,5.1875"
+    },
+    "e66c6594-1efe-47b7-865e-2999d8ea46ef": {
+      "type": "WALL",
+      "transform": "-3.227114,-0.94,0,0.1,4.114686"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0.1337187,1.4,0,1,1"
+    },
+    "1778": {
+      "Combo": "778",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "11.55025,-5.239138,0,1,1"
+    },
+    "6d777149-1a02-445c-99e4-42d556a77459": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "12.57937,5.52,0,1,1"
+    },
+    "5db4ffb3-2009-43f0-8b26-5f7c4d8b5544": {
+      "type": "WALL",
+      "transform": "12.58,7.99,0,0.1,0.9499999"
+    },
+    "99c5760d-d3cb-4e7f-8941-6c0128be433b": {
+      "type": "WALL",
+      "transform": "3.236563,0.83,0,0.1,2.7"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-1.83,-5.08,0,1,1"
+    },
+    "0988f0a1-2293-497e-a34e-6296a46c6dc9": {
+      "type": "BARS",
+      "transform": "11.34,6.904429,90,0.1,1"
+    },
+    "219bd012-c898-4b1b-9232-e6aba50c999e": {
+      "type": "WINDOW",
+      "transform": "-12.89124,1.45,0,0.1,5.977414"
+    }
+  },
+  "Name": "level8"
+}

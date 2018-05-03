@@ -1,1 +1,77 @@
-{"Contents":{"792b4944-39ae-48b2-a70f-37cdfeaf4292":{"type":"KEY","transform":"3,5.5,0,1,1"},"8ab501e0-5f6f-4b17-8667-c08a41cc0577":{"type":"WALL","transform":"-4.6,-2.8,0,0.1,1"},"8b73a4dd-949d-4892-b2d7-d58bf08a523d":{"type":"WALL","transform":"-7,0,0,0.1,5"},"3e16033e-50b3-48d0-9590-bdfe8b81baf1":{"type":"DOOR","transform":"-5.8,-4,90,1,1"},"d1dd669f-6c0d-471e-afd5-3cfa37150a99":{"type":"WALL","transform":"-1.1,6.5,90,0.1,4.6"},"1f2482d9-9f06-4115-a4ea-ffbea123bd7b":{"type":"WALL","transform":"-2.1,-2.8,0,0.1,1"},"b5f7f95a-4f99-4a65-a26c-8b8511467038":{"type":"WALL","transform":"-3.35,-4.05,90,0.1,1"},"0e937b60-a658-4200-ba13-57be18844976":{"type":"MIRROR","transform":"6,-5.4,320,0.1,1"},"8b3e0bf6-53f2-4e05-970b-9d502383a79e":{"type":"WINDOW","transform":"7,0,0,0.1,5"},"481f02ae-1ccf-41c9-881d-2457d26856aa":{"type":"WALL","transform":"-3.35,-1.55,90,0.1,1"},"player":{"type":"PLAYER","transform":"-5.8,-5.8,0,1,1"},"8e7234ce-7d3f-4163-8a88-f0c8e9cb3366":{"type":"BARS","transform":"-4.6,-5.2,0,0.1,1"},"d92c8f94-485f-4f73-95df-ae31d4ddc6b2":{"type":"WINDOW","transform":"1.1,-6.5,90,0.1,4.6"},"1c5d7693-42cf-4a9f-b063-97aab652121e":{"type":"CAT","transform":"-5.7,-4.8,0,1,1"}},"Name":"level2"}
+{
+  "Contents": {
+    "2ecf8dfd-dbf7-4b10-b863-565ac487540e": {
+      "Level": "level3",
+      "type": "EXIT",
+      "transform": "5.582253,6.923198,0,2.999996,1"
+    },
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "3,5.5,0,1,1"
+    },
+    "cc227eec-6473-456e-9d3e-1740bea69035": {
+      "type": "WALL",
+      "transform": "-4.6,-2.8,0,0.1,1"
+    },
+    "83452dc0-9e2b-4fa9-ab6c-a8576ae6b920": {
+      "type": "WALL",
+      "transform": "-7,0,0,0.1,5"
+    },
+    "7bf5a9c2-343d-4e43-8bb0-e3ed2ea74272": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "-5.8,-4,90,1,1"
+    },
+    "953df992-56be-4b26-8c48-9d330b42ee82": {
+      "type": "WALL",
+      "transform": "-1.1,6.5,90,0.1,4.6"
+    },
+    "03bec61c-5ea9-406e-b629-9644e6b132d5": {
+      "type": "WALL",
+      "transform": "-2.1,-2.8,0,0.1,1"
+    },
+    "3d5f03ac-5995-4d5b-b2c4-6e74b40f400c": {
+      "type": "WALL",
+      "transform": "-3.35,-4.05,90,0.1,1"
+    },
+    "c222b086-2cea-47f6-bc0e-0e79f77fff4d": {
+      "type": "MIRROR",
+      "transform": "6,-5.4,320,0.1,1"
+    },
+    "b2722fb3-9b42-4e5f-901b-a50640642a9b": {
+      "type": "WINDOW",
+      "transform": "7,0,0,0.1,5"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0,0,0,1,1"
+    },
+    "9d7fdfd0-14ba-43a5-9941-073ec4c8d745": {
+      "type": "WALL",
+      "transform": "-3.35,-1.55,90,0.1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-5.97,-5.95,0,1,1"
+    },
+    "afe7df02-1173-4a48-b091-29e64229f95c": {
+      "type": "BARS",
+      "transform": "-4.6,-5.2,0,0.1,1"
+    },
+    "88ac1067-e474-4e23-8474-f762ddf8c991": {
+      "type": "WINDOW",
+      "transform": "1.1,-6.5,90,0.1,4.6"
+    },
+    "72aee8d4-8ad8-4e4b-a8c4-47f8a8377a66": {
+      "type": "CAT",
+      "transform": "-5.7,-4.8,0,1,1"
+    }
+  },
+  "Name": "level2"
+}

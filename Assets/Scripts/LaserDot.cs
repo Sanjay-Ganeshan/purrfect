@@ -11,8 +11,8 @@ public class LaserDot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Optional<Cat> theCat = God.GetCat();
-        if(theCat.IsPresent())
+        Optional<Cat> theCat = God.GetCat(true);
+		if(theCat.IsPresent() && theCat.Get() != null)
         {
             theCat.Get().AddPossibleTarget(this.transform.position, GameConstants.LASER_PRIORITY);
         }

@@ -225,7 +225,7 @@ public class Cat : MonoBehaviour, IPersistantObject {
 
     void IPersistantObject.Unload()
     {
-
+		God.Kill(this.gameObject);
     }
 
     PersistanceType IPersistantObject.GetPType()

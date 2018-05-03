@@ -21,6 +21,7 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
     {
         Optional<Player> collidedPlayer = Optional<Player>.Of(player.gameObject.GetComponent<Player>());
         God.GetSavior().LoadLevel(LevelToLoad, true);
+		God.IncrementHintLevel();
     }
 
     public void Load(Dictionary<string, string> saveData)

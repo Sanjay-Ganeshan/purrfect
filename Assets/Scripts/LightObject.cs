@@ -10,7 +10,7 @@ public static class LightSim {
     /// Default intensity to give a "never ending" light emitter - 
     /// stops infinite loops.
     /// </summary>
-    public const float DEFAULT_INTENSITY = 1000f;
+    public const float DEFAULT_INTENSITY = 3000f;
 
     public static List<Vector2> EmitLight(LightType type, float intensity, Vector2 origin, Vector2 direction, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX)
     {

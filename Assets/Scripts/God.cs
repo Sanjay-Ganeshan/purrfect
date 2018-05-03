@@ -91,6 +91,11 @@ public class God: MonoBehaviour
         }
     }
 
+	public static void IncrementHintLevel()
+	{
+		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().MoveToNextLevel ();
+	}
+
     public static bool IsPaused()
     {
         FindGod();

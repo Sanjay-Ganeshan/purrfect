@@ -6,9 +6,11 @@ using Newtonsoft.Json;
 
 public class Statistics {
     private string urlBase = "https://3edgy6u.com/py/analytics?data=";
-    private Dictionary<string, string> data;
+    private Dictionary<string, object> data;
     public Statistics() {
-        this.data = new Dictionary<string, string>();
+        this.data = new Dictionary<string, object>();
+        this.data.Add("game_id", "purrfect");
+        this.data.Add("user_id", Random.Range(0,999999));
     }
 
 	// Use this for initialization

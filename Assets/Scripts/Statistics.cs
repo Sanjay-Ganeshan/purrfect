@@ -15,16 +15,6 @@ public class Statistics {
         data["user_id"] = Random.Range(0,999999);
     }
 
-	// Use this for initialization
-	void Start () {
-	    	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void initLevel(string id)
     {
         data["level_id"] = id;

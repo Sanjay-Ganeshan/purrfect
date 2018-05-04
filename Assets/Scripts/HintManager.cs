@@ -24,12 +24,16 @@ public class HintManager : MonoBehaviour {
 
 	void HintsButtonOnClick()
 	{
-		if (canGetHint) 
-		{
-			canGetHint = false;
-			if (nextHintNum < HintsList.HINTS_PER_LEVEL) 
-			{
-				DialogueBox.GetComponentInChildren<Text> ().text = HintsList.ALL_HINTS [level, nextHintNum];
+		if (canGetHint)
+        {
+
+            canGetHint = false;
+			if (nextHintNum < HintsList.HINTS_PER_LEVEL)
+            {
+                God.GetStats().incrementStat("hints", 1);
+                God.GetStats().SendData();
+
+                DialogueBox.GetComponentInChildren<Text> ().text = HintsList.ALL_HINTS [level, nextHintNum];
 			} 
 			else 
 			{

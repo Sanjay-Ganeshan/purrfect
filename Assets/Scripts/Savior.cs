@@ -65,6 +65,7 @@ public class Savior: MonoBehaviour
     public void LoadLevel(string name, bool keepCarried)
     {
         // STATS
+        God.GetStats().initLevel(name);
         God.GetStats().SendData();
         // ENDSTATS
 

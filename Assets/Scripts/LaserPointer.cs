@@ -46,6 +46,9 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
         this.IsOn = true;
         this.LaserRenderer.enabled = true;
         sound.Play();
+
+        God.GetStats().incrementStat("laser_shots", 1);
+        God.GetStats().SendData();
     }
 
     public override void EndUse(Vector2 location)

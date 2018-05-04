@@ -24,8 +24,8 @@ public class Statistics {
         data["duration"] = 0f;
         data["hints"] = 0;
         data["player_movement"] = 0f;
-        data["mouse_movement"] = 0f;
         data["laser_shots"] = 0;
+        data["whistle_uses"] = 0;
 
         start_time = Time.time;
     }

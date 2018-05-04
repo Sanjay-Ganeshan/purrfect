@@ -30,6 +30,9 @@ public class CatWhistle : InventoryItem, IInteractable
     {
         this.IsOn = true;
         whistleSound.Play();
+
+        God.GetStats().incrementStat("whistle_uses", 1);
+        God.GetStats().SendData();
     }
 
     public override void EndUse(Vector2 location)

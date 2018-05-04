@@ -49,6 +49,11 @@ public class Statistics {
     {
         data[key] = (float)data[key] + count;
     }
+    
+    public void cleared()
+    {
+        data["cleared"] = true;
+    }
 
     public void SendData() {
         data["duration"] = Time.time - start_time;

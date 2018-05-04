@@ -39,6 +39,9 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 		{
 			Vector2 dist = theCat.Get ().transform.position - collidedPlayer.Get().transform.position;
 			if (dist.SqrMagnitude () < GameConstants.MAX_CAT_DIST_FOR_LEVEL_END) {
+                God.GetStats().cleared();
+                God.GetStats().SendData();
+
 				God.GetSavior().LoadLevel(LevelToLoad, true);
 				God.IncrementHintLevel();
 			}
@@ -52,7 +55,7 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 
     public void PostLoad()
     {
-
+        God.GetStats().SendData();
     }
 
     public Dictionary<string, string> Save()

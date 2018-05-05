@@ -64,6 +64,7 @@ public class Savior: MonoBehaviour
 
     public void LoadLevel(string name, bool keepCarried)
     {
+		God.SetCurrentLevel (name);
         God.GetStats().initLevel(name);
 
         Dictionary<string, Dictionary<string, string>> toCarry = Unload();

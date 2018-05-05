@@ -6,11 +6,14 @@ using UnityEngine;
 public class Transitioner : MonoBehaviour, IPersistantObject {
 
     public string LevelToLoad;
-	public Collider2D enteredPlayer = null;
+	private bool hintToBringCat = false;
+	private Collider2D enteredPlayer = null;
 
 	// Use this for initialization
 	void Start () {
-		
+		if (God.GetCurrentLevel () == GameConstants.FIRST_LEVEL) {
+			hintToBringCat = true;
+		}
 	}
 	
 	// Update is called once per frame
@@ -45,6 +48,15 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 				God.GetSavior().LoadLevel(LevelToLoad, true);
 				God.IncrementHintLevel();
 			}
+			else 
+			{
+				if (hintToBringCat) 
+				{
+					God.ShowText (HintsList.HINT_TO_BRING_CAT);
+					hintToBringCat = false;
+				}
+			}
+				
 		}
 	}
 

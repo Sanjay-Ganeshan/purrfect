@@ -33,4 +33,5 @@ public static class HintsList
 			"Ugh, do I really have to get past\nall these guards twice, to get\nthe key and come back?",
 			"How can I get my cat to distract\nthat guard next to the second key?\nThere’s so many mirrors..."}
 	};
+	public const string HINT_TO_BRING_CAT = "Wait! I should bring my cat, too!";
 }

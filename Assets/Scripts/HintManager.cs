@@ -8,7 +8,7 @@ public class HintManager : MonoBehaviour {
 	public Button HintsButton, DialogueBox;
 	public Image DialoguePortrait;
 	private bool canGetHint = true;
-	private int level = 0;
+	private int level;
 	private int nextHintNum = 0;
 
 	// Use this for initialization
@@ -55,5 +55,11 @@ public class HintManager : MonoBehaviour {
 	public void MoveToNextLevel () { // may need modification if we branch in the future
 		level += 1;
 		nextHintNum = 0;
+	}
+
+	public void ShowText(string text) {
+		DialogueBox.GetComponentInChildren<Text> ().text = text;
+		DialogueBox.gameObject.SetActive (true);
+		DialoguePortrait.gameObject.SetActive (true);
 	}
 }

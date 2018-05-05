@@ -13,6 +13,7 @@ public class God: MonoBehaviour
     private bool initialized = false;
     private Savior MyChild;
     private Statistics stats;
+	private static string currentLevel;
 
     private Dictionary<string, IIdentifiable> identityLookup;
 
@@ -94,6 +95,11 @@ public class God: MonoBehaviour
 	public static void IncrementHintLevel()
 	{
 		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().MoveToNextLevel ();
+	}
+
+	public static void ShowText(string text)
+	{
+		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().ShowText (text);
 	}
 
     public static bool IsPaused()
@@ -187,6 +193,16 @@ public class God: MonoBehaviour
         FindGod();
         return TheOnlyGod.MyChild;
     }
+
+	public static void SetCurrentLevel(string name)
+	{
+		currentLevel = name;
+	}
+
+	public static string GetCurrentLevel() 
+	{
+		return currentLevel;
+	}
     
     public static Statistics GetStats()
     {

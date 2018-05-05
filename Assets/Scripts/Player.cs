@@ -55,7 +55,9 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         }
         HandleInteraction();
 
-        God.GetStats().incrementStat("player_movement", rb.velocity.magnitude*Time.deltaTime);
+		if (!God.GetSavior ().SaveMode) {
+			God.GetStats ().incrementStat ("player_movement", rb.velocity.magnitude * Time.deltaTime);
+		}
 	}
 
     void HandleMotion()

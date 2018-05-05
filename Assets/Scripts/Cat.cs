@@ -72,7 +72,11 @@ public class Cat : MonoBehaviour, IPersistantObject {
     {
         if(currentTarget.IsPresent())
         {
-            rb.velocity = catSpeed * VectorToTarget().normalized;
+			// do this check to avoid letting the cat see infinitely far through windows
+			if (VectorToTarget ().magnitude < GameConstants.CAT_SIGHT_RANGE)
+			{
+				rb.velocity = catSpeed * VectorToTarget ().normalized;
+			}
         } else {
             rb.velocity = Vector2.zero;
         }

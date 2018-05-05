@@ -37,6 +37,6 @@ public static class HintsList
 			"How can I get my cat to distract\nthat guard next to the second key?\nThere’s so many mirrors..."}
 	};
 	public const string HINT_TO_BRING_CAT = "Wait! I should bring my cat, too!";
-	public const string ON_WHISTLE_PICKUP = "Hey, I wonder if the cat listens to this whistle!";
+	public const string ON_WHISTLE_PICKUP = "Hey, I wonder if the cat listens to this whistle!\nCan I get it to come with me to the next room?";
 	public const string ON_LASER_POINTER_PICKUP = "Hehe, I hope this cat likes laser pointers!";
 }

@@ -11,7 +11,7 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 
 	// Use this for initialization
 	void Start () {
-		if (God.GetCurrentLevel () == GameConstants.FIRST_LEVEL) {
+		if (God.GetCurrentLevel () == GameConstants.BRING_CAT_HINT_LEVEL) {
 			hintToBringCat = true;
 		}
 	}

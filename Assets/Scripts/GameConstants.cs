@@ -21,5 +21,5 @@ public static class GameConstants
     public const string LEVEL_PATH = "Levels";
     public const string SAVE_PATH = "Save";
 	public const int MAX_CAT_DIST_FOR_LEVEL_END = 1;
-	public const string FIRST_LEVEL = "level1";
+	public const string BRING_CAT_HINT_LEVEL = "level1";
 }

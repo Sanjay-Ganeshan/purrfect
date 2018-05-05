@@ -1,32 +1,40 @@
 {
   "Contents": {
+    "77362709-fd00-412d-b61e-f0556778e41a": {
+      "type": "ENTRANCE",
+      "transform": "-8.075254,0.09427142,0,0.1,1"
+    },
+    "455a32ad-4dff-4143-bccc-a6a0e3cb31fa": {
+      "type": "WALL",
+      "transform": "-8.08,-2.41,0,0.1,1"
+    },
+    "85f0771c-7daf-49d4-b985-78402a888426": {
+      "type": "WALL",
+      "transform": "-8.08,2.5,0,0.1,1"
+    },
     "1777": {
       "Combo": "777",
       "Uses": "1",
       "type": "KEY",
       "transform": "7,2.5,0,1,1"
     },
-    "ff7dd038-9797-42af-9b24-29fb03952077": {
-      "type": "WALL",
-      "transform": "-8,0,0,0.1,3"
-    },
-    "1eb94b18-3731-43ba-9d98-675b658e3c17": {
+    "872fcb56-6c51-4024-95de-6589b7364454": {
       "type": "WALL",
       "transform": "0,3.75,90,0.1,6.3"
     },
-    "dbde5d92-db4d-43e4-b684-45723efb2870": {
+    "0852576e-dc39-4e65-9f11-2853502554f9": {
       "type": "BARS",
       "transform": "-2,2.5,0,0.1,1"
     },
-    "fecf35bb-5c38-4c3b-9794-0c68e5f1ba8c": {
+    "d616b5c2-fc56-444f-b200-ea2444f5f100": {
       "type": "LASER_POINTER",
-      "transform": "-7,-1,0,1,1"
+      "transform": "-5.63,-2.14,0,1,1"
     },
-    "66ba9812-0105-4be1-8af0-03af69736b48": {
+    "4be94431-bd96-452a-ac71-e0ac46b74182": {
       "type": "BARS",
       "transform": "-2,-2.5,0,0.1,1"
     },
-    "c65e136f-74ca-447e-bc45-e12e9bbd8284": {
+    "e342dde2-5cd6-49c1-ba4c-a350d88f00f3": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
@@ -35,20 +43,16 @@
     "player": {
       "Inventory": "",
       "type": "PLAYER",
-      "transform": "-6.76,-0.05,0,1,1"
+      "transform": "-6.84,-0.28,0,1,1"
     },
-    "a7965fe8-1af5-45ef-b6ce-7c52e7e594ce": {
+    "9f0dd135-2d48-4e31-86f7-3f0cbc90c215": {
       "Level": "level2",
       "type": "EXIT",
       "transform": "8.42,0.04,0,1,2.687501"
     },
-    "a33013c4-674e-45dc-88e3-1e9d2f9d7710": {
+    "894058d7-b343-43aa-939a-e9aaf856d7a2": {
       "type": "WALL",
       "transform": "8,-2.5,0,0.1,1"
-    },
-    "2": {
-      "type": "CAT_WHISTLE",
-      "transform": "-7,-1.5,0,1,1"
     },
     "camera": {
       "size": "7.89",
@@ -56,15 +60,15 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "6263bb36-cb22-45b9-a664-3ae3c05bbd94": {
+    "1a45b7dc-e219-4628-9800-ec69b18d1f30": {
       "type": "CAT",
-      "transform": "-5.5,0,0,1,1"
+      "transform": "-6.79,0.84,0,1,1"
     },
-    "956d026a-8a1d-4b9f-a72c-966c7c646ea1": {
+    "0dc55187-b08d-4ee0-a7fc-7b04eaefb6cd": {
       "type": "WALL",
       "transform": "8,2.5,0,0.1,1"
     },
-    "5bbfae39-a17e-40d9-af1f-7c6c9125779c": {
+    "9e8499b7-8bc0-4c65-86f0-a70f8ff541d6": {
       "type": "WALL",
       "transform": "0,-3.75,90,0.1,6.3"
     }

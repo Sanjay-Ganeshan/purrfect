@@ -88,6 +88,7 @@ public class LaserPointer : InventoryItem, IInteractable, IPersistantObject
     public bool Interact(Player p)
     {
         p.Bag.AddToInventory(this);
+		God.ShowText (HintsList.ON_LASER_POINTER_PICKUP);
         return true;
     }
 

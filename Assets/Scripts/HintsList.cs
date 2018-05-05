@@ -7,10 +7,13 @@ public static class HintsList
 {
 	public const int HINTS_PER_LEVEL = 3;
 	public const string NO_MORE_HINTS = "Maybe I should think a little harder...";
-	public static string[,] ALL_HINTS = new string[8,3] { // for some reason c# won't let me make this const
+	public static string[,] ALL_HINTS = new string[9,3] { // for some reason c# won't let me make this const
+		{	"I wonder what this whistle does?",
+			"Come here, kitty!",
+			"Can I bring the cat with me\nto the next room?"},
 		{	"I can’t get through the bars…\nbut I wonder if my cat can?",
-		 	"How can I make my cat grab the key?",
-			"I wonder if this whistle does anything…"},
+		 	"I wonder what this laser pointer does?",
+			"How can I make my cat grab the key?"},
 		{	"I guess my cat only chases\nthe endpoint of the laser?",
 			"Huh, if there’s a wall in the way,\nmy cat can’t see where the laser ends…",
 			"What if I move my cat out of the cell first\nso that it’ll be able to see my laser\nwhen I shine it on the mirror?"},
@@ -34,4 +37,6 @@ public static class HintsList
 			"How can I get my cat to distract\nthat guard next to the second key?\nThere’s so many mirrors..."}
 	};
 	public const string HINT_TO_BRING_CAT = "Wait! I should bring my cat, too!";
+	public const string ON_WHISTLE_PICKUP = "Hey, I wonder if the cat listens to this whistle!";
+	public const string ON_LASER_POINTER_PICKUP = "Hehe, I hope this cat likes laser pointers!";
 }

@@ -62,4 +62,9 @@ public class HintManager : MonoBehaviour {
 		DialogueBox.gameObject.SetActive (true);
 		DialoguePortrait.gameObject.SetActive (true);
 	}
+
+	public void CloseText() {
+		DialogueBox.gameObject.SetActive (false);
+		DialoguePortrait.gameObject.SetActive (false);
+	}
 }

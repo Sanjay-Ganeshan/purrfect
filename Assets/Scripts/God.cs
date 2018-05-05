@@ -102,6 +102,11 @@ public class God: MonoBehaviour
 		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().ShowText (text);
 	}
 
+	public static void CloseText()
+	{
+		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().CloseText ();
+	}
+
     public static bool IsPaused()
     {
         FindGod();

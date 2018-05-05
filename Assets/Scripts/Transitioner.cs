@@ -46,6 +46,7 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
                 God.GetStats().SendData();
 
 				God.GetSavior().LoadLevel(LevelToLoad, true);
+				God.CloseText ();
 				God.IncrementHintLevel();
 			}
 			else 

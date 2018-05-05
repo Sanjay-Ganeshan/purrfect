@@ -1,36 +1,40 @@
 {
   "Contents": {
-    "d4811f5f-33f9-427f-8ed4-ff9db293f796": {
+    "4b100db1-dc70-4b6b-b783-e74099aa8da0": {
+      "type": "ENTRANCE",
+      "transform": "-8.074194,0.13,0,0.1,1.2625"
+    },
+    "c2594ff2-ea6d-4b8a-aa6f-2d62f614bcc1": {
       "type": "WINDOW",
       "transform": "0,0,0,0.1,1"
     },
-    "5fb69c22-c510-4a11-9394-4e9b1b518d88": {
+    "6fbd8e4f-3d73-476b-9176-d9f255e35ca7": {
       "type": "WALL",
       "transform": "-1.5,6,90,0.1,5.1"
     },
-    "4f956709-1282-413e-a2e0-51a8d3cc5077": {
+    "f0969b1b-5487-421f-9dbe-3f7db9bf5168": {
       "type": "WALL",
       "transform": "0,-6,90,0.1,6.3"
     },
-    "199e34bf-a3d6-47d8-814c-b39325cc885a": {
+    "8332e541-6902-497b-9fe1-9f2a6c06b15f": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "5,-4.5,0,1,1.2"
     },
-    "0b32412d-dacc-4cea-bef2-846305ca5a07": {
+    "32b5f3c3-307c-48a6-ab09-811236377c5e": {
       "type": "MIRROR",
       "transform": "6.5,6,90,0.1,1.2"
     },
-    "a8b441ce-ea6d-452f-8932-cb3a5ec61ec6": {
+    "00b4aa81-250a-4b72-bf9a-8a84d55478b3": {
       "type": "MIRROR",
       "transform": "8,1.5,0,0.1,3.5"
     },
-    "3f7658a2-91d5-4d86-a319-08a9bac1c375": {
+    "e247c43b-914b-4be0-8b5d-22f3df1d018e": {
       "type": "CAT",
       "transform": "-6.9,-0.5,0,1,1"
     },
-    "17806a3a-08e3-444f-b79d-e5686148a830": {
+    "4746a21c-013b-4d91-879b-d17bd4de2b8e": {
       "Level": "level5",
       "type": "EXIT",
       "transform": "8.55,-4.6,0,1,2.712498"
@@ -41,15 +45,15 @@
       "type": "CAMERA",
       "transform": "0.06,0.24,0,1,1"
     },
-    "fab04f74-4c45-46ea-9c05-082c9c329a1e": {
+    "7e33e7c9-529a-4c8c-9f1d-2972901daf81": {
       "type": "MIRROR",
       "transform": "6.5,-3,90,0.1,1.2"
     },
-    "5ec828de-7ebc-42f6-a192-1fec3529db95": {
+    "d6fdcb55-b07e-4270-94a3-ac7ffc91fad8": {
       "type": "WALL",
       "transform": "-8,-3.75,0,0.1,1.75"
     },
-    "b611979d-6280-4202-9716-948a8e892f75": {
+    "a755e89a-bf47-4d1d-b95a-1aa21b3a9fbf": {
       "type": "WALL",
       "transform": "-8,3.75,0,0.1,1.75"
     },
@@ -59,11 +63,11 @@
       "type": "KEY",
       "transform": "7,5,0,1,1"
     },
-    "6ecfb1cf-7708-46ea-a1ac-581ab18807ae": {
+    "42d04a0d-0e10-4d1d-8ffc-32bcac21160f": {
       "type": "BARS",
       "transform": "-5,1.5,0,0.1,3.5"
     },
-    "0828d8fa-6612-43b9-8afe-e350f33c77d6": {
+    "47f6c068-6958-41b0-9324-02229f131e0f": {
       "type": "WALL",
       "transform": "0.1,-3,90,0.1,4"
     },

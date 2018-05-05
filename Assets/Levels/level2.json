@@ -1,9 +1,8 @@
 {
   "Contents": {
-    "2ecf8dfd-dbf7-4b10-b863-565ac487540e": {
-      "Level": "level3",
-      "type": "EXIT",
-      "transform": "5.582253,6.923198,0,2.999996,1"
+    "accb7ff8-4eee-46e0-8e09-8b2230c5ce9b": {
+      "type": "ENTRANCE",
+      "transform": "-6.002054,-6.73,90,0.1,1"
     },
     "1777": {
       "Combo": "777",
@@ -11,37 +10,42 @@
       "type": "KEY",
       "transform": "3,5.5,0,1,1"
     },
-    "cc227eec-6473-456e-9d3e-1740bea69035": {
+    "81a77f1d-3184-4815-9649-492549a8516a": {
       "type": "WALL",
       "transform": "-4.6,-2.8,0,0.1,1"
     },
-    "83452dc0-9e2b-4fa9-ab6c-a8576ae6b920": {
+    "06b8f18d-3322-4aa8-aef9-8020eca2c19b": {
       "type": "WALL",
       "transform": "-7,0,0,0.1,5"
     },
-    "7bf5a9c2-343d-4e43-8bb0-e3ed2ea74272": {
+    "23176eea-4a18-49a5-9af3-bd270197a677": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "-5.8,-4,90,1,1"
     },
-    "953df992-56be-4b26-8c48-9d330b42ee82": {
+    "96603690-b48e-43c3-aac2-8f6a8e57ae92": {
       "type": "WALL",
       "transform": "-1.1,6.5,90,0.1,4.6"
     },
-    "03bec61c-5ea9-406e-b629-9644e6b132d5": {
+    "6cd765c2-c1a6-4e74-a4ce-19b61b7ad4c2": {
+      "Level": "level3",
+      "type": "EXIT",
+      "transform": "5.582253,6.923198,0,2.999996,1"
+    },
+    "6987b3d8-c24c-4ef1-9a17-fc10097ae713": {
       "type": "WALL",
       "transform": "-2.1,-2.8,0,0.1,1"
     },
-    "3d5f03ac-5995-4d5b-b2c4-6e74b40f400c": {
+    "0305594a-e85d-42d9-8bf3-8e169ab9bcdc": {
       "type": "WALL",
       "transform": "-3.35,-4.05,90,0.1,1"
     },
-    "c222b086-2cea-47f6-bc0e-0e79f77fff4d": {
+    "73d007b4-090e-4cd3-a4a0-07fba05a5ea9": {
       "type": "MIRROR",
       "transform": "6,-5.4,320,0.1,1"
     },
-    "b2722fb3-9b42-4e5f-901b-a50640642a9b": {
+    "2d449fa4-a947-4fcd-99a6-630b92f678aa": {
       "type": "WINDOW",
       "transform": "7,0,0,0.1,5"
     },
@@ -51,7 +55,7 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "9d7fdfd0-14ba-43a5-9941-073ec4c8d745": {
+    "f6edd097-f6a3-435d-b7fd-ee9bb24a1cf8": {
       "type": "WALL",
       "transform": "-3.35,-1.55,90,0.1,1"
     },
@@ -60,15 +64,15 @@
       "type": "PLAYER",
       "transform": "-5.97,-5.95,0,1,1"
     },
-    "afe7df02-1173-4a48-b091-29e64229f95c": {
+    "4c6d53d1-757a-4e00-9692-addc96973006": {
       "type": "BARS",
       "transform": "-4.6,-5.2,0,0.1,1"
     },
-    "88ac1067-e474-4e23-8474-f762ddf8c991": {
+    "3f7b76f5-54b8-4448-8edd-a85d571e0908": {
       "type": "WINDOW",
       "transform": "1.1,-6.5,90,0.1,4.6"
     },
-    "72aee8d4-8ad8-4e4b-a8c4-47f8a8377a66": {
+    "9c44dec2-ea2d-4366-9bce-c8f4d401ca3a": {
       "type": "CAT",
       "transform": "-5.7,-4.8,0,1,1"
     }

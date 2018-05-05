@@ -188,6 +188,8 @@ MonoBehaviour:
     Template: {fileID: 1880136466028504, guid: ba387842950d149478aeed0b610e99e5, type: 2}
   - PType: 11
     Template: {fileID: 1707942524446578, guid: 65da000580a80ac468dd05d034f67c8c, type: 2}
+  - PType: 12
+    Template: {fileID: 1988626028517926, guid: 91bd43c8135674482968e6b8fc300189, type: 2}
   activated: 1
   SaveMode: 0
 --- !u!114 &114339709708565852

@@ -16,7 +16,7 @@ public class Cat : MonoBehaviour, IPersistantObject {
     public const float DISTANCE_AT_TARGET = 0.1f;
     public string id;
 
-    private const float MaxVisionRange = 100f;
+	private const float MaxVisionRange = GameConstants.CAT_SIGHT_RANGE;
 
     public float catSpeed = 10.0f;
     private Rigidbody2D rb;

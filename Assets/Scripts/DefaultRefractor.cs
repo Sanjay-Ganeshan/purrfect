@@ -18,7 +18,7 @@ public class DefaultRefractor : MonoBehaviour, ILightObject
         return this;
     }
 
-    public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Collider2D collider, Vector2 normal, float refractiveIndex = 1)
+	public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 direction, Collider2D collider, Vector2 normal, float refractiveIndex = 1)
     {
         List<Vector2> laterPoints = new List<Vector2>();
         //laterPoints.Add(destination);

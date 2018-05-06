@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DefaultAbsorber : MonoBehaviour, ILightObject
 {
-    public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Collider2D collider, Vector2 normal, float refractiveIndex)
+	public List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 direction, Collider2D collider, Vector2 normal, float refractiveIndex)
     {
         List<Vector2> hits = new List<Vector2>();
         hits.Add(destination);

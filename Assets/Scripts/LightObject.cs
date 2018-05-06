@@ -29,7 +29,7 @@ public static class LightSim {
             Vector2 hitNormal = hit.normal;
             if(hitObject != null)
             {
-                List<Vector2> nextHits = hitObject.OnLightHit(type, intensity - (hitDistance * DISTANCE_PER_INTENSITY), origin, hitPoint, hit.collider, hitNormal, refractiveIndex);
+                List<Vector2> nextHits = hitObject.OnLightHit(type, intensity - (hitDistance * DISTANCE_PER_INTENSITY), origin, hitPoint, direction, hit.collider, hitNormal, refractiveIndex);
                 points.AddRange(nextHits);
             }
         }
@@ -76,7 +76,7 @@ public interface ILightObject
 {
     LightObjectType GetLightObjectType();
 
-    List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Collider2D collider, Vector2 normal, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX);
+    List<Vector2> OnLightHit(LightType type, float intensity, Vector2 origin, Vector2 destination, Vector2 direction, Collider2D collider, Vector2 normal, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX);
 
     MonoBehaviour GetMono();
 }

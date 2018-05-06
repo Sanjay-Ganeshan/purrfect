@@ -1,21 +1,33 @@
 {
   "Contents": {
-    "03821422-548e-4d02-9e7c-428e610c4c1c": {
-      "type": "ENTRANCE",
-      "transform": "-9.557464,-3.824344,0,0.1,1"
+    "18f0c84b-9df4-44e8-9460-66f4dfc3ae62": {
+      "type": "GUARD",
+      "transform": "5.541642,-4.349547,90,0.3,0.3"
     },
-    "80fabf97-7a42-4a08-92e7-3ec10c44de9f": {
+    "a63bd725-55f0-4331-b154-08d4aba88b73": {
+      "type": "GUARD",
+      "transform": "-8.96,4.6,0,0.3,0.3"
+    },
+    "df26f6d5-02d6-4853-b658-ab664a8b8945": {
+      "type": "GUARD",
+      "transform": "-3.31,-4.35,90,0.3,0.3"
+    },
+    "364cc73e-fd63-4bce-a9a9-31487b0038a5": {
       "Level": "level6",
       "type": "EXIT",
       "transform": "8.76,5.88,0,3.275004,1"
     },
-    "7821539c-8173-4756-a17d-36cb285e8589": {
+    "9b377be2-97fa-4a0c-9db2-b1df71b32c48": {
       "type": "WALL",
       "transform": "0.5,-5,90,0.1,7.8"
     },
-    "99bc1219-0a30-4319-b184-b297365c626e": {
+    "5f9560e9-76c7-490e-9513-350521745ed1": {
       "type": "CAT",
       "transform": "-7,-3.6,0,1,1"
+    },
+    "ca68e1eb-ee8d-48e9-9b2f-204bc9681dcc": {
+      "type": "ENTRANCE",
+      "transform": "-9.557464,-3.824344,0,0.1,1"
     },
     "player": {
       "Inventory": "",
@@ -28,19 +40,19 @@
       "type": "CAMERA",
       "transform": "0.6901948,0.1446812,0,1,1"
     },
-    "85beb82d-f6f8-4178-9e13-2d8853ec291c": {
+    "221bc9ba-06d0-4a37-8278-d62e798d693f": {
       "type": "WALL",
       "transform": "0.5,0,0,0.1,2"
     },
-    "c52f6abc-c128-47fa-a154-30e30d24f9b2": {
+    "59ea9790-a669-48a8-b990-a703bd68ff5f": {
       "type": "WALL",
       "transform": "-9.5,1.5,0,0.1,3.1"
     },
-    "e0baab65-a0ea-4859-b555-ee207714e1a4": {
+    "c7351a51-0929-4c8a-a0f1-a1ce10b068aa": {
       "type": "MIRROR",
       "transform": "-0.7,5.5,90,0.1,6.8"
     },
-    "e14a70c6-6cf2-471f-852d-23ca3db9fbc2": {
+    "18be03c1-ce1a-4596-aa99-11e6044a8a53": {
       "type": "WALL",
       "transform": "10.5,0.2,0,0.1,4.1"
     }

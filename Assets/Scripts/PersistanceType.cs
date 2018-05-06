@@ -17,6 +17,7 @@ public enum PersistanceType
     LASER_POINTER,
     KEY,
     CAMERA,
-	ENTRANCE
+	ENTRANCE,
+	GUARD
 }
 

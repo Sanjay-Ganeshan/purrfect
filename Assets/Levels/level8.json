@@ -1,6 +1,22 @@
 {
   "Contents": {
-    "4f15e4ef-b91d-4ab1-be01-744475bcb7f6": {
+    "983291b5-e17d-4226-9f1c-77528d2e6282": {
+      "type": "GUARD",
+      "transform": "11.66858,3.557872,270,0.3,0.3"
+    },
+    "8c9e0754-2f99-47bc-b0cd-53d0d1e20cfd": {
+      "type": "GUARD",
+      "transform": "6.903185,-5.66,90,0.3,0.3"
+    },
+    "e867de3a-b821-4f1f-8e0f-fbf94d198561": {
+      "type": "GUARD",
+      "transform": "1.666483,-5.658722,90,0.3,0.3"
+    },
+    "fe7e8e26-9d83-4120-bfb4-45eb6d591566": {
+      "type": "GUARD",
+      "transform": "-6.76,-5.56,90,0.3,0.3"
+    },
+    "7ad7d679-eec9-41cc-8682-7063f1a95bce": {
       "type": "CAT",
       "transform": "-1.879706,-3.541097,0,1,1"
     },
@@ -10,66 +26,66 @@
       "type": "KEY",
       "transform": "-12.06795,-5.393505,0,1,1"
     },
-    "0f699a0c-491f-4dc0-8d36-34d8eb307956": {
+    "b303742d-9867-47cf-815f-cdab14568509": {
       "type": "WALL",
       "transform": "4.65,6.9,90,0.1,4.2375"
     },
-    "9bde13c1-c34b-48ae-afb7-f9ca553da952": {
+    "8b6a2de3-d657-4757-92f1-bec50b167062": {
       "Level": "level9",
       "type": "EXIT",
       "transform": "13.32,5.489222,0,1,2.612502"
     },
-    "6db09f4a-aba8-4fd9-9ec3-9400f2ada868": {
+    "c97237e3-c1ba-43e8-91e2-907c2ca03e0f": {
       "type": "WINDOW",
       "transform": "-6.82,9.07,90,0.1,4.810621"
     },
-    "d4701b3b-4a97-42e3-aca2-6fdb9aef0ea0": {
+    "f65be857-9ad1-4777-8c5a-094f8848413a": {
       "type": "BARS",
       "transform": "-3.32,6.9,90,0.1,2.012499"
     },
-    "a0e1db95-21fb-4da6-833c-741f95250215": {
+    "47828b9b-4f7e-471f-8aff-c65e146a173f": {
       "type": "MIRROR",
       "transform": "10.11,0.83,0,0.1,2.7"
     },
-    "54e923f5-f5da-49ce-b0f3-e22b37f4960c": {
+    "6f59f4ff-06b7-4edb-958d-41467a42d2a5": {
       "type": "WALL",
       "transform": "9.821809,0.83,0,0.1,2.7"
     },
-    "3c2c0196-b679-4f1a-81b7-c4ded41fa0e9": {
+    "ab11a20c-2f63-47c8-8cd4-b01e36ae65ae": {
       "type": "ENTRANCE",
       "transform": "-1.84,-6.34,90,0.1,1"
     },
-    "183c5918-3d7b-4759-b88e-ab6665b000df": {
+    "297115c1-023c-42ce-ae38-715b9c0dd9f0": {
       "type": "WALL",
       "transform": "5.89,9.07,90,0.1,5.173435"
     },
-    "087f5bcf-8f8a-42d9-b1c1-e7d2a5f9ccf5": {
+    "cba4825f-508a-4606-98bd-aeafcd2f5e42": {
       "Combo": "778",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "-3.22,5.57,0,1,1"
     },
-    "9863d300-51de-400e-b119-24f431fc03ea": {
+    "4e130a4e-e4dd-4a47-938e-7cc782806f4d": {
       "type": "MIRROR",
       "transform": "3.524753,0.83,0,0.1,2.7"
     },
-    "28904bdf-5db8-461a-890c-0efb2e409a51": {
+    "0c88529e-8f77-4e74-8306-9a69290c3ebe": {
       "type": "WINDOW",
       "transform": "-8.09,-6.29,90,0.1,3.782626"
     },
-    "f2d20b93-8d46-4ac4-af1d-bf969356cbc0": {
+    "0eb858a5-52dc-4868-9674-5e4f2ca5ad9d": {
       "type": "WALL",
       "transform": "12.58214,-1.06,0,0.1,4.136347"
     },
-    "695a5f29-396d-44f4-917b-c3316705bc05": {
+    "c805b18b-32f8-40e4-aa64-e529fbc6f0bf": {
       "type": "MIRROR",
       "transform": "-9.39,6.9,90,0.1,2.750836"
     },
-    "be653a31-3176-419b-a790-864d60cb54c7": {
+    "61ea18c8-c95b-4409-bdbd-5189fdaf1897": {
       "type": "WALL",
       "transform": "5.953777,-6.29,90,0.1,5.1875"
     },
-    "f36d8fb4-6887-4ff5-b79a-38125c286886": {
+    "9641a51d-e573-4048-a108-8d7bf5213fd0": {
       "type": "WALL",
       "transform": "-3.227114,-0.94,0,0.1,4.114686"
     },
@@ -85,17 +101,17 @@
       "type": "KEY",
       "transform": "11.55025,-5.239138,0,1,1"
     },
-    "a46528be-9516-4fc9-b5c3-1e75fe42d54e": {
+    "4d027df9-95da-4cfe-8bf1-8b9de0be6c70": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "12.57937,5.52,0,1,1"
     },
-    "9de927af-d413-44f3-92ce-f4327107a766": {
+    "6d35beac-c0ae-4292-92b3-5793beb102e1": {
       "type": "WALL",
       "transform": "12.58,7.99,0,0.1,0.9499999"
     },
-    "3ab502ba-57c0-4a66-9b12-ff61031805df": {
+    "be21e1f3-b7c8-4a2e-946c-00796d0ff655": {
       "type": "WALL",
       "transform": "3.236563,0.83,0,0.1,2.7"
     },
@@ -104,11 +120,11 @@
       "type": "PLAYER",
       "transform": "-1.83,-5.08,0,1,1"
     },
-    "78818700-f6ac-4143-bbd1-a87ae141315f": {
+    "ca8065a0-f5e5-4682-ad97-13d7554b7a10": {
       "type": "BARS",
       "transform": "11.34,6.904429,90,0.1,1"
     },
-    "30340f27-e048-4853-a192-a271840e221d": {
+    "595dff0f-6e02-4452-862c-80685c23be4e": {
       "type": "WINDOW",
       "transform": "-12.89124,1.45,0,0.1,5.977414"
     }

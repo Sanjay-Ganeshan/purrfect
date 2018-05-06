@@ -6,5 +6,6 @@ using System.Text;
 public enum LightType
 {
     KITTY_LASER,
-    KITTY_VISION
+    KITTY_VISION,
+	GUARD_VISION
 }

@@ -10,5 +10,6 @@ public enum LightObjectType
     REFRACTOR,
     ABSORBER,
     TRANSPARENT,
-    SPLITTER
+    SPLITTER,
+	GUARD_ONLY_REFRACTOR
 }

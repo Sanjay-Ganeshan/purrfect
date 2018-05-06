@@ -46,8 +46,7 @@ public class God: MonoBehaviour
     {
         GameObject.Destroy(gameObject);
     }
-
-
+		
     private Cat[] GetCats_(bool forceRefresh = false)
     {
 		if (forceRefresh || !this.knownCats.IsPresent())
@@ -82,6 +81,11 @@ public class God: MonoBehaviour
         FindGod();
         return TheOnlyGod.GetCats_(forceRefresh);
     }
+
+	public static Player GetPlayer() {
+		GameObject[] playersGO = GameObject.FindGameObjectsWithTag(GameConstants.LBL_PLAYER);
+		return playersGO [0].GetComponent<Player>();
+	}
 
     private static void FindGod()
     {

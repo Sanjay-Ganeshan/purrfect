@@ -135,6 +135,7 @@ public class Cat : MonoBehaviour, IPersistantObject {
 
             List<Vector2> emissionResults = this.transform.EmitLightTowards(LightType.KITTY_VISION, range, position);
             Vector2 endpoint = emissionResults[emissionResults.Count - 1];
+			currentTarget = Optional<Vector3>.Of(endpoint);
 
             Vector3[] pos = new Vector3[emissionResults.Count];
             for(int i = 0; i < emissionResults.Count; i++)

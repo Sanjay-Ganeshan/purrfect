@@ -39,4 +39,5 @@ public static class HintsList
 	public const string HINT_TO_BRING_CAT = "Wait! I should bring my cat, too!";
 	public const string ON_WHISTLE_PICKUP = "Hey, I wonder if the cat listens to this whistle!\nCan I get it to come with me to the next room?";
 	public const string ON_LASER_POINTER_PICKUP = "Hehe, I hope this cat likes laser pointers!";
+	public const string GUARD_SEES_PLAYER = "Yikes, the guard saw me! I'll try a different way.";
 }

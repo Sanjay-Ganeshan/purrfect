@@ -72,11 +72,7 @@ public class Cat : MonoBehaviour, IPersistantObject {
     {
         if(currentTarget.IsPresent())
         {
-			// do this check to avoid letting the cat see infinitely far through windows
-			if (VectorToTarget ().magnitude < GameConstants.CAT_SIGHT_RANGE)
-			{
-				rb.velocity = catSpeed * VectorToTarget ().normalized;
-			}
+			rb.velocity = catSpeed * VectorToTarget ().normalized;
         } else {
             rb.velocity = Vector2.zero;
         }
@@ -135,7 +131,7 @@ public class Cat : MonoBehaviour, IPersistantObject {
 
             List<Vector2> emissionResults = this.transform.EmitLightTowards(LightType.KITTY_VISION, range, position);
             Vector2 endpoint = emissionResults[emissionResults.Count - 1];
-			currentTarget = Optional<Vector3>.Of(endpoint);
+//			currentTarget = Optional<Vector3>.Of(endpoint);
 
             Vector3[] pos = new Vector3[emissionResults.Count];
             for(int i = 0; i < emissionResults.Count; i++)
@@ -148,6 +144,11 @@ public class Cat : MonoBehaviour, IPersistantObject {
             {
                 shouldUpdate = false;
             }
+
+			// do this check to avoid letting the cat see infinitely far through windows
+			if ((position - this.transform.position).ToVector2().magnitude > GameConstants.CAT_SIGHT_RANGE) {
+				shouldUpdate = false;
+			}
 
             // Don't update if already at this target.
             if (Mathf.Approximately(DISTANCE_AT_TARGET, (position - this.transform.position).ToVector2().magnitude)

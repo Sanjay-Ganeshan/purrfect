@@ -32,12 +32,14 @@ public class Statistics {
 
     public void incrementStat(string key, int count)
     {
-        data[key] = (int)data[key] + count;
+        if(data.ContainsKey(key))
+            data[key] = (int)data[key] + count;
     }
 
     public void incrementStat(string key, float count)
     {
-        data[key] = (float)data[key] + count;
+        if(data.ContainsKey(key))
+            data[key] = (float)data[key] + count;
     }
     
     public void cleared()

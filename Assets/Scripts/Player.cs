@@ -23,7 +23,6 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
     private bool initialized;
 
     private string inventoryItemsToAdd;
-    private string currentLevel;
 
     // Use this for initialization
 	void Start () {
@@ -65,7 +64,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
     void HandleMiscInputs() {
 
         if(Input.GetButtonDown(GameConstants.BTN_RESET))
-            God.GetSavior().ReloadCurrentLevel(God.GetCurrentLevel(), true);
+            God.GetSavior().ReloadCurrentLevel();
     }
 
     void HandleMotion()
@@ -196,9 +195,6 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         {
             Debug.Log("Using compatibility mode to parse player...no inventory found.");
         }
-
-        if (saveData.ContainsKey("Level"))
-            this.currentLevel = saveData["Level"];
 
         DoInitIfNeeded();
     }

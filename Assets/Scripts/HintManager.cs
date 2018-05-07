@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HintManager : MonoBehaviour {
 
-	public Button HintsButton, DialogueBox;
+	public Button HintsButton, DialogueBox, ResetButton;
 	public Image DialoguePortrait;
 	private bool canGetHint = true;
 	private int level;
@@ -14,7 +14,8 @@ public class HintManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		HintsButton.onClick.AddListener(HintsButtonOnClick);
-		DialogueBox.onClick.AddListener (DialogueBoxOnClick);
+		DialogueBox.onClick.AddListener(DialogueBoxOnClick);
+		ResetButton.onClick.AddListener(ResetButtonOnClick);
 	}
 	
 	// Update is called once per frame
@@ -50,6 +51,10 @@ public class HintManager : MonoBehaviour {
 		DialogueBox.gameObject.SetActive (false);
 		DialoguePortrait.gameObject.SetActive (false);
 		canGetHint = true;
+	}
+
+	private void ResetButtonOnClick() {
+    God.GetSavior().ReloadCurrentLevel();
 	}
 
 	public void MoveToNextLevel () { // may need modification if we branch in the future

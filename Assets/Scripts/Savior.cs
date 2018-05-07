@@ -203,10 +203,10 @@ public class Savior: MonoBehaviour
         God.IncrementHintLevel();
     }
 
-    public void ReloadCurrentLevel(string currentLevel, bool keepCarried) {
+    public void ReloadCurrentLevel() {
 
         // Stats for reset here
-        LoadLevel(currentLevel, keepCarried);
+        LoadLevel(God.GetCurrentLevel(), true);
         // Handle if we want story to reset as well
         // Should hint level remain?
     }

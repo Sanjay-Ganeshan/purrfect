@@ -18,6 +18,7 @@ public enum PersistanceType
     KEY,
     CAMERA,
 	ENTRANCE,
-	GUARD
+	GUARD,
+	BUTTON
 }
 

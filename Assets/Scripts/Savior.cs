@@ -183,7 +183,10 @@ public class Savior: MonoBehaviour
         return carrying;
     }
 
-    
+	public Dictionary<PersistanceType, GameObject> GetTemplates()
+	{
+		return _Templates;
+	}
 
     IPersistantObject[] GetMapPersistantObjects()
     {

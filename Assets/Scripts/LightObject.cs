@@ -18,7 +18,7 @@ public static class LightSim {
         // float dist = intensity * DISTANCE_PER_INTENSITY;
         List<Vector2> points = new List<Vector2>();
         points.Add(origin);
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, intensity, GetMask());
+		RaycastHit2D hit = Physics2D.Raycast(origin + direction * 0.0001f, direction, intensity, GetMask());
         Vector2 hitPoint;
         if (hit.collider != null)
         {

@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e9d7d657c371149a9496ecbfc664a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: level1
+  LevelName: level0
   Templates:
   - PType: 0
     Template: {fileID: 1748401221617152, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
@@ -194,6 +194,8 @@ MonoBehaviour:
     Template: {fileID: 1731839853956128, guid: 5b53833491f594c908158effd1b4fb01, type: 2}
   - PType: 14
     Template: {fileID: 1818084297988446, guid: 6cdf826bd579d43258751623642767df, type: 2}
+  - PType: 15
+    Template: {fileID: 1172484010644526, guid: 7f77aaa06a840e74bb4be3c43355558a, type: 2}
   activated: 1
   SaveMode: 0
 --- !u!114 &114339709708565852

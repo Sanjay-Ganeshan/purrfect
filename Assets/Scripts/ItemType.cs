@@ -7,5 +7,6 @@ public enum ItemType
 {
     LASER_POINTER,
     CAT_WHISTLE,
-    KEY
+    KEY,
+    TOY_BALL
 }

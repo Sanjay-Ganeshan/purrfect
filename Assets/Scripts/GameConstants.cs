@@ -17,6 +17,8 @@ public static class GameConstants
     public const string ZOC_LAYER = "Interactable";
     public const int LASER_PRIORITY = 10;
     public const int WHISTLE_PRIORITY = 5;
+    public const int BALL_PRIORITY = 15;
+    public const float BALL_SPEED = 2f;
     public const float DEFAULT_REFRACTIVE_INDEX = 1.0f;
     public const string PLAYER_ID = "player";
     public const string CAMERA_ID = "camera";

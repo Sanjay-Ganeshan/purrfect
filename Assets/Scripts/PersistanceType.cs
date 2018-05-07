@@ -19,6 +19,7 @@ public enum PersistanceType
     CAMERA,
 	ENTRANCE,
 	GUARD,
-	BUTTON
+	BUTTON,
+    TOY_BALL,
 }
 

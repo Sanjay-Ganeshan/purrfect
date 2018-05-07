@@ -32,24 +32,20 @@ public class Guard : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		List<Vector2> emissionResults = this.transform.EmitLight (LightType.GUARD_VISION, GameConstants.GUARD_SIGHT_RANGE, currentDirection);
-		if (previousEmissionResults.Count != emissionResults.Count) {
-			Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
-			if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
-				//TODO make player reset level
-				Debug.Log ("guard sees player");
-			}
+		Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
+		if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
+			God.ShowText (HintsList.GUARD_SEES_PLAYER);
+			God.GetSavior ().ReloadCurrentLevel ();
 		}
 		if (!moving) {
-			if (previousEmissionResults.Count != emissionResults.Count) {
-				Optional<Cat> cat = God.GetCat (true);
-				if (cat.Get () != null) {
-					Bounds catBounds = God.GetCat ().Get ().GetComponentInChildren<BoxCollider2D> ().bounds;
-					Optional<Vector2> catLoc = SeeObjectInBounds (catBounds, emissionResults);
-					if (catLoc.IsPresent ()) {
-						currentTarget = catLoc;
-						moving = true;
+			Optional<Cat> cat = God.GetCat (true);
+			if (cat.Get () != null) {
+				Bounds catBounds = God.GetCat ().Get ().GetComponentInChildren<BoxCollider2D> ().bounds;
+				Optional<Vector2> catLoc = SeeObjectInBounds (catBounds, emissionResults);
+				if (catLoc.IsPresent ()) {
+					currentTarget = catLoc;
+					moving = true;
 //						Debug.Log ("guard sees cat");
-					}
 				}
 			}
 		} else {
@@ -83,11 +79,9 @@ public class Guard : MonoBehaviour {
 	}
 
 	private Optional<Vector2> SeeObjectInBounds(Bounds bounds, List<Vector2> emissionResults) {
-//		Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D>().bounds;
-//		Vector2 playerPosition = God.GetPlayer ().transform.position;
 		foreach (Vector2 vec in emissionResults) 
 		{
-			if (bounds.Contains (vec)) {
+			if (bounds.SqrDistance (vec) < DISTANCE_AT_TARGET) {
 				return Optional<Vector2>.Of(vec);
 			}
 		}

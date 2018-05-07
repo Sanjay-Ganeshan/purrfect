@@ -53,8 +53,9 @@ public class HintManager : MonoBehaviour {
 		canGetHint = true;
 	}
 
-	private void ResetButtonOnClick() {
-    God.GetSavior().ReloadCurrentLevel();
+	private void ResetButtonOnClick() 
+	{
+    	God.GetSavior().ReloadCurrentLevel();
 	}
 
 	public void MoveToNextLevel () { // may need modification if we branch in the future

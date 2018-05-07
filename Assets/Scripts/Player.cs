@@ -24,6 +24,8 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
     private string inventoryItemsToAdd;
 
+    public GameObject equipRenderer;
+
     // Use this for initialization
 	void Start () {
         DoInitIfNeeded();   
@@ -65,6 +67,8 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 
         if(Input.GetButtonDown(GameConstants.BTN_RESET))
             God.GetSavior().ReloadCurrentLevel();
+
+        equipRenderer.SetActive(this.currentlyEquipped != null);
     }
 
     void HandleMotion()

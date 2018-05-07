@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ToyBall : InventoryItem, IInteractable
 {
+    private Rigidbody2D rb;
+
     public bool IsOn;
 
     // public AudioSource ballSoumd;
@@ -14,6 +16,7 @@ public class ToyBall : InventoryItem, IInteractable
     {
         IsOn = false;
         // ballSoumd = GetComponent<AudioSource>();
+        this.rb = transform.GetComponent<Rigidbody2D>();
     }
 
     public void Update()
@@ -37,9 +40,10 @@ public class ToyBall : InventoryItem, IInteractable
     {
         this.IsOn = true;
         // ballSoumd.Play();
-        transform.position = God.GetPlayer().transform.position;
         Vector2 direction = location - (Vector2)transform.position;
-        transform.GetComponent<Rigidbody2D>().velocity = direction.normalized * GameConstants.BALL_SPEED;
+
+        this.rb.simulated = true;
+        this.rb.velocity = direction.normalized * GameConstants.BALL_SPEED;
         God.GetPlayer().Bag.Drop(this);
         God.GetPlayer().currentlyEquipped = null;
 
@@ -70,8 +74,9 @@ public class ToyBall : InventoryItem, IInteractable
     public bool Interact(Player p)
     {
         this.IsOn = false;
-        transform.position = God.GetPlayer().transform.position;
-        transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        this.rb.velocity = Vector3.zero;
+        this.rb.simulated = false;
+
         p.Bag.Add(this);
 		// God.ShowText (HintsList.ON_BALL_PICKUP);
         return this;

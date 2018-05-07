@@ -77,6 +77,7 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
         if (this.InventoryRenderer != null)
         {
             this.InventoryRenderer.enabled = true;
+            InventoryRenderer.transform.position = GameObject.Find("EquipSlot").transform.position;
         }
         if (this.WorldRenderer != null)
         {

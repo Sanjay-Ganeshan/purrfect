@@ -18,7 +18,7 @@ public class GuardOnlyRefractor : MonoBehaviour, ILightObject {
 	{
 		List<Vector2> laterPoints = new List<Vector2>();
 		//laterPoints.Add(destination);
-		laterPoints.AddRange(LightSim.EmitLight(type, Mathf.Max(intensity, 0), destination, direction, refractiveIndex));
+		laterPoints.AddRange(LightSim.EmitLight(type, Mathf.Max(intensity*0.9f-0.1f, 0), destination, direction, refractiveIndex));
 
 		//laterPoints.Add(destination);
 		//laterPoints.Add(nextDestination);

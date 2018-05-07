@@ -11,6 +11,7 @@ public static class GameConstants
     public const string AXIS_MOVE_HORIZONTAL = "Horizontal";
     public const string BTN_INTERACT = "Interact";
     public const string BTN_SELECT = "UseItem";
+    public const string BTN_RESET = "ResetLevel";
     public const string LBL_CAT = "Cat";
 	public const string LBL_PLAYER = "Player";
     public const string ZOC_LAYER = "Interactable";

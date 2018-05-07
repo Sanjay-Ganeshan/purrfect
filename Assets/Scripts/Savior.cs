@@ -192,4 +192,22 @@ public class Savior: MonoBehaviour
     {
         return FindObjectsOfType<MonoBehaviour>().OfType<IPersistantObject>().ToArray();
     }
+
+    public void TransitionToNewLevel(string newLevel, bool keepCarried) {
+
+        God.GetStats().cleared();
+        God.GetStats().SendData();
+
+        LoadLevel(newLevel, keepCarried);
+        God.CloseText();
+        God.IncrementHintLevel();
+    }
+
+    public void ReloadCurrentLevel(string currentLevel, bool keepCarried) {
+
+        // Stats for reset here
+        LoadLevel(currentLevel, keepCarried);
+        // Handle if we want story to reset as well
+        // Should hint level remain?
+    }
 }

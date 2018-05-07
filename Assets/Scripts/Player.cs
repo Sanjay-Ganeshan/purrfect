@@ -23,6 +23,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
     private bool initialized;
 
     private string inventoryItemsToAdd;
+    private string currentLevel;
 
     // Use this for initialization
 	void Start () {
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 	// Update is called once per frame
 	void Update () {
         DoInitIfNeeded();
+        HandleMiscInputs();
         HandleShowInventory();
         if (!God.IsPaused())
         {
@@ -59,6 +61,12 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
 			God.GetStats ().incrementStat ("player_movement", rb.velocity.magnitude * Time.deltaTime);
 		}
 	}
+
+    void HandleMiscInputs() {
+
+        if(Input.GetButtonDown(GameConstants.BTN_RESET))
+            God.GetSavior().ReloadCurrentLevel(God.GetCurrentLevel(), true);
+    }
 
     void HandleMotion()
     {
@@ -188,6 +196,10 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         {
             Debug.Log("Using compatibility mode to parse player...no inventory found.");
         }
+
+        if (saveData.ContainsKey("Level"))
+            this.currentLevel = saveData["Level"];
+
         DoInitIfNeeded();
     }
 

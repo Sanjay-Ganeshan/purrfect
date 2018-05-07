@@ -19,7 +19,7 @@ public class Statistics {
     {
         data["level_id"] = id;
         data["level_difficulty"] = 0;
-        data["attempts"] = 0;
+        data["attempts"] = 1;
         data["cleared"] = false;
         data["duration"] = 0f;
         data["hints"] = 0;

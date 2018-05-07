@@ -31,31 +31,40 @@ public class Guard : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		List<Vector2> emissionResults = this.transform.EmitLight (LightType.GUARD_VISION, GameConstants.GUARD_SIGHT_RANGE, currentDirection);
+		if (previousEmissionResults.Count != emissionResults.Count) {
+			Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
+			if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
+				//TODO make player reset level
+				Debug.Log ("guard sees player");
+			}
+		}
 		if (!moving) {
-			List<Vector2> emissionResults = this.transform.EmitLight (LightType.GUARD_VISION, GameConstants.GUARD_SIGHT_RANGE, currentDirection);
 			if (previousEmissionResults.Count != emissionResults.Count) {
-				Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
-				if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
-					//TODO make player reset level
-				}
-				Bounds catBounds = God.GetCat ().Get ().GetComponentInChildren<BoxCollider2D> ().bounds;
-				Optional<Vector2> catLoc = SeeObjectInBounds (catBounds, emissionResults);
-				if (catLoc.IsPresent ()) {
-					currentTarget = catLoc;
-					moving = true;
+				Optional<Cat> cat = God.GetCat (true);
+				if (cat.Get () != null) {
+					Bounds catBounds = God.GetCat ().Get ().GetComponentInChildren<BoxCollider2D> ().bounds;
+					Optional<Vector2> catLoc = SeeObjectInBounds (catBounds, emissionResults);
+					if (catLoc.IsPresent ()) {
+						currentTarget = catLoc;
+						moving = true;
+//						Debug.Log ("guard sees cat");
+					}
 				}
 			}
 		} else {
-			SetVelocity ();
+			rb.velocity = guardSpeed * currentDirection;
 			if (AtTarget ()) {
-				currentDirection *= -1;
 				if (currentTarget.Get () != basePosition) 
 				{
 					currentTarget = Optional<Vector2>.Of (basePosition);
+					currentDirection = -baseDirection;
 				} 
 				else 
 				{
 					moving = false;
+					rb.velocity = Vector2.zero;
+					currentDirection = baseDirection;
 				}
 			}
 		}
@@ -65,6 +74,12 @@ public class Guard : MonoBehaviour {
 //		{
 //			List<Vector2> emissionResults = this.transform.EmitLight (LightType.KITTY_VISION, GameConstants.GUARD_SIGHT_RANGE, baseDirection);
 //		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		currentTarget = Optional<Vector2>.Of (basePosition);
+		currentDirection = -baseDirection;
 	}
 
 	private Optional<Vector2> SeeObjectInBounds(Bounds bounds, List<Vector2> emissionResults) {

@@ -18,7 +18,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
     private Rigidbody2D rb;
     public Vector2 maxSpeed = new Vector2(1,1);
 
-    private Collider2D[] overlappingColliders = new Collider2D[InteractablesToCheck];
+    // private Collider2D[] overlappingColliders = new Collider2D[InteractablesToCheck];
     private Optional<ContactFilter2D> ZoCFilter = Optional<ContactFilter2D>.Empty();
     private bool initialized;
 
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
                 {
                      collidedInteracter = res.transform.parent.GetComponent<IInteractable>();
                 }
-                catch(NullReferenceException e)
+                catch(NullReferenceException)
                 {
                     continue;
                 }

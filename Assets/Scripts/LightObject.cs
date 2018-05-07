@@ -15,7 +15,7 @@ public static class LightSim {
     public static List<Vector2> EmitLight(LightType type, float intensity, Vector2 origin, Vector2 direction, float refractiveIndex = GameConstants.DEFAULT_REFRACTIVE_INDEX)
     {
 
-        float dist = intensity * DISTANCE_PER_INTENSITY;
+        // float dist = intensity * DISTANCE_PER_INTENSITY;
         List<Vector2> points = new List<Vector2>();
         points.Add(origin);
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, intensity, GetMask());

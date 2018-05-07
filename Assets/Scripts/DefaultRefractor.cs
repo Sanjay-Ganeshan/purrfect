@@ -29,10 +29,10 @@ public class DefaultRefractor : MonoBehaviour, ILightObject
         // Amount of incoming vector perpendicular to normal
         Vector2 perpendicular = incomingDirection - projection;
 
-        float signedAngleOfIncidence = Vector2.SignedAngle(projection.normalized, incomingDirection.normalized) * Mathf.Deg2Rad;
-        float angleOfIncidence = Mathf.Abs(signedAngleOfIncidence);
+        // float signedAngleOfIncidence = Vector2.SignedAngle(projection.normalized, incomingDirection.normalized) * Mathf.Deg2Rad;
+        // float angleOfIncidence = Mathf.Abs(signedAngleOfIncidence);
 
-        float angleOfRefraction = Mathf.Asin(refractiveIndex / this.refractiveIndex * Mathf.Sin(angleOfIncidence));
+        // float angleOfRefraction = Mathf.Asin(refractiveIndex / this.refractiveIndex * Mathf.Sin(angleOfIncidence));
         // n1 sin (t1) = n2 sin (t2)
 
         Vector2 nextDirection = projection + refractiveIndex / this.refractiveIndex * perpendicular;

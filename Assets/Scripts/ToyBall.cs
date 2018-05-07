@@ -37,11 +37,12 @@ public class ToyBall : InventoryItem, IInteractable
     {
         this.IsOn = true;
         // ballSoumd.Play();
+        transform.position = God.GetPlayer().transform.position;
         Vector2 direction = location - (Vector2)transform.position;
         transform.GetComponent<Rigidbody2D>().velocity = direction.normalized * GameConstants.BALL_SPEED;
         God.GetPlayer().Bag.Drop(this);
         God.GetPlayer().currentlyEquipped = null;
-        
+
         // God.GetStats().incrementStat("whistle_uses", 1);
         God.GetStats().SendData();
     }
@@ -68,6 +69,9 @@ public class ToyBall : InventoryItem, IInteractable
 
     public bool Interact(Player p)
     {
+        this.IsOn = false;
+        transform.position = God.GetPlayer().transform.position;
+        transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         p.Bag.Add(this);
 		// God.ShowText (HintsList.ON_BALL_PICKUP);
         return this;

@@ -204,8 +204,9 @@ public class Savior: MonoBehaviour
     }
 
     public void ReloadCurrentLevel() {
+        God.GetStats().incrementStat("attempts", 1);
+        God.GetStats().SendData();
 
-        // Stats for reset here
         LoadLevel(God.GetCurrentLevel(), true);
         // Handle if we want story to reset as well
         // Should hint level remain?

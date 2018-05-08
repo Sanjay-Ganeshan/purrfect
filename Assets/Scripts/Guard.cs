@@ -13,7 +13,6 @@ public class Guard : MonoBehaviour {
 	private Vector2 currentDirection;
 	Optional<Vector2> currentTarget;
 	private bool moving = false;
-	private List<Vector2> previousEmissionResults = new List<Vector2>();
 	private Rigidbody2D rb;
 
 	void Awake() {

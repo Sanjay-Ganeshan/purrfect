@@ -1,40 +1,44 @@
 {
   "Contents": {
-    "4b100db1-dc70-4b6b-b783-e74099aa8da0": {
+    "1f6c5645-cc8f-4a55-ab37-a4f008d01081": {
+      "type": "TOY_BALL",
+      "transform": "-4.29,-0.56,0,1,1"
+    },
+    "59a27e01-4821-4bf2-a139-ffa289a3dfb3": {
       "type": "ENTRANCE",
       "transform": "-8.074194,0.13,0,0.1,1.2625"
     },
-    "c2594ff2-ea6d-4b8a-aa6f-2d62f614bcc1": {
+    "9b1c32f1-545e-4a58-ab7d-c3fe4e52c502": {
       "type": "WINDOW",
       "transform": "0,0,0,0.1,1"
     },
-    "6fbd8e4f-3d73-476b-9176-d9f255e35ca7": {
+    "d10a2fef-70fb-4522-9bb7-51518c44620f": {
       "type": "WALL",
       "transform": "-1.5,6,90,0.1,5.1"
     },
-    "f0969b1b-5487-421f-9dbe-3f7db9bf5168": {
+    "6c6297b5-8818-491f-8884-f38bde3c1fa5": {
       "type": "WALL",
       "transform": "0,-6,90,0.1,6.3"
     },
-    "8332e541-6902-497b-9fe1-9f2a6c06b15f": {
+    "a16d8c02-49b4-4063-9bbd-0ca6896583ed": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "5,-4.5,0,1,1.2"
     },
-    "32b5f3c3-307c-48a6-ab09-811236377c5e": {
+    "9520f40e-d315-4a97-abc0-ac2e94f23b57": {
       "type": "MIRROR",
       "transform": "6.5,6,90,0.1,1.2"
     },
-    "00b4aa81-250a-4b72-bf9a-8a84d55478b3": {
+    "bf4744ab-b679-4c2c-adb8-5dd65808dbf4": {
       "type": "MIRROR",
       "transform": "8,1.5,0,0.1,3.5"
     },
-    "e247c43b-914b-4be0-8b5d-22f3df1d018e": {
+    "81bc696b-5752-4bfd-b37b-2ef2b065dd8f": {
       "type": "CAT",
       "transform": "-6.9,-0.5,0,1,1"
     },
-    "4746a21c-013b-4d91-879b-d17bd4de2b8e": {
+    "7377f52a-21a3-4756-a4a3-ad85e69d6613": {
       "Level": "level5",
       "type": "EXIT",
       "transform": "8.55,-4.6,0,1,2.712498"
@@ -45,15 +49,15 @@
       "type": "CAMERA",
       "transform": "0.06,0.24,0,1,1"
     },
-    "7e33e7c9-529a-4c8c-9f1d-2972901daf81": {
+    "f8d0caa4-2279-45ff-8326-ec13fa0601a2": {
       "type": "MIRROR",
       "transform": "6.5,-3,90,0.1,1.2"
     },
-    "d6fdcb55-b07e-4270-94a3-ac7ffc91fad8": {
+    "7641d590-69aa-4162-bb6b-55937ebdc17b": {
       "type": "WALL",
       "transform": "-8,-3.75,0,0.1,1.75"
     },
-    "a755e89a-bf47-4d1d-b95a-1aa21b3a9fbf": {
+    "94288131-4b2c-4400-8ed6-d9694e13b8d5": {
       "type": "WALL",
       "transform": "-8,3.75,0,0.1,1.75"
     },
@@ -63,11 +67,11 @@
       "type": "KEY",
       "transform": "7,5,0,1,1"
     },
-    "42d04a0d-0e10-4d1d-8ffc-32bcac21160f": {
+    "c309ea20-8ced-4d47-ae7f-928fa8df7af9": {
       "type": "BARS",
       "transform": "-5,1.5,0,0.1,3.5"
     },
-    "47f6c068-6958-41b0-9324-02229f131e0f": {
+    "0e2e4561-c637-4468-89aa-d2b399cbda61": {
       "type": "WALL",
       "transform": "0.1,-3,90,0.1,4"
     },

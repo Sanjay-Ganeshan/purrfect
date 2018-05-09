@@ -224,12 +224,12 @@ Prefab:
     - target: {fileID: 224456986401981298, guid: ab34fd067b3631149b6984b07c6d6507,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 224456986401981298, guid: ab34fd067b3631149b6984b07c6d6507,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114772360542501680, guid: ab34fd067b3631149b6984b07c6d6507,
         type: 2}
@@ -250,12 +250,12 @@ Prefab:
     - target: {fileID: 224783333616169364, guid: ab34fd067b3631149b6984b07c6d6507,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 140
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 224783333616169364, guid: ab34fd067b3631149b6984b07c6d6507,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114899833816525850, guid: ab34fd067b3631149b6984b07c6d6507,
         type: 2}
@@ -559,7 +559,7 @@ Prefab:
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}
       propertyPath: LevelName
-      value: level1_Redo
+      value: level0_Redo
       objectReference: {fileID: 0}
     - target: {fileID: 114169538331368378, guid: d0af5f3a251ac8744a11b8c81fe26c06,
         type: 2}

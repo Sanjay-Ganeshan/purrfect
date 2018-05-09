@@ -1,8 +1,12 @@
 {
   "Contents": {
-    "f41bfc9a-9c7e-4241-a2ad-62d49e96f16f": {
-      "type": "WALL",
+    "4cdb9aa7-de62-48a7-ab07-b672908fe15d": {
+      "type": "TILE_WALL",
       "transform": "0,-5,0,0.2,0.2"
+    },
+    "a89b13a8-a828-47c4-aa16-a7cdf941d1e6": {
+      "type": "BLACKBOX",
+      "transform": "-21.95,-0.24,0,2,2"
     },
     "camera": {
       "size": "7.89",
@@ -10,12 +14,20 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "857e434e-7c83-4fba-ad8e-bf302dd1b176": {
-      "type": "WALL",
+    "5d930610-b4d2-41e3-a771-f90e6081b633": {
+      "type": "BLACKBOX",
+      "transform": "0.41,10.09,0,3,1"
+    },
+    "28b85514-ad07-4fed-a7df-826c96899e8d": {
+      "type": "FLOOR",
+      "transform": "-1.676652,-1.122928,0,0.5,0.5"
+    },
+    "6e917bbc-e206-4f34-9974-af7c05bd85ce": {
+      "type": "TILE_WALL",
       "transform": "-12,0,0,0.2,0.2"
     },
-    "4242da77-dfee-43a3-a8b4-a399c985778f": {
-      "type": "WALL",
+    "db6276f6-6c46-43ca-9d47-8d5ac861e3d3": {
+      "type": "TILE_WALL",
       "transform": "0,5,0,0.2,0.2"
     },
     "2": {
@@ -25,19 +37,27 @@
     "player": {
       "Inventory": "",
       "type": "PLAYER",
-      "transform": "3.05,-0.6819776,0,1.5,1.5"
+      "transform": "3.05,-1.11,0,1.5,1.5"
     },
-    "ab9d09b1-7d79-4cb7-b6f7-890a51fac3ec": {
+    "535744e5-b575-4523-b562-42306b1feeef": {
+      "type": "BLACKBOX",
+      "transform": "0.47,-10.1,0,3,1"
+    },
+    "a6ed0fbf-9844-4e70-b6f6-8a6ad2abf8d5": {
       "type": "CAT",
       "transform": "0.47,-2.05,0,1.5,1.5"
     },
-    "488a9554-1174-4c31-a8ef-4f3801544442": {
+    "f9448faf-fb83-4e85-b9ad-45ea4446b531": {
       "Level": "level1",
       "type": "EXIT",
       "transform": "8.42,0.04,0,1,2.687501"
     },
-    "661f166c-9a15-494a-a251-1e7b9c72249d": {
-      "type": "WALL",
+    "67f55b07-342c-43d3-9d47-4300c56436c6": {
+      "type": "BLACKBOX",
+      "transform": "22.01,-0.12,0,2,2"
+    },
+    "d8911235-9ed4-4e71-ab62-c31f7c74b161": {
+      "type": "TILE_WALL",
       "transform": "12,0,0,0.2,0.2"
     }
   },

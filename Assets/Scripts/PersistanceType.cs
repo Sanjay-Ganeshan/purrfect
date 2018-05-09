@@ -21,5 +21,8 @@ public enum PersistanceType
 	GUARD,
 	BUTTON,
     TOY_BALL,
+	TILE_WALL,
+	FLOOR,
+	BLACKBOX
 }
 

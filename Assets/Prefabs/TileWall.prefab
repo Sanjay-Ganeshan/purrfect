@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  PType: 4
+  PType: 16
 --- !u!212 &212786533997245732
 SpriteRenderer:
   m_ObjectHideFlags: 1

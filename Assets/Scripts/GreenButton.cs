@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GreenButton : MonoBehaviour, IPersistantObject {
 
-	// currently, button presses only support adding a defaultsavable to the scene, but it shouldn't be hard to extend if necessary
 	public Sprite ButtonPressed;
 	public GameObject gameChild;
 	private IPersistantObject child;
@@ -14,7 +13,7 @@ public class GreenButton : MonoBehaviour, IPersistantObject {
 	// Use this for initialization
 	void Start () {
 		if (gameChild != null) {
-			child = gameChild.GetComponent<DefaultSavable>();
+			child = gameChild.GetComponent<IPersistantObject>();
 		}
 	}
 

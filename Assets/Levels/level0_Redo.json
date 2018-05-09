@@ -1,13 +1,13 @@
 {
   "Contents": {
-    "955a59d8-ed25-4f04-9950-8513362be86f": {
+    "94bf0007-f6b3-4ffb-a188-934ab0ed833b": {
       "rendx": "120",
       "rendy": "4",
       "childTrans": "0,-5,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,-5,0,0.2,0.2"
     },
-    "7dcfbd13-fc13-4dcf-972c-09bbe0f31fa0": {
+    "68246bc0-481f-40d6-aab0-a35bc801fe49": {
       "type": "BLACKBOX",
       "transform": "-21.95,-0.24,0,2,2"
     },
@@ -17,26 +17,26 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "31b1f746-be61-49bf-b2ed-f966a51f4e9b": {
+    "88f33a74-340b-40aa-ac90-92771e7ba33a": {
       "type": "BLACKBOX",
       "transform": "0.41,10.09,0,3,1"
     },
-    "72b3cb81-05bd-47b7-b08f-f12bba79ea86": {
+    "969cf1ff-325b-4e33-a311-aee3c8a2d284": {
       "type": "FLOOR",
       "transform": "-1.676652,-1.122928,0,0.6,0.6"
     },
-    "0f2eed55-2a74-4c66-a476-ae79bda6cb41": {
+    "03a22dad-22d8-4cef-9898-ba5e92ba32bb": {
       "type": "SOFA_SIDE2",
       "transform": "-5,0.7,0,2,2"
     },
-    "5e557bd4-e102-4966-8383-65e821893d53": {
+    "86739188-473a-4c67-810f-a5b109f8f361": {
       "rendx": "4",
       "rendy": "54",
       "childTrans": "-12,0,0,5,55",
       "type": "TILE_WALL",
       "transform": "-12,0,0,0.2,0.2"
     },
-    "c74286ef-b4e5-48f7-815b-aef5d544453c": {
+    "fc1ad3b2-b614-4776-9b96-22df60c80f68": {
       "rendx": "120",
       "rendy": "4",
       "childTrans": "0,5,0,124,4",
@@ -52,36 +52,36 @@
       "type": "PLAYER",
       "transform": "-2,1,0,1.4,1.4"
     },
-    "b4c9ff2f-4c0d-44d5-8cc1-25a3262a46ff": {
+    "7c51ce61-f596-4da0-a44c-560a4b104c03": {
       "type": "BLACKBOX",
       "transform": "0.47,-10.1,0,3,1"
     },
-    "7608ce3e-aad7-484a-820f-ea4136f1c9a6": {
+    "93a6d228-b17f-4462-b481-4a7966609487": {
       "type": "CAT",
       "transform": "-10,0,0,1.5,1.5"
     },
-    "dfc78b0f-7acf-4ccf-9db7-7cf9717f6d2f": {
+    "cc715b71-d90e-4c06-bc26-ae51fcc9f10b": {
       "type": "BOOKSHELF",
       "transform": "-9.93905,2.863087,0,1,1"
     },
-    "d3d0595e-c2d0-481c-b619-5f9c0308efb4": {
+    "ec3ff8a4-e486-48ca-92c6-a845e9671843": {
       "Level": "level1_Redo",
       "type": "EXIT",
       "transform": "11.75,0.04,0,1,2.687501"
     },
-    "1ef268a0-54a4-460e-a3a7-da39b8b9bbd1": {
+    "f95a1aa6-bd2a-49b6-b380-912a33687de6": {
       "type": "SOFA_SIDE",
       "transform": "1,0.7,0,2,2"
     },
-    "f34e2530-00be-4050-b8b1-945cd6cdc3e3": {
+    "352cd0a4-9d21-4a7d-88b0-0aeae4d1dc79": {
       "type": "BLACKBOX",
       "transform": "22.01,-0.12,0,2,2"
     },
-    "ac37f867-1244-41e4-ae53-f656dea9e18f": {
+    "8657b447-2670-4f55-88cb-6cc3afa2d91a": {
       "type": "SOFA",
       "transform": "-2,2.6,0,2,2"
     },
-    "a89df89c-8002-40c8-9a88-6a5ec3e61b7d": {
+    "e21cfe24-fdc6-43e1-8fd6-99f01f157aab": {
       "rendx": "4",
       "rendy": "54",
       "childTrans": "12,0,0,5,55",

@@ -1,10 +1,13 @@
 {
   "Contents": {
-    "29347a66-97a2-414c-81dd-3daf0a9d16bc": {
+    "37e81e46-098b-45b4-8e83-6b52bc974b2a": {
+      "rendx": "120",
+      "rendy": "4",
+      "childTrans": "0,-5,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,-5,0,0.2,0.2"
     },
-    "1bb4f515-c021-4c10-9bc5-22bade073771": {
+    "ef434c3f-a3d6-4905-9502-13334707ec30": {
       "type": "BLACKBOX",
       "transform": "-21.95,-0.24,0,2,2"
     },
@@ -14,19 +17,25 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "8f728316-8189-4558-91ff-a919c9f76712": {
+    "e6190d30-1e4d-4951-893b-e6ab96b13eca": {
       "type": "BLACKBOX",
       "transform": "0.41,10.09,0,3,1"
     },
-    "7399d688-57b4-4b20-a8aa-a4d6fe49cc11": {
+    "0a695850-b5ab-43fd-acdd-388a0bac4201": {
       "type": "FLOOR",
       "transform": "-1.676652,-1.122928,0,0.5,0.5"
     },
-    "0157b7fb-69f7-4bd0-a513-ba5e29bb3d14": {
+    "94b4b3e0-8825-4561-9cb7-82bcfcf18e32": {
+      "rendx": "4",
+      "rendy": "54",
+      "childTrans": "-12,0,0,5,55",
       "type": "TILE_WALL",
       "transform": "-12,0,0,0.2,0.2"
     },
-    "b80e302c-2061-4dbd-90f1-b9302d82d01c": {
+    "d9f1408d-304e-4e9c-a315-190b3e4ba4fd": {
+      "rendx": "120",
+      "rendy": "4",
+      "childTrans": "0,5,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,5,0,0.2,0.2"
     },
@@ -39,24 +48,27 @@
       "type": "PLAYER",
       "transform": "-2,1,0,1.4,1.4"
     },
-    "19f539b2-c548-485a-8380-9290b01081dc": {
+    "97feba3c-d56e-493f-b2c5-f4058d8dd867": {
       "type": "BLACKBOX",
       "transform": "0.47,-10.1,0,3,1"
     },
-    "716a3d6e-3284-4f91-be11-db4e5f7bf34b": {
+    "0aa0e751-0d5e-40f2-ae4e-9c4bd0f49035": {
       "type": "CAT",
       "transform": "-10,-2.05,0,1.5,1.5"
     },
-    "12311b49-14dd-4f7c-a8de-73b96df5216a": {
-      "Level": "level1",
+    "dd9327e7-f275-4746-83a4-73898da7dcd3": {
+      "Level": "level1_Redo",
       "type": "EXIT",
       "transform": "11.75,0.04,0,1,2.687501"
     },
-    "9f9fd7fc-4441-443a-95bc-2f45cd0d342a": {
+    "d40ff95e-1c84-4223-a8b0-55c5476b0ed6": {
       "type": "BLACKBOX",
       "transform": "22.01,-0.12,0,2,2"
     },
-    "30dd18ae-c85e-4165-98f1-5fc0c9d8cd79": {
+    "4385227b-d061-4d7f-aed4-9a449924babf": {
+      "rendx": "4",
+      "rendy": "54",
+      "childTrans": "12,0,0,5,55",
       "type": "TILE_WALL",
       "transform": "12,0,0,0.2,0.2"
     }

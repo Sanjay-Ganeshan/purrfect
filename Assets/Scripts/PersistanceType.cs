@@ -23,6 +23,7 @@ public enum PersistanceType
     TOY_BALL,
 	TILE_WALL,
 	FLOOR,
-	BLACKBOX
+	BLACKBOX,
+	IRON_BARS
 }
 

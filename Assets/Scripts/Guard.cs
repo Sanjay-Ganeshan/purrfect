@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,9 @@ public class Guard : MonoBehaviour {
 	void Start () {
 		basePosition = this.transform.position;
 		baseRotation = this.transform.rotation;
-		baseDirection = new Vector2 (Mathf.Cos (baseRotation.z), Mathf.Sin (baseRotation.z));
+		Vector3 baseEulerAngles = this.transform.eulerAngles;
+		baseDirection = new Vector2 (Mathf.Cos (baseEulerAngles.z*(float)Math.PI/180), Mathf.Sin (baseEulerAngles.z*(float)Math.PI/180));
+		Debug.Log (baseDirection);
 		currentDirection = baseDirection;
 		currentTarget = Optional<Vector2>.Empty();
 	}

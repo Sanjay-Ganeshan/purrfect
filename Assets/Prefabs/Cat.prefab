@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  catSpeed: 5
+  catSpeed: 8
   debugVision: {fileID: 120765868175078772}
   ZoC: {fileID: 58870283566879718}
 --- !u!120 &120765868175078772

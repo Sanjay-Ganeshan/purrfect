@@ -50,7 +50,6 @@ public class Statistics {
     public void SendData() {
         data["duration"] = Time.time - start_time;
 
-        Debug.Log("STATISTICS DATA SENT.");
         UnityWebRequest www = UnityWebRequest.Get(urlBase + JsonConvert.SerializeObject(data));
         www.SendWebRequest();
     }

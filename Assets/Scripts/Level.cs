@@ -41,9 +41,10 @@ public class Level
 
     public Level SaveToPath(string path)
     {
+        Debug.Log("Saving to " + path);
         string jsonOutput;
         jsonOutput = JsonConvert.SerializeObject(this,Formatting.Indented);
-        using (var writer = new StreamWriter(this.GetMasterFilepath()))
+        using (var writer = new StreamWriter(path))
         {
             writer.Write(jsonOutput);
         }
@@ -52,8 +53,9 @@ public class Level
 
     public Level LoadFromPath(string path)
     {
+        Debug.Log("Loading from " + path);
         string json;
-        using (var reader = new StreamReader(this.GetMasterFilepath()))
+        using (var reader = new StreamReader(path))
         {
             json = reader.ReadToEnd();
         }

@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
+using System;
 
 public class Savior: MonoBehaviour
 {
@@ -64,17 +65,22 @@ public class Savior: MonoBehaviour
 
     public void LoadLevel(string name, bool keepCarried)
     {
+        /* Do stats stuff */
 		God.SetCurrentLevel (name);
         God.GetStats().initLevel(name);
 
         Dictionary<string, Dictionary<string, string>> toCarry = Unload();
-        Debug.Log("Carrying " + toCarry.Count + " objects to next scene");
+        //Debug.Log("Carrying " + toCarry.Count + " objects to next scene");
+        //foreach(string key in toCarry.Keys)
+        //{
+        //    Debug.Log("Carrying " + key);
+        //}
         Dictionary<string, PersistanceType> typeLookup = new Dictionary<string, PersistanceType>();
         foreach (PersistanceType t in System.Enum.GetValues(typeof(PersistanceType)))
         {
             typeLookup.Add(t.ToString(), t);
         }
-        Level lvl = new Level(name).LoadFromMaster();
+        Level lvl = new Level(name).LoadFromPlaythrough();
         Dictionary<string, Dictionary<string, string>> output = lvl.Contents;
 
         // Merge the dictionaries of the scene & file
@@ -135,8 +141,9 @@ public class Savior: MonoBehaviour
         {
             Debug.Log("WARNING: Using compatibility mode to load level...things may not load as expected");
         }
-        Debug.Log("Loaded from " + lvl.GetMasterFilepath() + "!");
+        lvl.SaveToPlaythrough();
     }
+    
 
     void LoadAll()
     {
@@ -155,13 +162,18 @@ public class Savior: MonoBehaviour
     {
         IPersistantObject[] mapObjects = GetMapPersistantObjects();
         PreSave(mapObjects);
+        Level newPlaythroughVersion = new Level(God.GetCurrentLevel());
+        Dictionary<string, Dictionary<string, string>> levelState = new Dictionary<string, Dictionary<string, string>>();
         Dictionary<string, Dictionary<string, string>> carrying = new Dictionary<string, Dictionary<string, string>>();
         foreach (IPersistantObject ip in mapObjects)
         {
             Dictionary<string, string> saved = ip.Save();
             Dictionary<string, string> carry = new Dictionary<string, string>();
+
             bool shouldAdd = false;
-            foreach (string carriedKey in ip.PersistThroughLoad())
+            IEnumerable<string> toPersist = ip.PersistThroughLoad();
+            List<string> toPersistL = toPersist.ToList();
+            foreach (string carriedKey in toPersistL)
             {
                 if (saved.ContainsKey(carriedKey))
                 {
@@ -207,7 +219,7 @@ public class Savior: MonoBehaviour
         God.GetStats().incrementStat("attempts", 1);
         God.GetStats().SendData();
 
-        LoadLevel(God.GetCurrentLevel(), true);
+        LoadLevel(God.GetCurrentLevel(), false);
         // Handle if we want story to reset as well
         // Should hint level remain?
     }

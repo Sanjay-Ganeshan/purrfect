@@ -1,1 +1,77 @@
-{"Contents":{"7b458576-c928-40f2-a999-2d8bd1f00eff":{"type":"KEY","transform":"7,2.5,0,1,1"},"f4ae66da-587b-45c4-94f4-c478f4011b43":{"type":"WALL","transform":"-8,0,0,0.1,3"},"b3e7dbed-d369-4a25-98ab-f15c3e19c1e4":{"type":"WALL","transform":"0,3.75,90,0.1,6.3"},"eaf01f74-7167-4fa7-a34c-f661e0257893":{"type":"BARS","transform":"-2,2.5,0,0.1,1"},"bfd4c6c2-f4f9-4a70-b7ac-ee7a2aba8df1":{"type":"LASER_POINTER","transform":"-7,-1,0,1,1"},"78f3e3d5-876b-4475-86c2-bda783c7ff10":{"type":"BARS","transform":"-2,-2.5,0,0.1,1"},"acc9b24d-570f-4a87-ba1b-9cbfda31c088":{"type":"DOOR","transform":"-2,0,0,1,1"},"player":{"type":"PLAYER","transform":"-7,0,0,1,1"},"bbd8490f-4fa0-4386-b511-5cf31213abbb":{"type":"WALL","transform":"8,-2.5,0,0.1,1"},"9f78d129-ff00-40b5-8006-835e8415af4a":{"type":"CAT_WHISTLE","transform":"-7,-1.5,0,1,1"},"3f91a020-253e-4546-8bb4-4b28c0456706":{"type":"CAT","transform":"-5.5,0,0,1,1"},"ee2570be-5bc4-43c5-a03b-299775ae08f0":{"type":"WALL","transform":"8,2.5,0,0.1,1"},"0e784fd8-ec74-44f0-bc0f-dc4d92ef14cb":{"type":"WALL","transform":"0,-3.75,90,0.1,6.3"}},"Name":"level1"}
+{
+  "Contents": {
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "7,2.5,0,1,1"
+    },
+    "281d2618-0733-47dc-815d-aefaa0242f8d": {
+      "type": "WALL",
+      "transform": "0,3.75,90,0.1,6.3"
+    },
+    "e432e608-b39c-4df4-a7ea-6faf80869d6e": {
+      "type": "BARS",
+      "transform": "-2,2.5,0,0.1,1"
+    },
+    "e00cd219-f894-49cd-b56e-7ffaed3eb135": {
+      "type": "LASER_POINTER",
+      "transform": "-5.63,-2.14,0,1,1"
+    },
+    "4512e44a-331a-4fcf-9dc4-fefa8a7597c6": {
+      "type": "BARS",
+      "transform": "-2,-2.5,0,0.1,1"
+    },
+    "f1b3a08f-fbde-4a1a-9ccd-a95ee4a347a4": {
+      "type": "WALL",
+      "transform": "-8.08,-2.41,0,0.1,1"
+    },
+    "d6547392-c3e1-4fb0-b0f8-cd60e9006149": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "-2,0,0,1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-6.183645,-0.28,0,1,1"
+    },
+    "602bc193-0ae3-46b7-aaff-82f840c97e7e": {
+      "Level": "level2",
+      "type": "EXIT",
+      "transform": "8.42,0.04,0,1,2.687501"
+    },
+    "0833d432-cb3d-4137-a065-856177c255d7": {
+      "type": "WALL",
+      "transform": "8,-2.5,0,0.1,1"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0,0,0,1,1"
+    },
+    "4a005df2-e681-47bd-a153-a02b58a7b62d": {
+      "type": "CAT",
+      "transform": "-6.79,0.84,0,1,1"
+    },
+    "ff17d4d4-f9e5-45f0-ad7d-0ba449921478": {
+      "type": "WALL",
+      "transform": "8,2.5,0,0.1,1"
+    },
+    "1cb7192a-f0ea-41d5-9b02-ebb937ef2df1": {
+      "type": "ENTRANCE",
+      "transform": "-8.075254,0.09427142,0,0.1,1"
+    },
+    "be8456c8-57d3-4264-8008-b36cba933092": {
+      "type": "WALL",
+      "transform": "-8.08,2.5,0,0.1,1"
+    },
+    "876bd5c9-1abc-4d56-950d-680102f3a4b0": {
+      "type": "WALL",
+      "transform": "0,-3.75,90,0.1,6.3"
+    }
+  },
+  "Name": "level1"
+}

@@ -9,7 +9,7 @@ using UnityEngine;
 public class Inventory: ICollection<InventoryItem>
 {
     public List<InventoryItem> Items;
-    Transform owner;
+    public Transform owner;
     public Inventory(Transform owner)
     {
         this.Items = new List<InventoryItem>();
@@ -133,6 +133,11 @@ public class Inventory: ICollection<InventoryItem>
     {
         return Delete(item);
     }
+
+	public Transform GetOwner() 
+	{
+		return owner;
+	}
 
     IEnumerator IEnumerable.GetEnumerator()
     {

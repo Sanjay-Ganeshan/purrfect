@@ -60,7 +60,7 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
         }
     }
 
-    private void RenderWorld()
+    protected void RenderWorld()
     {
         if (this.InventoryRenderer != null)
         {
@@ -72,7 +72,7 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
         }
     }
 
-    private void RenderInventory()
+    protected void RenderInventory()
     {
         if (this.InventoryRenderer != null)
         {
@@ -85,7 +85,7 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
         }
     }
     
-    private void RenderNone()
+    protected void RenderNone()
     {
         if (this.InventoryRenderer != null)
         {

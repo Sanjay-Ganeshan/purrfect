@@ -204,6 +204,16 @@ MonoBehaviour:
     Template: {fileID: 1389310606289882, guid: 1ead5cbbcc0893845bf6e3ca255693fc, type: 2}
   - PType: 19
     Template: {fileID: 1796265992915058, guid: 42c67ba2131916b45898bfce8fd1f6a4, type: 2}
+  - PType: 20
+    Template: {fileID: 1586197198955682, guid: a89c769b7058a204cad0478aa9c0d2dd, type: 2}
+  - PType: 21
+    Template: {fileID: 1028840953715432, guid: 454e15676f0bcea4b9b7da8c609ff023, type: 2}
+  - PType: 22
+    Template: {fileID: 1767487933984562, guid: 437c90cba7b67f74aa89e82581a8c346, type: 2}
+  - PType: 23
+    Template: {fileID: 1867984706292474, guid: 124daafabfe7c114b90453586eedd98d, type: 2}
+  - PType: 28
+    Template: {fileID: 1767487933984562, guid: 437c90cba7b67f74aa89e82581a8c346, type: 2}
   activated: 1
   SaveMode: 1
 --- !u!114 &114339709708565852

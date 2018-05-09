@@ -9,7 +9,6 @@ public class Guard : MonoBehaviour {
 	public float guardSpeed;
 
 	private Vector2 basePosition;
-	private Quaternion baseRotation;
 	private Vector2 baseDirection;
 	private Vector2 currentDirection;
 	Optional<Vector2> currentTarget;
@@ -23,7 +22,6 @@ public class Guard : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		basePosition = this.transform.position;
-		baseRotation = this.transform.rotation;
 		Vector3 baseEulerAngles = this.transform.eulerAngles;
 		baseDirection = new Vector2 (Mathf.Cos (baseEulerAngles.z*(float)Math.PI/180), Mathf.Sin (baseEulerAngles.z*(float)Math.PI/180));
 		Debug.Log (baseDirection);

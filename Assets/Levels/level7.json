@@ -1,36 +1,34 @@
 {
   "Contents": {
-    "b8a70d95-a76f-4aeb-b869-d05675176d13": {
-      "type": "GUARD",
-      "transform": "-6.083835,-1.626462,0,0.3,0.3"
+    "37d2828d-2bc1-4f9f-8668-16c68a8d5a2b": {
+      "type": "WINDOW",
+      "transform": "9,-1.96,0,0.1,1.883139"
     },
-    "1777": {
-      "Combo": "777",
-      "Uses": "1",
-      "type": "KEY",
-      "transform": "-5.717266,-5.239787,0,1,1"
+    "4510412e-3d80-48c7-8448-ea3f8c492232": {
+      "type": "WINDOW",
+      "transform": "-0.03,0.82,0,0.1,2.807089"
     },
     "player": {
       "Inventory": "",
       "type": "PLAYER",
-      "transform": "-5.22,2.05,0,1,1"
+      "transform": "-5.22,2.05,0,1.4,1.4"
     },
-    "6411a5bc-e62c-4f69-94a9-1d25e3922517": {
+    "8a3d2823-d7c9-4bce-afd0-d1d365990026": {
       "type": "BARS",
       "transform": "-3.43,4.414766,90,0.1,2.625"
     },
-    "abd25e66-7b78-4ac7-a30d-0f42fe977fde": {
+    "cc09f826-c92d-4729-a253-570a102a1d2c": {
       "Level": "level8",
       "type": "EXIT",
-      "transform": "7.15,-6.53,0,3.175,1"
+      "transform": "7.15,-6.53,0,3.175,2.687501"
     },
-    "bcf2f242-34c3-4a09-aa94-5fae6f4accf2": {
+    "3bf687dc-f085-4daa-a9df-40258828825a": {
       "type": "CAT",
-      "transform": "-5.120946,0.5859788,0,1,1"
+      "transform": "-5.120946,0.5859788,0,1.4,1.4"
     },
-    "0f2b7276-eef1-4a12-b2ef-94514047fd6e": {
+    "9af48dd1-0245-4ed1-8e82-ef2d1cd313d3": {
       "type": "WALL",
-      "transform": "8.866596,1,0,0.1,5.534306"
+      "transform": "9,4.33,0,0.1,2.97469"
     },
     "camera": {
       "size": "7.89",
@@ -38,33 +36,39 @@
       "type": "CAMERA",
       "transform": "1.079727,0.9237468,0,1,1"
     },
-    "621fd66f-d2ba-4213-a14f-a2ad505d7c92": {
+    "1498f4e7-16db-4a1d-89b9-d9adb7560e95": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "-0.05537164,-4.88,0,1,1"
     },
-    "6a9c5a96-5877-4ee4-ac15-534b9f77fdc3": {
+    "c4fd202a-9900-444f-9988-0fed61914693": {
       "type": "WALL",
       "transform": "1.06,8.16,90,0.1,6.137188"
     },
-    "63d9d54e-e016-42e3-b24a-ee9fb37fe217": {
+    "046a0aec-f979-4fd6-8df3-ca02738a49a8": {
       "type": "ENTRANCE",
       "transform": "-6.781035,1.62319,0,0.1,1.275"
     },
-    "112fff5a-f4ab-4772-a081-3a89cd7d501a": {
+    "69717b60-db8b-45e7-8d47-e13c5a109668": {
       "type": "MIRROR",
       "transform": "-0.59,-6.08,90,0.1,4.8125"
     },
-    "f4c8686b-4e67-4bc2-881a-d0ecb1a4a9fa": {
-      "type": "MIRROR",
-      "transform": "-0.05537164,0.38,0,0.1,3.162498"
-    },
-    "9dfdedcd-3ab2-4df0-9587-e2f510af91e4": {
+    "7820b358-e87c-4b2e-9017-c0282b33d992": {
       "type": "MIRROR",
       "transform": "-6.757126,-2.87,0,0.1,2.5125"
     },
-    "cda85d7a-a0f1-4573-862c-b8330aa482da": {
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "-5.717266,-5.239787,0,1,1"
+    },
+    "c7d1197d-b106-4cd7-b1ad-a04dc69391f6": {
+      "type": "GUARD",
+      "transform": "-6.083835,-1.626462,0,0.3,0.3"
+    },
+    "f8065ab0-1d75-4ca8-a40e-f6d4a69a92c9": {
       "type": "WALL",
       "transform": "-6.757126,5.64,0,0.1,1.965625"
     }

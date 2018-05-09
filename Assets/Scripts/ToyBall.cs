@@ -120,6 +120,11 @@ public class ToyBall : InventoryItem, IInteractable
 		}
 	}
 
+	public override IEnumerable<string> PersistThroughLoad()
+	{
+		return new string[0];
+	}
+
     public override PersistanceType GetPType()
     {
         return PersistanceType.TOY_BALL;

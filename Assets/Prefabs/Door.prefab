@@ -195,6 +195,7 @@ MonoBehaviour:
   LockCombo: 777
   id: 
   PType: 0
+  OpenSprite: {fileID: 21300000, guid: 955258ebd313f144b84eadad97d1f8d3, type: 3}
   DoorCollider: {fileID: 61522888839040476}
 --- !u!212 &212210262767276616
 SpriteRenderer:

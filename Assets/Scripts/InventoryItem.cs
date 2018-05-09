@@ -14,7 +14,7 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
 
     public bool isEquippable;
 
-    public bool CarryToNextScene = false;
+    public bool CarryToNextScene;
 
     public Collider2D ZoC;
     public SpriteRenderer InventoryRenderer;

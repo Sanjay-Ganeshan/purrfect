@@ -24,6 +24,15 @@ public enum PersistanceType
 	TILE_WALL,
 	FLOOR,
 	BLACKBOX,
-	IRON_BARS
+	IRON_BARS,
+	BOOKSHELF,
+	SOFA,
+	SOFA_SIDE,
+	SOFA_SIDE2,
+	TOILET,
+	SINK,
+	RUG,
+	CAULDRON,
+	TABLE
 }
 

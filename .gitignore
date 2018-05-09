@@ -47,3 +47,9 @@ downloads.unitypackage
 Assets/ice_Particles.cs
 *.sublime-project
 *.sublime-workspace
+
+# ============== #
+# Save Games     #
+# ============== #
+
+Assets/Save/*

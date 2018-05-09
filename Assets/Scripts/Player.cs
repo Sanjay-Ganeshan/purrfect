@@ -194,6 +194,7 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         if (saveData.ContainsKey("Inventory"))
         {
             this.inventoryItemsToAdd = saveData["Inventory"];
+            Debug.Log("Inventory: " + this.inventoryItemsToAdd);
         }
         else
         {

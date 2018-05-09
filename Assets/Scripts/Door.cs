@@ -11,6 +11,7 @@ public class Door : MonoBehaviour, IInteractable, IPersistantObject {
     public Inventory Lock;
     public string id = "";
     public PersistanceType PType;
+	public Sprite OpenSprite;
 
     public Collider2D DoorCollider;
 
@@ -69,6 +70,7 @@ public class Door : MonoBehaviour, IInteractable, IPersistantObject {
         // Open the door
         DoorCollider.enabled = false;
         this.IsOpen = true;
+		this.GetComponentInChildren<SpriteRenderer> ().sprite = OpenSprite;
     }
 
     private void CloseDoor() {

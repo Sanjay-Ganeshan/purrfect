@@ -1,91 +1,40 @@
 {
   "Contents": {
-    "fa4cd759-79f3-4951-a730-2b382bde4acc": {
-      "type": "BLACKBOX",
-      "transform": "0.46,-11.26,0,3,1"
-    },
-    "47dfaf91-5304-4a58-b0d3-3e3caa8196f2": {
-      "type": "BLACKBOX",
-      "transform": "-0.11,10.96,0,3,1"
-    },
-    "6e8f301b-294a-434b-9ab1-15be34ee263b": {
-      "type": "BLACKBOX",
-      "transform": "21.94,-1.01,0,2,2"
-    },
-    "69062865-6b35-4785-b10d-d1333142a17c": {
-      "type": "BLACKBOX",
-      "transform": "-21.89,-0.55,0,2,2"
-    },
-    "79ee9186-a134-4809-9a4e-1c37b2408161": {
-      "type": "FLOOR",
-      "transform": "-3.864226,-2.671306,0,0.5,0.5"
-    },
-    "c1e4858d-412f-43ce-b3d4-c789064909b8": {
-      "rendx": "35",
-      "rendy": "1",
-      "childTrans": "0,-6.4,0,35,1",
-      "type": "IRON_BARS",
-      "transform": "0,-6.4,0,0.7,0.7"
-    },
-    "8ffcb8a6-e39c-4ecd-af27-36a91dc4278e": {
-      "rendx": "1.3",
-      "rendy": "18",
-      "childTrans": "12,0,0,1,18",
-      "type": "IRON_BARS",
-      "transform": "12,0,0,0.7,0.7"
-    },
-    "a6f3dacd-ed5f-4f19-a548-94427f719f6f": {
-      "rendx": "1",
-      "rendy": "6.4",
-      "childTrans": "-6.852776,-3.994452,0,1,6",
-      "type": "IRON_BARS",
-      "transform": "-6.852776,-3.994452,0,0.7,0.7"
-    },
-    "0abc840d-328d-4897-939d-3148e1dce0b7": {
-      "rendx": "36",
-      "rendy": "16",
-      "childTrans": "-3,-0.37,0,36,16",
-      "type": "TILE_WALL",
-      "transform": "-3,-0.37,0,0.2,0.2"
-    },
-    "29ce8eb7-bd62-4526-9727-8d47c0aac825": {
-      "rendx": "124",
-      "rendy": "4",
-      "childTrans": "0,6,0,124,4",
-      "type": "TILE_WALL",
-      "transform": "0,6,0,0.2,0.2"
-    },
-    "56c6c433-a798-4fb1-92db-4f3943223af0": {
-      "rendx": "4",
-      "rendy": "64",
-      "childTrans": "-12,0,0,4,65",
-      "type": "TILE_WALL",
-      "transform": "-12,0,0,0.2,0.2"
-    },
     "1777": {
       "Combo": "777",
       "Uses": "1",
       "type": "KEY",
       "transform": "8,4.5,0,1,1"
     },
-    "a5932f8d-8390-467c-a87e-807637b0ebfc": {
+    "50353835-d053-4bab-8cc9-121aae9482de": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
       "transform": "-9.4,-2,90,1,1"
     },
-    "78d9b317-3124-4020-8639-3cedffcc134b": {
+    "1aa51106-3f60-4897-a98d-e6a33bbae6b2": {
       "type": "ENTRANCE",
       "transform": "-9.4,-6,90,0.1,1"
     },
-    "ea7213ff-05a6-4f60-a510-ab67cc868e16": {
+    "f98520f5-e6d7-4b3f-ba49-ee5a71f36e4c": {
+      "type": "BLACKBOX",
+      "transform": "0.46,-11.26,0,3,1"
+    },
+    "26996687-c53b-4047-8e90-5856c91fdd02": {
       "Level": "level3_Redo",
       "type": "EXIT",
       "transform": "12,3.8,0,1,2.4"
     },
-    "a4e42b0d-5b81-4810-8e95-80a29e10a1aa": {
+    "73082586-0841-4dc0-9891-5c1ef25ae220": {
       "type": "MIRROR",
       "transform": "10.5,-4.5,320,0.15,1.5"
+    },
+    "7ce87016-1fef-422a-adca-f4d298359e03": {
+      "rendx": "4",
+      "rendy": "64",
+      "childTrans": "-12,0,0,4,65",
+      "type": "TILE_WALL",
+      "transform": "-12,0,0,0.2,0.2"
     },
     "camera": {
       "size": "7.89",
@@ -93,14 +42,65 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
+    "ee41edd2-17cf-45fc-8f4c-2e5640777a7f": {
+      "rendx": "35",
+      "rendy": "1",
+      "childTrans": "0,-6.4,0,35,1",
+      "type": "IRON_BARS",
+      "transform": "0,-6.4,0,0.7,0.7"
+    },
+    "27d37724-62f0-4106-9f09-66caa7597b6c": {
+      "type": "BLACKBOX",
+      "transform": "21.94,-1.01,0,2,2"
+    },
+    "aeee02f1-4d77-4d54-b804-5ed45b49e6bd": {
+      "type": "BLACKBOX",
+      "transform": "-21.89,-0.55,0,2,2"
+    },
     "player": {
       "Inventory": "",
       "type": "PLAYER",
-      "transform": "-9,-4,0,1,1"
+      "transform": "-9,-4,0,1.4,1.4"
     },
-    "1d4bc659-9a90-41fa-ae14-e283b9afb2a5": {
+    "6a103324-5188-428f-af0c-93fa282a0357": {
+      "type": "BLACKBOX",
+      "transform": "-0.11,10.96,0,3,1"
+    },
+    "d0112bb5-a288-408a-88a6-422989238079": {
+      "rendx": "1",
+      "rendy": "6.4",
+      "childTrans": "-6.852776,-3.994452,0,1,6",
+      "type": "IRON_BARS",
+      "transform": "-6.852776,-3.994452,0,0.7,0.7"
+    },
+    "8c4238b9-c630-49bf-9aa1-f4bf0ccdb588": {
+      "rendx": "36",
+      "rendy": "16",
+      "childTrans": "-3,-0.37,0,36,16",
+      "type": "TILE_WALL",
+      "transform": "-3,-0.37,0,0.2,0.2"
+    },
+    "d513d6c5-7fb6-48a5-aa82-1ac10121b97e": {
       "type": "CAT",
-      "transform": "-9,-5,0,1,1"
+      "transform": "-9,-4.877,0,1.4,1.4"
+    },
+    "c633e6be-c4ff-4864-9e89-ffcf8f53ebb6": {
+      "rendx": "124",
+      "rendy": "4",
+      "childTrans": "0,6,0,124,4",
+      "type": "TILE_WALL",
+      "transform": "0,6,0,0.2,0.2"
+    },
+    "e0cf59ea-6577-4b95-beef-b24bdf05f2ef": {
+      "rendx": "1.3",
+      "rendy": "18",
+      "childTrans": "12,0,0,1,18",
+      "type": "IRON_BARS",
+      "transform": "12,0,0,0.7,0.7"
+    },
+    "384be200-24f9-4bdd-8459-161ed6bfbd00": {
+      "type": "FLOOR",
+      "transform": "-3.864226,-2.671306,0,0.6,0.6"
     }
   },
   "Name": "level2_Redo"

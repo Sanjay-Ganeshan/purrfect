@@ -6,19 +6,19 @@
       "type": "KEY",
       "transform": "9.5,4.5,0,1,1"
     },
-    "20501def-9572-4f25-b6ac-2188ddcb42d6": {
+    "c94397fd-810b-45cb-ba2b-bdc0fa6a1bd1": {
       "type": "BLACKBOX",
       "transform": "0.03,11.21,0,3,1"
     },
-    "8be73bf3-a0db-44f7-aa37-981fc945c7fa": {
+    "60db45e1-4811-426d-a34c-e32f780a9730": {
       "type": "BLACKBOX",
       "transform": "-0.31,-10.95,0,3,1"
     },
-    "7f970991-b127-4c3d-a387-d66c244547ae": {
+    "fc9728a4-6766-412e-9ee0-1f37037b10ba": {
       "type": "LASER_POINTER",
       "transform": "-7,-4,0,1,1"
     },
-    "41585092-164c-49ab-bd0c-5ea2fc0e23df": {
+    "2e317e94-ea3a-49da-8075-c4d2c0cbee6b": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
@@ -29,30 +29,30 @@
       "type": "PLAYER",
       "transform": "-6.84,-0.28,0,1.4,1.4"
     },
-    "42f526e2-4660-4420-a5fd-75409167cbcb": {
+    "18b1e70e-faa4-49ef-a565-f56a878d94b3": {
       "Level": "level2_Redo",
       "type": "EXIT",
       "transform": "11.75,0.04,0,1,2.687501"
     },
-    "969bcacf-2e4d-4907-8140-6f7950aa7f1a": {
+    "db8dbc76-32b9-42b1-b2c4-c016e947f04d": {
       "type": "BLACKBOX",
       "transform": "21.91,-0.49,0,2,2"
     },
-    "971f4f45-aad9-4a11-ae55-77377810eba9": {
+    "9b46d610-0cb2-4d07-ad6d-0d0d87605b62": {
       "rendx": "124",
       "rendy": "4",
       "childTrans": "0,6,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,6,0,0.2,0.2"
     },
-    "bc353a79-daec-481b-9b6e-609d010bf856": {
+    "1de161da-928f-4f80-9109-183a1134efc3": {
       "rendx": "124",
       "rendy": "4",
       "childTrans": "0,-6,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,-6,0,0.2,0.2"
     },
-    "0a800995-4d9e-4e0e-b547-9d63c6d2c851": {
+    "f9051b5b-dc1f-4b50-87aa-93a3eab624fc": {
       "rendx": "1.3",
       "rendy": "5",
       "childTrans": "-1.85,4,0,1,5",
@@ -65,40 +65,40 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "932e2b1b-0fdf-46f0-bbdf-9f9991df8614": {
+    "8ee076e0-aa51-4b40-9ad9-e744302cef8f": {
       "type": "CAT",
       "transform": "-6.79,0.84,0,1.4,1.4"
     },
-    "7e6269f9-1e66-429a-b0a1-5f491d31fd52": {
+    "7eedf842-30e4-4339-ba39-a170cdc110b8": {
       "type": "BLACKBOX",
       "transform": "-22.01,-0.65,0,2,2"
     },
-    "21e6104e-f7b9-4ae5-b8de-64f54f24b501": {
+    "90a3022b-06d9-4857-9e08-ace0b8ceb370": {
       "type": "ENTRANCE",
       "transform": "-11.7,0.09427142,0,0.1,1"
     },
-    "914b9fd6-4386-43cc-8950-abfa8783d470": {
+    "9d63dd2e-f586-4b30-bc35-1fa1b1e1251c": {
       "rendx": "1.3",
       "rendy": "5",
       "childTrans": "-1.85,-4,0,1,5",
       "type": "IRON_BARS",
       "transform": "-1.85,-4,0,0.7,0.7"
     },
-    "18597bb0-f603-4311-8051-7d9c29a83bcd": {
+    "b77433e4-0bac-43a5-a744-d77f528f8c1e": {
       "rendx": "4",
       "rendy": "60",
       "childTrans": "12,0,0,5,55",
       "type": "TILE_WALL",
       "transform": "12,0,0,0.2,0.2"
     },
-    "ae86c85e-3b1d-466b-8747-efaa8a1ee077": {
+    "15e4410a-130d-4e6c-829c-91cf86d97b7d": {
       "rendx": "4",
       "rendy": "60",
       "childTrans": "-12,0,0,5,55",
       "type": "TILE_WALL",
       "transform": "-12,0,0,0.2,0.2"
     },
-    "cf9c657b-c54d-4fc6-9a79-1cbafc88d02a": {
+    "92ed4f1a-ea36-49cb-bceb-ee1a023b582c": {
       "type": "FLOOR",
       "transform": "-5.99,-4.52,0,0.6,0.6"
     }

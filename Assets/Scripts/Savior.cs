@@ -32,7 +32,7 @@ public class Savior: MonoBehaviour
             }
             else
             {
-                Invoke("LoadAll", 1.0f);
+                Invoke("LoadAll", 0.05f);
             }
         }
     }

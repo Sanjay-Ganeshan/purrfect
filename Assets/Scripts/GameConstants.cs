@@ -25,7 +25,8 @@ public static class GameConstants
     public const string LEVEL_PATH = "Levels";
     public const string SAVE_PATH = "Save";
 	public const int MAX_CAT_DIST_FOR_LEVEL_END = 1;
-	public const string BRING_CAT_HINT_LEVEL = "level1";
+	public const string OPENING_NARRATIVE_LEVEL = "level0_Redo";
+	public const string BRING_CAT_HINT_LEVEL = "level1_Redo";
 	public const int CAT_SIGHT_RANGE = 300;
 	public const int GUARD_SIGHT_RANGE = 300;
 }

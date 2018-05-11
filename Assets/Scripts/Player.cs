@@ -235,6 +235,9 @@ public class Player : MonoBehaviour, IPersistantObject, IInteractable {
         foreach(InventoryItem item in c.catInventory)
         {
             toTake.Add(item);
+			if (God.GetCurrentLevel () == GameConstants.BRING_CAT_HINT_LEVEL) {
+				God.ShowTexts (HintsList.PLAYER_GOT_KEY);
+			}
         }
         foreach(InventoryItem item in toTake)
         {

@@ -39,6 +39,9 @@ class Key : InventoryItem, IInteractable
     public bool Interact(Cat c)
     {
         c.catInventory.Add(this);
+		if (God.GetCurrentLevel () == GameConstants.BRING_CAT_HINT_LEVEL) {
+			God.ShowText (HintsList.CAT_GOT_KEY);
+		}
         return true;
     }
 

@@ -63,7 +63,7 @@ public class CatWhistle : InventoryItem, IInteractable
     public bool Interact(Player p)
     {
         p.Bag.Add(this);
-		God.ShowText (HintsList.ON_WHISTLE_PICKUP);
+		God.ShowTexts (HintsList.ON_WHISTLE_PICKUP);
         return this;
     }
 

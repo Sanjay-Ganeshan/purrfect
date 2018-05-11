@@ -142,6 +142,9 @@ public class Savior: MonoBehaviour
             Debug.Log("WARNING: Using compatibility mode to load level...things may not load as expected");
         }
         lvl.SaveToPlaythrough();
+		if (name == GameConstants.OPENING_NARRATIVE_LEVEL) {
+			God.ShowTexts (HintsList.OPENING_NARRATIVE);
+		}
     }
     
 

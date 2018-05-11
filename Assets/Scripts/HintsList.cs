@@ -37,7 +37,26 @@ public static class HintsList
 			"How can I get my cat to distract\nthat guard next to the second key?\nThere’s so many mirrors..."}
 	};
 	public const string HINT_TO_BRING_CAT = "Wait! I should bring my cat, too!";
-	public const string ON_WHISTLE_PICKUP = "Hey, I wonder if the cat listens to this whistle!\nCan I get it to come with me to the next room?";
-	public const string ON_LASER_POINTER_PICKUP = "Hehe, I hope this cat likes laser pointers!";
+	public static string[] ON_WHISTLE_PICKUP = new string[2] {
+		"Hey, I wonder if the cat listens to this whistle!\nCan I get it to come with me to the next room?",
+		"Open up your inventory with Q and select the\nwhistle. Hold down your left mouse button to\nblow on the whistle, calling your cat over!"
+	};
+	public static string[] ON_LASER_POINTER_PICKUP = {
+		"Hehe, I hope this cat likes laser pointers!",
+		"Take your laser pointer out from your inventory\nand aim at a wall to direct your cat\nto a point on the wall!"
+	};
 	public const string GUARD_SEES_PLAYER = "Yikes, the guard saw me! I'll try a different way.";
+	public static string[] OPENING_NARRATIVE = new string[4] {
+		"Where am I?\n(Click to advance dialogue)",
+		"My head hurts...\nI remember I was walking home,\nand then I heard a cat meowing...",
+		"...",
+		"I should get out of here..."
+	};
+	public const string CAT_GOT_KEY = "Awesome! Now I can get the key from the cat.";
+	public static string[] PLAYER_GOT_KEY = new string[2] {
+		"I think I can use this key on the gate!",
+		"Walk up to the gate and press E to use the key."
+	};
+	public const string INTERACT_GATE_WITHOUT_KEY = "I need to find a key to unlock this first...";
+	public const string CANT_GO_BACK = "There's no time to go back!\nI need to get out of here, fast!\nI have homework due tomorrow...";
 }

@@ -42,16 +42,20 @@ public class Door : MonoBehaviour, IInteractable, IPersistantObject {
 
             Key k = p.Bag.GetStreamBySystemType<Key>().Where((key) => key.CanUnlock(this.LockCombo)).FirstOrDefault();
 
-            if (k != null)
-            {
-                bool ShouldAdd = k.Consume();
-                if (ShouldAdd)
-                {
-                    this.Lock.Add(k);
-                }
-                this.ToggleDoorState();
-                return true;
-            }
+			if (k != null) 
+			{
+				bool ShouldAdd = k.Consume ();
+				if (ShouldAdd) 
+				{
+					this.Lock.Add (k);
+				}
+				this.ToggleDoorState ();
+				return true;
+			}
+			else 
+			{
+				God.ShowText (HintsList.INTERACT_GATE_WITHOUT_KEY);
+			}
         }
         return false;
     }

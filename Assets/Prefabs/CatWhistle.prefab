@@ -246,7 +246,7 @@ MonoBehaviour:
   ZoC: {fileID: 58227260765207390}
   InventoryRenderer: {fileID: 212978674753863558}
   WorldRenderer: {fileID: 212057991227102574}
-  Icon: {fileID: 21300000, guid: 249953830f77fe64c882b45e88bdf407, type: 3}
+  Icon: {fileID: 21300000, guid: 4aaa2c4b732f8421397549ddc1073b56, type: 3}
   IsOn: 0
   whistleSound: {fileID: 0}
 --- !u!212 &212057991227102574

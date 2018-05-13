@@ -1,0 +1,341 @@
+{
+  "Contents": {
+    "d1bf74f2-af50-4a30-acce-9c9540f65e14": {
+      "type": "MIRROR",
+      "transform": "4.84,16.23,90,0.15,2"
+    },
+    "e1a0ed4d-d5c0-44d9-a309-589e935ab0d3": {
+      "type": "MIRROR",
+      "transform": "11.48,6.34,0,0.15,2"
+    },
+    "cb6241bc-a692-467f-b2af-79996bef424a": {
+      "type": "BLACKBOX",
+      "transform": "-18.05,22.1,0,1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "2.31,-5.84,0,1.4,1.4"
+    },
+    "2b7554c1-18a8-4654-b6df-613c033a4eb5": {
+      "type": "MIRROR",
+      "transform": "-4.89,6.79,0,0.15,2"
+    },
+    "56522142-f984-4efb-a1b1-12186056c2fb": {
+      "type": "WINDOW",
+      "transform": "2.21,0.97,90,0.1,1.156251"
+    },
+    "04653646-2176-43aa-9d26-1dda5e6a1d08": {
+      "rendx": "4",
+      "rendy": "25",
+      "childTrans": "-5.14,17.51,0,4,25",
+      "type": "TILE_WALL",
+      "transform": "-5.14,17.51,0,0.2,0.2"
+    },
+    "562236b3-8bb9-4e19-81c4-6cd679c4e7d2": {
+      "rendx": "1.4",
+      "rendy": "6",
+      "childTrans": "-8.72,19.59,180,10,1",
+      "type": "WINDOW_TILE",
+      "transform": "-8.72,19.59,90,0.8,1.1"
+    },
+    "f065ab27-31dd-4d47-ac8c-b46c402c6db4": {
+      "type": "MIRROR",
+      "transform": "-2.2,20.43,150,0.15,2"
+    },
+    "3865d39a-d4ea-4eaa-b400-2f26dde511c6": {
+      "rendx": "4",
+      "rendy": "15",
+      "childTrans": "1.04,-6.07,0,4,15",
+      "type": "TILE_WALL",
+      "transform": "1.04,-6.07,0,0.2,0.2"
+    },
+    "1c0bb026-e23a-4cb1-b0aa-9d0d8ed98cdf": {
+      "type": "MIRROR",
+      "transform": "11.48,9.74,0,0.15,2"
+    },
+    "f1a0aaf6-aa3a-4fb4-b2ff-126b263b1d12": {
+      "type": "MIRROR",
+      "transform": "7.59,16.23,90,0.15,2"
+    },
+    "0d4c5ebb-27c1-4694-b4b3-67aaa00f5a5e": {
+      "type": "BLACKBOX",
+      "transform": "-2.3,21.8,330,0.2,1"
+    },
+    "6922bf9e-0099-49a5-9799-48b3a213ee91": {
+      "childID": "77f89c7d-17ba-422e-b7cd-70226eebbfda",
+      "type": "BUTTON",
+      "transform": "-15.65346,4.65558,0,1,1"
+    },
+    "821418c8-35f7-4f6c-aa50-9dac7949a9ca": {
+      "type": "BLACKBOX",
+      "transform": "-2.45,23.3,315,0.5,0.5"
+    },
+    "c1c2d919-e73a-49e1-8669-a1d579a016d0": {
+      "childID": "3865d39a-d4ea-4eaa-b400-2f26dde511c6",
+      "type": "BUTTON",
+      "transform": "-1.867224,-6.515299,0,1,1"
+    },
+    "camera": {
+      "size": "16.3882",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "-2.9,6.88,0,1,1"
+    },
+    "2fec2a1b-29d4-4ac2-a64e-731612589bf4": {
+      "type": "MIRROR",
+      "transform": "-3.83,17.6,150,0.15,2"
+    },
+    "602efaf7-0e04-45af-b580-fc9273130927": {
+      "type": "BLACKBOX",
+      "transform": "21.7,6.577194,0,2,5"
+    },
+    "4b730292-873f-484c-bfe0-5c9fc2df62b3": {
+      "type": "MIRROR",
+      "transform": "-12.19,18.1,140,0.15,1.5"
+    },
+    "6145c2a3-427a-47b7-a1b7-369d504c803a": {
+      "type": "GUARD",
+      "transform": "-15.68,-3.138984,0,0.4,0.4"
+    },
+    "e2c61681-6926-4dcd-b485-c3263f90576a": {
+      "type": "MIRROR",
+      "transform": "1.89,16.23,90,0.15,2"
+    },
+    "f59a8f05-7416-40fa-99c5-2d545b22855a": {
+      "rendx": "1.4",
+      "rendy": "10",
+      "childTrans": "0.78,4.99,180,10,1",
+      "type": "WINDOW_TILE",
+      "transform": "0.78,4.99,90,0.8,1.1"
+    },
+    "a4aa2cb6-7116-4ede-92cc-5f5c73822d49": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "9.12,4.04,90,1,1"
+    },
+    "adfb6eb3-c567-465c-a111-2342645c6009": {
+      "type": "GUARD",
+      "transform": "-2.65,14.26,0,0.4,0.4"
+    },
+    "7670ceaf-42f1-4952-a253-7fc9cfbb86d0": {
+      "childID": "1777",
+      "type": "BUTTON",
+      "transform": "0.87,14.25,0,1,1"
+    },
+    "761e7744-f0df-4eff-88ac-ee41e405de62": {
+      "type": "ENTRANCE",
+      "transform": "1.14,-7.5,90,0.1,1"
+    },
+    "c21bd100-d9b5-4b90-9092-b4c5e20da457": {
+      "type": "MIRROR",
+      "transform": "-4.89,13.73,0,0.15,2"
+    },
+    "e1ea6aea-e8d8-4478-9117-620ba919785a": {
+      "rendx": "1.3",
+      "rendy": "5",
+      "childTrans": "6.6,2.9,0,1,5",
+      "type": "IRON_BARS",
+      "transform": "6.6,2.9,0,0.7,0.7"
+    },
+    "47578a29-75c4-4101-9da2-ab7abf5b7db3": {
+      "type": "BLACKBOX",
+      "transform": "-1.3,-17.9,0,5,2"
+    },
+    "db8f6af1-8a43-498c-9868-6541a4a65631": {
+      "rendx": "4",
+      "rendy": "148",
+      "childTrans": "-2.94,-7.96,90,4,15",
+      "type": "TILE_WALL",
+      "transform": "-2.94,-7.96,90,0.2,0.2"
+    },
+    "b479d683-f6d0-45cc-b33f-a9bbb8e38e65": {
+      "type": "BLACKBOX",
+      "transform": "-9.65,24.5,0,1.5,1"
+    },
+    "db422b76-464b-4ab7-b742-93de9a8dc91c": {
+      "type": "BLACKBOX",
+      "transform": "-13.77,20.68,315,0.5,0.5"
+    },
+    "41232a5f-e5d0-4733-b48c-591acfcbe739": {
+      "type": "MIRROR",
+      "transform": "-3.44,-7.71,270,0.15,2"
+    },
+    "9ab19c6d-3a53-4ce4-8faf-90c58ebe1175": {
+      "rendx": "4",
+      "rendy": "25",
+      "childTrans": "-15.29,16.93,90,4,25",
+      "type": "TILE_WALL",
+      "transform": "-15.29,16.93,90,0.2,0.2"
+    },
+    "c85ed6bc-afc6-4032-b7a8-6bbd1e49eb8c": {
+      "type": "MIRROR",
+      "transform": "-4.89,10.19,0,0.15,2"
+    },
+    "f8393e89-e631-4353-93e6-b10c4c2fab34": {
+      "type": "MIRROR",
+      "transform": "-7.42,0.82,90,0.15,2"
+    },
+    "07af4b33-36ee-4886-862a-a874f52ba280": {
+      "rendx": "1.4",
+      "rendy": "5",
+      "childTrans": "4.05,0.8,180,5,1",
+      "type": "WINDOW_TILE",
+      "transform": "4.05,0.8,90,0.8,1.1"
+    },
+    "89cba393-863f-4249-96d2-f7ace5006c08": {
+      "rendx": "1.4",
+      "rendy": "9",
+      "childTrans": "7.17,18.18,135,10,1",
+      "type": "WINDOW_TILE",
+      "transform": "7.17,18.18,45,0.8,1.1"
+    },
+    "c9ec6d08-7c8e-4f69-a04b-8b1ffbe01fe4": {
+      "type": "MIRROR",
+      "transform": "-10.45,5.88,0,0.15,2"
+    },
+    "5cf89b2c-d32f-4ca3-9949-dc3fcaf945c3": {
+      "type": "CAT",
+      "transform": "-0.27,-5.96,0,1.2,1.2"
+    },
+    "430d57ed-2122-408f-a8c5-731642310541": {
+      "type": "MIRROR",
+      "transform": "-10.45,2.55,0,0.15,2"
+    },
+    "3b2c6fad-ae60-4ea1-a6b5-47c8b8a77fc0": {
+      "rendx": "1.4",
+      "rendy": "3",
+      "childTrans": "-7.67,-4.69,180,3,1",
+      "type": "WINDOW_TILE",
+      "transform": "-7.67,-4.69,90,0.8,1.1"
+    },
+    "352ef436-53fd-4b53-ac33-da0255d11b5d": {
+      "type": "MIRROR",
+      "transform": "11.34,13.15,10,0.15,2"
+    },
+    "3220e8cf-24d9-4db7-82c1-ae245d7a4961": {
+      "Level": "level2_Redo",
+      "type": "EXIT",
+      "transform": "1.17,21.94,90,1,2.687501"
+    },
+    "78e6c14b-aa5b-44e8-b2fe-f1e7afae1772": {
+      "rendx": "4",
+      "rendy": "15",
+      "childTrans": "1.04,-0.25,0,4,15",
+      "type": "TILE_WALL",
+      "transform": "1.04,-0.25,0,0.2,0.2"
+    },
+    "f8fa74bc-db50-4d16-8a76-aaf44d5c76c6": {
+      "type": "MIRROR",
+      "transform": "-10.89,-7.71,270,0.15,2"
+    },
+    "8451a116-2420-4c72-9d3e-b244e14f9fd0": {
+      "rendx": "1.4",
+      "rendy": "3",
+      "childTrans": "1.04,-3.12,270,3,1",
+      "type": "WINDOW_TILE",
+      "transform": "1.04,-3.12,180,0.8,1.1"
+    },
+    "b661ef49-fe70-4675-bf8a-3708e57cace9": {
+      "type": "FLOOR",
+      "transform": "-2.97471,2.336006,0,0.7,0.7"
+    },
+    "d25291f7-9ba5-4423-b280-1c02475b5027": {
+      "type": "MIRROR",
+      "transform": "-10.45,9.16,0,0.15,2"
+    },
+    "9b6307f9-f24e-4428-b955-f563d2dc7f21": {
+      "type": "BLACKBOX",
+      "transform": "8.5,31.2,315,5,2"
+    },
+    "898f9f02-1b42-40e0-aaec-771d3f1c61ea": {
+      "rendx": "1.4",
+      "rendy": "10",
+      "childTrans": "-17.23,11.18,270,10,1",
+      "type": "WINDOW_TILE",
+      "transform": "-17.23,11.18,180,0.8,1.1"
+    },
+    "6277e921-cf6c-477d-a365-090d05762665": {
+      "rendx": "1.4",
+      "rendy": "7",
+      "childTrans": "6.67,8.41,270,7,1",
+      "type": "WINDOW_TILE",
+      "transform": "6.67,8.41,180,0.8,1.1"
+    },
+    "e8f203e8-ae1b-46db-9ebb-03e64e5af6de": {
+      "type": "GUARD",
+      "transform": "5.53,-0.31,0,0.4,0.4"
+    },
+    "4e209dea-9630-49be-a4ad-4afd3d9495ee": {
+      "type": "MIRROR",
+      "transform": "-10.45,12.49,0,0.15,2"
+    },
+    "f0c40760-399f-4a2a-87df-d970554ea6f4": {
+      "type": "BLACKBOX",
+      "transform": "-1.3,31.8,0,5,2"
+    },
+    "8c952c96-e125-4df5-a4a6-e8a054b789f9": {
+      "rendx": "4",
+      "rendy": "15",
+      "childTrans": "-17.25207,4.326305,0,4,15",
+      "type": "TILE_WALL",
+      "transform": "-17.25207,4.326305,0,0.2,0.2"
+    },
+    "07ea1c97-3df2-41a9-8a74-1ba66eaf7be5": {
+      "type": "BLACKBOX",
+      "transform": "-27.4,6.577194,0,2,5"
+    },
+    "fb237f87-108f-463a-a358-0147a846df1e": {
+      "rendx": "4",
+      "rendy": "18",
+      "childTrans": "-13.26,-5.73,0,4,15",
+      "type": "TILE_WALL",
+      "transform": "-13.26,-5.73,0,0.2,0.2"
+    },
+    "c9e1a794-f328-4968-8c8c-e5079a194b41": {
+      "rendx": "1.4",
+      "rendy": "10",
+      "childTrans": "-17.23,-2.6,270,10,1",
+      "type": "WINDOW_TILE",
+      "transform": "-17.23,-2.6,180,0.8,1.1"
+    },
+    "1f6c5645-cc8f-4a55-ab37-a4f008d01081": {
+      "type": "TOY_BALL",
+      "transform": "-3.524687,-6.515299,0,1,1"
+    },
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "9.61,-6.11,0,1,1"
+    },
+    "e0aaa734-681a-4413-9c4d-9f7dca56d2e3": {
+      "rendx": "4",
+      "rendy": "60",
+      "childTrans": "11.49,-1.56,0,4,60",
+      "type": "TILE_WALL",
+      "transform": "11.49,-1.56,0,0.2,0.2"
+    },
+    "77f89c7d-17ba-422e-b7cd-70226eebbfda": {
+      "type": "MIRROR",
+      "transform": "-14.04,-3.18,45,0.15,1.5"
+    },
+    "02bd35b9-00c8-42d4-a7bf-ff7aa3e14976": {
+      "rendx": "4",
+      "rendy": "15",
+      "childTrans": "-9.61,0.73,90,4,15",
+      "type": "TILE_WALL",
+      "transform": "-9.61,0.73,90,0.2,0.2"
+    },
+    "f6cd5cf4-30d7-4673-8b1d-91ac206c6f28": {
+      "type": "MIRROR",
+      "transform": "-4.21,0.82,90,0.15,2"
+    },
+    "c0db1068-4f94-4e8a-b634-83a82f2b8b52": {
+      "type": "MIRROR",
+      "transform": "-1.13,0.82,90,0.15,2"
+    }
+  },
+  "Name": "level9_Redo"
+}

@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e9d7d657c371149a9496ecbfc664a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: level1_Redo
+  LevelName: level0_Redo
   Templates:
   - PType: 0
     Template: {fileID: 1748401221617152, guid: 3cab9dbc78f1b974c84eb61efdb4c32f, type: 2}
@@ -212,10 +212,20 @@ MonoBehaviour:
     Template: {fileID: 1767487933984562, guid: 437c90cba7b67f74aa89e82581a8c346, type: 2}
   - PType: 23
     Template: {fileID: 1867984706292474, guid: 124daafabfe7c114b90453586eedd98d, type: 2}
+  - PType: 24
+    Template: {fileID: 1854735483482648, guid: 6a7eb44e2bee573459214aab5f11aacc, type: 2}
+  - PType: 25
+    Template: {fileID: 1363394861267882, guid: c05a98627fe347940925b439b7ad1c3c, type: 2}
   - PType: 28
-    Template: {fileID: 1767487933984562, guid: 437c90cba7b67f74aa89e82581a8c346, type: 2}
+    Template: {fileID: 1972909917914856, guid: f5476c9b203cfe74e860cb715a50a585, type: 2}
+  - PType: 27
+    Template: {fileID: 1703712168055432, guid: 36e279cd33260f147b9483ad9e70626a, type: 2}
+  - PType: 29
+    Template: {fileID: 1664046875158736, guid: 5cc8a85d9d9cad5409416b1d1979fd1d, type: 2}
+  - PType: 30
+    Template: {fileID: 1331053456897530, guid: bf006aabd4e2cba46bd6518e9b48a870, type: 2}
   activated: 1
-  SaveMode: 1
+  SaveMode: 0
 --- !u!114 &114339709708565852
 MonoBehaviour:
   m_ObjectHideFlags: 1

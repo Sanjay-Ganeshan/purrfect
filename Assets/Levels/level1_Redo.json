@@ -1,24 +1,36 @@
 {
   "Contents": {
+    "a514d73f-95dc-4dcc-8555-c5f0ff60b1f9": {
+      "type": "SOFA_SIDE2",
+      "transform": "3.12783,-0.1221172,0,2,2"
+    },
     "1777": {
       "Combo": "777",
       "Uses": "1",
       "type": "KEY",
       "transform": "9.5,4.5,0,1,1"
     },
-    "c94397fd-810b-45cb-ba2b-bdc0fa6a1bd1": {
+    "c5c43d01-c7ca-4fde-b96b-39086df91d0d": {
+      "type": "BOOKSHELF",
+      "transform": "-11.62,4.14,90,0.8,0.6"
+    },
+    "2ff99a42-b17d-42de-aa45-b40e6bdc6517": {
       "type": "BLACKBOX",
       "transform": "0.03,11.21,0,3,1"
     },
-    "60db45e1-4811-426d-a34c-e32f780a9730": {
+    "9103dda5-aeeb-41aa-8024-8a4981c381f3": {
       "type": "BLACKBOX",
       "transform": "-0.31,-10.95,0,3,1"
     },
-    "fc9728a4-6766-412e-9ee0-1f37037b10ba": {
-      "type": "LASER_POINTER",
-      "transform": "-7,-4,0,1,1"
+    "61a96578-ef2f-4d1d-8542-a072801cece4": {
+      "type": "BOOKSHELF",
+      "transform": "-11.62,-4.04,90,0.8,0.6"
     },
-    "2e317e94-ea3a-49da-8075-c4d2c0cbee6b": {
+    "c86c70e7-62a0-43fe-a199-e44fcedc1c4d": {
+      "type": "LASER_POINTER",
+      "transform": "-5.56,-0.45,0,1,1"
+    },
+    "d80b4feb-a5fa-49c0-be35-6b74ff323bb0": {
       "Combo": "777",
       "IsOpen": "False",
       "type": "DOOR",
@@ -27,32 +39,32 @@
     "player": {
       "Inventory": "",
       "type": "PLAYER",
-      "transform": "-6.84,-0.28,0,1.4,1.4"
+      "transform": "-9.92,-0.28,0,1.4,1.4"
     },
-    "18b1e70e-faa4-49ef-a565-f56a878d94b3": {
+    "d9074807-65f8-4022-80d9-6beb6133acc8": {
       "Level": "level2_Redo",
       "type": "EXIT",
       "transform": "11.75,0.04,0,1,2.687501"
     },
-    "db8dbc76-32b9-42b1-b2c4-c016e947f04d": {
+    "dcf19108-3a89-4ee3-8494-eeab99dd3636": {
       "type": "BLACKBOX",
       "transform": "21.91,-0.49,0,2,2"
     },
-    "9b46d610-0cb2-4d07-ad6d-0d0d87605b62": {
+    "7f451da0-e77f-4873-9d90-562fc30f6911": {
       "rendx": "124",
       "rendy": "4",
       "childTrans": "0,6,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,6,0,0.2,0.2"
     },
-    "1de161da-928f-4f80-9109-183a1134efc3": {
+    "d08f7111-4c7e-42fe-9420-6b5b95d850fb": {
       "rendx": "124",
       "rendy": "4",
       "childTrans": "0,-6,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,-6,0,0.2,0.2"
     },
-    "f9051b5b-dc1f-4b50-87aa-93a3eab624fc": {
+    "f4cd7f8c-2531-4d22-9604-a58816896d04": {
       "rendx": "1.3",
       "rendy": "5",
       "childTrans": "-1.85,4,0,1,5",
@@ -65,40 +77,44 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "8ee076e0-aa51-4b40-9ad9-e744302cef8f": {
+    "69b0ecf0-a1e4-4abb-a269-c94144d5edef": {
       "type": "CAT",
-      "transform": "-6.79,0.84,0,1.4,1.4"
+      "transform": "-8.4,-0.89,0,1.2,1.2"
     },
-    "7eedf842-30e4-4339-ba39-a170cdc110b8": {
+    "d75d9369-4674-4b80-937c-00e9aa883ffc": {
       "type": "BLACKBOX",
       "transform": "-22.01,-0.65,0,2,2"
     },
-    "90a3022b-06d9-4857-9e08-ace0b8ceb370": {
+    "a17f0d37-ce05-4f7e-90fb-d47c56e284c8": {
       "type": "ENTRANCE",
-      "transform": "-11.7,0.09427142,0,0.1,1"
+      "transform": "-11.6,0.09427142,0,0.1,1"
     },
-    "9d63dd2e-f586-4b30-bc35-1fa1b1e1251c": {
+    "65f0dfe9-ca8b-47e4-8a23-3cba9a50ddea": {
       "rendx": "1.3",
       "rendy": "5",
       "childTrans": "-1.85,-4,0,1,5",
       "type": "IRON_BARS",
       "transform": "-1.85,-4,0,0.7,0.7"
     },
-    "b77433e4-0bac-43a5-a744-d77f528f8c1e": {
+    "0133fd36-6328-4e71-a102-bd8918c5db51": {
       "rendx": "4",
       "rendy": "60",
-      "childTrans": "12,0,0,5,55",
+      "childTrans": "12,0,0,4,74",
       "type": "TILE_WALL",
       "transform": "12,0,0,0.2,0.2"
     },
-    "15e4410a-130d-4e6c-829c-91cf86d97b7d": {
+    "43e5975c-5794-41d6-8e0f-65d836146a64": {
       "rendx": "4",
       "rendy": "60",
-      "childTrans": "-12,0,0,5,55",
+      "childTrans": "-12,0,0,4,74",
       "type": "TILE_WALL",
       "transform": "-12,0,0,0.2,0.2"
     },
-    "92ed4f1a-ea36-49cb-bceb-ee1a023b582c": {
+    "77182c44-4260-42e7-9d04-e60fb43ccfb4": {
+      "type": "SOFA_SIDE",
+      "transform": "7.494194,-0.1588096,0,2,2"
+    },
+    "1b40a44e-e301-4a7a-8827-66daee6dff23": {
       "type": "FLOOR",
       "transform": "-5.99,-4.52,0,0.6,0.6"
     }

@@ -69,10 +69,10 @@ Transform:
   m_GameObject: {fileID: 1900392677907262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 55, z: 0}
+  m_LocalScale: {x: 5, y: 74, z: 0}
   m_Children: []
   m_Father: {fileID: 4173215548299004}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4173215548299004
 Transform:
@@ -80,15 +80,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1980556106242554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 5.76, y: 8.83, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
-  - {fileID: 4166150697504056}
   - {fileID: 4351625749310872}
+  - {fileID: 4166150697504056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4351625749310872
 Transform:
   m_ObjectHideFlags: 1
@@ -97,10 +97,10 @@ Transform:
   m_GameObject: {fileID: 1474309837229390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 55, z: 0}
+  m_LocalScale: {x: 4, y: 74, z: 0}
   m_Children: []
   m_Father: {fileID: 4173215548299004}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61049184254577004
 BoxCollider2D:
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4, y: 54}
+  m_Size: {x: 4, y: 74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

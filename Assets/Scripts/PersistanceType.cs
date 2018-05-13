@@ -33,6 +33,8 @@ public enum PersistanceType
 	SINK,
 	RUG,
 	CAULDRON,
-	TABLE
+	TABLE,
+	WINDOW_TILE,
+	BED
 }
 

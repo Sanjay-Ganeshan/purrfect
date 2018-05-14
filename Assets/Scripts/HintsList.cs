@@ -51,7 +51,7 @@ public static class HintsList
 	};
 	public const string GUARD_SEES_PLAYER = "Yikes, the guard saw me! I'll try a different way.";
 	public static string[] OPENING_NARRATIVE = new string[4] {
-		"Where am I?\n(Click to advance dialogue)",
+		"Where am I?\n(Click the dialogue box to advance)",
 		"My head hurts...\nI remember I was walking home,\nand then I heard a cat meowing...",
 		"...",
 		"I should get out of here..."
@@ -66,7 +66,7 @@ public static class HintsList
 	public static bool YARN_SAID = false;
 	public static string[] YARN = new string[2] {
 		"Looks like my cat likes chasing yarn...\nMaybe I can get it to go where\nthe laser can't shine?",
-		"When your cat brings the yarn back to you,\ntry using the yarn when your cat\nis appropriately positioned!"
+		"(When your cat brings the yarn back to you,\ntry using the yarn when your cat\nis appropriately positioned!)"
 	};
 	public static bool GUARDS_SAID = false;
 	public static string[] GUARDS = new string[2] {
@@ -92,4 +92,7 @@ public static class HintsList
 	};
 	public const string WITCH_GIVES_KEY = "Ugh, I forgot about that booby trap.\nNever mind, you still can't get past me!";
 	public const string GAME_END_YAY = "I made it! and I even made a new friend, too...";
+	public const string TWO_DOORS_HINT = "I hope I can figure out which key\nopens which door...";
+	public const string SHOULD_HOLD = "(Hold down the mouse button to\nkeep using the whistle.)";
+	public static bool SHOULD_HOLD_SAID = false;
 }

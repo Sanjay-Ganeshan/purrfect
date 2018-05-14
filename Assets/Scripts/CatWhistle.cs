@@ -29,7 +29,7 @@ public class CatWhistle : InventoryItem, IInteractable
     public override void BeginUse(Vector2 location)
     {
         this.IsOn = true;
-        whistleSound.Play();
+		whistleSound.Play ();
 
         God.GetStats().incrementStat("whistle_uses", 1);
         God.GetStats().SendData();
@@ -39,6 +39,10 @@ public class CatWhistle : InventoryItem, IInteractable
     {
         this.IsOn = false;
         whistleSound.Stop();
+		if (!HintsList.SHOULD_HOLD_SAID) {
+			God.ShowText (HintsList.SHOULD_HOLD);
+			HintsList.SHOULD_HOLD_SAID = true;
+		}
     }
 
     public override void Using(Vector2 location)

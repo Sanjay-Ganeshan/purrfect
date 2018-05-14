@@ -7,6 +7,8 @@ public class Guard : MonoBehaviour {
 
 	public const float DISTANCE_AT_TARGET = 0.2f;
 	public float guardSpeed;
+	public float guardPause;
+	public float resetPause;
 
 	private Vector2 basePosition;
 	private Vector2 baseDirection;
@@ -15,6 +17,7 @@ public class Guard : MonoBehaviour {
 	private bool moving = false;
 	private Rigidbody2D rb;
 	private bool initialized = false;
+	private bool canTurn = true;
 
 	void Awake() {
 		rb = GetComponent<Rigidbody2D>();
@@ -40,7 +43,7 @@ public class Guard : MonoBehaviour {
 		Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
 		if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
 			God.ShowText (HintsList.GUARD_SEES_PLAYER);
-			God.GetSavior ().ReloadCurrentLevel ();
+			StartCoroutine (ResetLevel ());
 		}
 		if (!moving) {
 			Optional<Cat> cat = God.GetCat (true);
@@ -54,21 +57,13 @@ public class Guard : MonoBehaviour {
 				}
 			}
 		} else {
-			rb.velocity = guardSpeed * currentDirection;
-			if (AtTarget ()) {
-				if (currentTarget.Get () != basePosition) 
-				{
-					currentTarget = Optional<Vector2>.Of (basePosition);
-					currentDirection = -baseDirection;
-				} 
-				else 
-				{
-					moving = false;
-					rb.velocity = Vector2.zero;
-					this.GetComponent<SpriteChanger> ().SetDirectedSprite (baseDirection);
-					currentDirection = baseDirection;
-					gameObject.transform.position = basePosition;
-				}
+			if (canTurn) {
+				rb.velocity = guardSpeed * currentDirection;
+			}
+			if (AtTarget () && canTurn) {
+				rb.velocity = Vector2.zero;
+				canTurn = false;
+				StartCoroutine(Turn ());
 			}
 		}
 		rb.rotation = 0;
@@ -78,6 +73,34 @@ public class Guard : MonoBehaviour {
 //		{
 //			List<Vector2> emissionResults = this.transform.EmitLight (LightType.KITTY_VISION, GameConstants.GUARD_SIGHT_RANGE, baseDirection);
 //		}
+	}
+
+	IEnumerator ResetLevel()
+	{
+		yield return new WaitForSeconds (resetPause);
+		God.GetSavior ().ReloadCurrentLevel ();
+	}
+
+	IEnumerator Turn()
+	{
+		yield return new WaitForSeconds (guardPause);
+		Debug.Log ("turn");
+		if (currentTarget.Get () != basePosition) 
+		{
+			Debug.Log ("turn if");
+			currentTarget = Optional<Vector2>.Of (basePosition);
+			currentDirection = -baseDirection;
+		} 
+		else 
+		{
+			Debug.Log ("turn else");
+			moving = false;
+			rb.velocity = Vector2.zero;
+			this.GetComponent<SpriteChanger> ().SetDirectedSprite (baseDirection);
+			currentDirection = baseDirection;
+			gameObject.transform.position = basePosition;
+		}
+		canTurn = true;
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

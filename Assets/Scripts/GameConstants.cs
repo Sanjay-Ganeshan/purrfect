@@ -28,6 +28,7 @@ public static class GameConstants
 	public const string OPENING_NARRATIVE_LEVEL = "level0_Redo";
 	public const string BRING_CAT_HINT_LEVEL = "level1_Redo";
 	public const string FIRST_GUARD_LEVEL = "level5_Redo";
+	public const string TWO_DOORS_LEVEL = "level8_Redo";
 	public const string FINAL_LEVEL = "level9_Redo";
 	public const string GAME_END = "game_end";
 	public const int CAT_SIGHT_RANGE = 300;

@@ -1,0 +1,85 @@
+{
+  "Contents": {
+    "602ebb05-c439-4069-bfec-e0365e240116": {
+      "type": "ENTRANCE",
+      "transform": "-8.074194,0.13,0,0.1,1.2625"
+    },
+    "0ad94ca4-7b16-428d-86f3-59a8d44bce34": {
+      "type": "WINDOW",
+      "transform": "0,0,0,0.1,1.5"
+    },
+    "be6279d4-2e8d-47dd-a438-8fea65b3048e": {
+      "type": "WALL",
+      "transform": "-1.5,6,90,0.1,5.1"
+    },
+    "80b80adb-d75c-4ba7-9d4c-092771dcea15": {
+      "type": "WALL",
+      "transform": "0,-6,90,0.1,6.3"
+    },
+    "3d4cf6b1-c13b-4a0a-99fb-6927725933ba": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "5,-4.5,0,1,1.2"
+    },
+    "cbdea56e-7155-4c83-8795-098ee3fcd94a": {
+      "type": "MIRROR",
+      "transform": "6.5,6,90,0.15,1.2"
+    },
+    "d52ffe74-858c-4d67-a2b4-57adc7c7b76e": {
+      "type": "MIRROR",
+      "transform": "8,1.5,0,0.15,3.5"
+    },
+    "872fc648-9de8-48c9-a78b-4c03afc2f09f": {
+      "type": "CAT",
+      "transform": "-4.340674,-0.558835,0,1.4,1.4"
+    },
+    "46edc1af-2cd2-426d-ada7-24c1f3761861": {
+      "Level": "level5",
+      "type": "EXIT",
+      "transform": "8.55,-4.6,0,1,2.712498"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0.06,0.24,0,1,1"
+    },
+    "1f6c5645-cc8f-4a55-ab37-a4f008d01081": {
+      "type": "TOY_BALL",
+      "transform": "-4.29,-0.56,0,1,1"
+    },
+    "51c58d16-cdd4-4bc8-a678-d595b2fcd98d": {
+      "type": "MIRROR",
+      "transform": "6.5,-3,90,0.15,1.2"
+    },
+    "8508c2a9-9643-4b00-8d38-29f2f2803cd9": {
+      "type": "WALL",
+      "transform": "-8,-3.75,0,0.1,1.75"
+    },
+    "87bf9776-1f91-4b30-99d1-8900afc0c7f1": {
+      "type": "WALL",
+      "transform": "-8,3.75,0,0.1,1.75"
+    },
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "7,5,0,1,1"
+    },
+    "125c6723-d422-4e0b-b5e5-3f5967076f22": {
+      "type": "BARS",
+      "transform": "-5,1.5,0,0.1,3.5"
+    },
+    "262938c7-978b-4541-8c23-706963b81484": {
+      "type": "WALL",
+      "transform": "0.1,-3,90,0.1,4"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-6.83,0.7,0,1.4,1.4"
+    }
+  },
+  "Name": "level4"
+}

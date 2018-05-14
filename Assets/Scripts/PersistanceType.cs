@@ -35,6 +35,8 @@ public enum PersistanceType
 	CAULDRON,
 	TABLE,
 	WINDOW_TILE,
-	BED
+	BED,
+	END_SCREEN,
+	WITCH
 }
 

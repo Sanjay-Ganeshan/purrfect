@@ -111,6 +111,11 @@ public class God: MonoBehaviour
 		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().ShowTexts (texts);
 	}
 
+	public static void ShowTextsMoreSpeakers(string[] texts, int[] speakers)
+	{
+		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().ShowTextsMoreSpeakers (texts, speakers);
+	}
+
 	public static void CloseText()
 	{
 		GameObject.FindGameObjectWithTag ("HintManager").GetComponent<HintManager> ().CloseText ();

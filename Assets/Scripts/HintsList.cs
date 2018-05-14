@@ -7,7 +7,7 @@ public static class HintsList
 {
 	public const int HINTS_PER_LEVEL = 3;
 	public const string NO_MORE_HINTS = "Maybe I should think a little harder...";
-	public static string[,] ALL_HINTS = new string[9,3] { // for some reason c# won't let me make this const
+	public static string[,] ALL_HINTS = new string[10,3] { // c# won't let me make this const
 		{	"I wonder what this whistle does?",
 			"Come here, kitty!",
 			"Can I bring the cat with me\nto the next room?"},
@@ -34,7 +34,11 @@ public static class HintsList
 			"Can I use the toy ball to get my cat\nto distract the guard?"},
 		{	"Hmm… which key should I try to get first?",
 			"Ugh, do I really have to get past\nall these guards twice, to get\nthe key and come back?",
-			"How can I get my cat to distract\nthat guard next to the second key?\nThere’s so many mirrors..."}
+			"How can I get my cat to distract\nthat guard next to the second key?\nThere’s so many mirrors..."},
+		{	"Looks like I have to get my cat to me\nusing the long way around...",
+			"Let me try bouncing off a bunch of mirrors\nto get my laser pointer to go\nwhere I need it to...",
+			"Wait, didn't my cat find a\nball of yarn earlier?"
+		}
 	};
 	public const string HINT_TO_BRING_CAT = "Wait! I should bring my cat, too!";
 	public static string[] ON_WHISTLE_PICKUP = new string[2] {
@@ -59,4 +63,30 @@ public static class HintsList
 	};
 	public const string INTERACT_GATE_WITHOUT_KEY = "I need to find a key to unlock this first...";
 	public const string CANT_GO_BACK = "There's no time to go back!\nI need to get out of here, fast!\nI have homework due tomorrow...";
+	public static bool YARN_SAID = false;
+	public static string[] YARN = new string[2] {
+		"Looks like my cat likes chasing yarn...\nMaybe I can get it to go where\nthe laser can't shine?",
+		"When your cat brings the yarn back to you,\ntry using the yarn when your cat\nis appropriately positioned!"
+	};
+	public static string[] GUARDS = new string[2] {
+		"If those guards see me,\nI'll have to go back to the entrance...",
+		"Maybe I can distract them with my cat\nand sneak around them?"
+	};
+	public static string[] FINAL_LEVEL_NARRATIVE = new string[11] {
+		"Hohoho... Why hello there, my little mouse.",
+		"I see you woke up! But you should stop\nscurrying around, you know?",
+		"I set up a small trap to separate you\nfrom your new feline friend...\nwho you won't be seeing anymore.",
+		"Be a good little girl and let me fix you up...\nThere's no clause for concern.",
+		"Huh?! What are you planning on doing to me?",
+		"I'm fixing humeownity one step at a time...",
+		"By turning everyone into cats,\nwe'll never have any problems again!",
+		"Hehehe!!",
+		"(She's crazy! I need to get out of here\nwithout her noticing me...)",
+		"And don't even think about escaping!\nI threw away the key,\nand I'll be watching the only exit!",
+		"Hahahahahaha!!"
+	};
+	public static int[] FINAL_LEVEL_NARRATIVE_SAYERS = new int[11] {
+		1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1
+	};
+	public const string WITCH_GIVES_KEY = "Ugh, I forgot about that booby trap.\nNever mind, you still can't get past me!";
 }

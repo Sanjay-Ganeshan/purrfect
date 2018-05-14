@@ -1,0 +1,24 @@
+{
+  "Contents": {
+    "e902a7c7-cb60-4d2d-addb-3b9ab0f90565": {
+      "type": "CAT",
+      "transform": "0.5112175,0.9804957,0,1.2,1.2"
+    },
+    "dd1512c9-3323-4a38-bc2f-8a3aca8bc1c3": {
+      "type": "FLOOR",
+      "transform": "-0.6978846,5.977544,0,0.6,0.6"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "-0.4554191,6.659416,0,1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-2.267836,1.222153,0,1.4,1.4"
+    }
+  },
+  "Name": "game_end"
+}

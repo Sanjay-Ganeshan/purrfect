@@ -1,21 +1,13 @@
 {
   "Contents": {
-    "5bbefebc-695a-4e42-b4c2-9792930c9bdd": {
-      "type": "BOOKSHELF",
-      "transform": "-3.48,4.43,0,1,0.8"
-    },
-    "08054f3e-449e-44df-8498-04f1ff32b48c": {
-      "type": "BED",
-      "transform": "0.08,2.969046,0,1,1"
-    },
-    "26ac8a99-0877-4356-b70a-ea7304d20154": {
+    "b1b6238e-0e6c-46f5-9a5d-e1a8518d6849": {
       "rendx": "120",
       "rendy": "4",
       "childTrans": "0,-5,0,124,4",
       "type": "TILE_WALL",
       "transform": "0,-5,0,0.2,0.2"
     },
-    "73b6c491-79ad-4e75-9223-379ed2c3b307": {
+    "ce75bf9f-d1ac-44b0-b23a-bb516527e610": {
       "type": "BLACKBOX",
       "transform": "-21.95,-0.24,0,2,2"
     },
@@ -25,22 +17,30 @@
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
     },
-    "9449e72b-6960-42b2-8aa7-9caa4028d257": {
+    "3ed8d321-8d13-490d-a70e-42ed9a8bd1b3": {
+      "type": "BOOKSHELF",
+      "transform": "-3.48,4.43,0,1,0.8"
+    },
+    "db46d1c3-b7fb-4ea1-bc84-b7ecd6c5eb86": {
       "type": "BLACKBOX",
       "transform": "0.41,10.09,0,3,1"
     },
-    "561332f0-cabb-4c6e-8a1b-b443e73c8f66": {
+    "afe814d5-77e4-416d-887f-ba03755cc7f7": {
       "type": "FLOOR",
       "transform": "-1.676652,-1.122928,0,0.6,0.6"
     },
-    "95ba2b2d-04b5-4f87-b189-05f63c596b78": {
+    "a40937f1-c30c-48a8-8445-822129bec1b1": {
       "rendx": "4",
       "rendy": "55",
       "childTrans": "-12,0,0,4,55",
       "type": "TILE_WALL",
       "transform": "-12,0,0,0.2,0.2"
     },
-    "2f99d958-c3ef-4b93-a283-137a7184fe8a": {
+    "1bb45b3a-8578-4db2-aec9-9bf884b665c8": {
+      "type": "BED",
+      "transform": "0.08,2.969046,0,1,1"
+    },
+    "a6c9d573-f79e-4d09-b0f9-d85e3cb6d206": {
       "rendx": "120",
       "rendy": "4",
       "childTrans": "0,5,0,124,4",
@@ -56,28 +56,28 @@
       "type": "PLAYER",
       "transform": "-2.85,1.22,0,1.4,1.4"
     },
-    "6898b527-f160-4f6c-8237-86f23da9020b": {
+    "42a8d79b-a14a-49a6-982b-343432efe06d": {
       "type": "BLACKBOX",
       "transform": "0.47,-10.1,0,3,1"
     },
-    "af3a70fe-34e0-4544-aea1-26023cdeb384": {
+    "104214f6-70e0-4041-ba2b-032e7fc566b2": {
       "type": "CAT",
       "transform": "-10.21,-0.97,0,1.2,1.2"
     },
-    "b7b2446a-53a7-46cf-9bee-f60e5db27d05": {
+    "51e6070e-2d26-4fdd-982f-978a53e60fb1": {
       "type": "BOOKSHELF",
       "transform": "3.24,4.43,0,1,0.8"
     },
-    "d1e02fef-a8a1-4594-b14e-e67cc8891c2a": {
+    "c2c14cd1-91e9-4428-8851-2d80a3d561a4": {
       "Level": "level1_Redo",
       "type": "EXIT",
       "transform": "11.75,0.04,0,1,2.687501"
     },
-    "9aea39f1-3829-415f-a57e-bcd3deee6ee8": {
+    "eb0dd927-cb91-4167-9aa4-b117e1e01eab": {
       "type": "BLACKBOX",
       "transform": "22.01,-0.12,0,2,2"
     },
-    "fe06f27d-bdb5-4eaa-9d53-d1f61f7faf1b": {
+    "9d3a9c88-c4d6-46dd-b8fe-f63da34f538c": {
       "rendx": "4",
       "rendy": "54",
       "childTrans": "12,0,0,5,55",

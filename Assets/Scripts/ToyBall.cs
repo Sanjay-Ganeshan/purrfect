@@ -85,6 +85,10 @@ public class ToyBall : InventoryItem, IInteractable
 
     public bool Interact(Cat c)
     {
+		if (!HintsList.YARN_SAID) {
+			God.ShowTexts (HintsList.YARN);
+			HintsList.YARN_SAID = true;
+		}
 		this.rb.velocity = c.GetComponent<Rigidbody2D> ().velocity;
 		if (onWall) {
 			this.IsOn = false;

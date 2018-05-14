@@ -24,24 +24,23 @@ public class SpriteChanger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		SetDirectedSprite ();
+		if (rb.velocity != Vector2.zero) {
+			SetDirectedSprite (rb.velocity);
+		}
 	}
 
-	private void SetDirectedSprite() 
+	public void SetDirectedSprite(Vector2 direction) 
 	{
-		if (rb.velocity != Vector2.zero) 
-		{
-			float minAngle = 180;
-			Sprite directedSprite = this.GetComponentInChildren<SpriteRenderer> ().sprite;
-			foreach(Vector2 dir in _Sprites.Keys) {
-				// pick sprite corresponding to direction closest to current velocity
-				float angle = Math.Min (Math.Abs (Vector2.Angle (rb.velocity, dir)), Math.Abs (Vector2.Angle (dir, rb.velocity)));
-				if (angle < minAngle) {
-					minAngle = angle;
-					directedSprite = _Sprites [dir];
-				}
+		float minAngle = 180;
+		Sprite directedSprite = this.GetComponentInChildren<SpriteRenderer> ().sprite;
+		foreach(Vector2 dir in _Sprites.Keys) {
+			// pick sprite corresponding to direction closest to current velocity
+			float angle = Math.Min (Math.Abs (Vector2.Angle (direction, dir)), Math.Abs (Vector2.Angle (dir, direction)));
+			if (angle < minAngle) {
+				minAngle = angle;
+				directedSprite = _Sprites [dir];
 			}
-			this.GetComponentInChildren<SpriteRenderer> ().sprite = directedSprite;
 		}
+		this.GetComponentInChildren<SpriteRenderer> ().sprite = directedSprite;
 	}
 }

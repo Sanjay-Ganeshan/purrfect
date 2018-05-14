@@ -209,7 +209,6 @@ public class Savior: MonoBehaviour
     }
 
     public void TransitionToNewLevel(string newLevel, bool keepCarried) {
-
         God.GetStats().cleared();
         God.GetStats().SendData();
 

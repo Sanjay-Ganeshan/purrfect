@@ -42,7 +42,15 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 		{
 			Vector2 dist = theCat.Get ().transform.position - collidedPlayer.Get().transform.position;
 			if (dist.SqrMagnitude () < GameConstants.MAX_CAT_DIST_FOR_LEVEL_END) {
-
+				// I know this is a bandaid, but it fixes a problem that occurs when you carry yarn into a scene that also has yarn in it
+				GameObject[] toyBalls = GameObject.FindGameObjectsWithTag("DeleteOnTransition");
+				for (int i = 0; i < toyBalls.Length; i++) {
+//					Debug.Log ("destroy ball");
+//					Debug.Log ("length" + (toyBalls [i]).GetComponent<ToyBall>().GetOwner ().Items.Count);
+					(toyBalls [i]).GetComponent<ToyBall>().GetOwner ().Items.Remove (toyBalls [i].GetComponent<ToyBall>());
+//					Debug.Log ("new length" + (toyBalls [i]).GetComponent<ToyBall>().GetOwner ().Items.Count);
+					Destroy (toyBalls [i]);
+				}
                 God.GetSavior().TransitionToNewLevel(LevelToLoad, true);
 			}
 			else 

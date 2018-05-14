@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Guard : MonoBehaviour {
 
-	public const float DISTANCE_AT_TARGET = 0.1f;
+	public const float DISTANCE_AT_TARGET = 0.2f;
 	public float guardSpeed;
 
 	private Vector2 basePosition;
@@ -61,9 +61,11 @@ public class Guard : MonoBehaviour {
 					moving = false;
 					rb.velocity = Vector2.zero;
 					currentDirection = baseDirection;
+					gameObject.transform.position = basePosition;
 				}
 			}
 		}
+		rb.rotation = 0;
 
 
 //		if (!moving) 
@@ -75,7 +77,7 @@ public class Guard : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		currentTarget = Optional<Vector2>.Of (basePosition);
-		currentDirection = -baseDirection;
+		currentDirection = (basePosition - (Vector2)this.transform.position).normalized;
 	}
 
 	private Optional<Vector2> SeeObjectInBounds(Bounds bounds, List<Vector2> emissionResults) {

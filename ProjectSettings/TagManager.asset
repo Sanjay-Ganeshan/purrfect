@@ -7,6 +7,7 @@ TagManager:
   - Cat
   - God
   - HintManager
+  - DeleteOnTransition
   layers:
   - Default
   - TransparentFX

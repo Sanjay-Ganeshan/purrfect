@@ -145,13 +145,13 @@ public class Savior: MonoBehaviour
 		if (name == GameConstants.OPENING_NARRATIVE_LEVEL) {
 			God.ShowTexts (HintsList.OPENING_NARRATIVE);
 		}
-		if (name == GameConstants.FIRST_GUARD_LEVEL) {
+		else if (name == GameConstants.FIRST_GUARD_LEVEL) {
 			God.ShowTexts (HintsList.GUARDS);
 		}
-		if (name == GameConstants.FINAL_LEVEL) {
+		else if (name == GameConstants.FINAL_LEVEL) {
 			God.ShowTextsMoreSpeakers (HintsList.FINAL_LEVEL_NARRATIVE, HintsList.FINAL_LEVEL_NARRATIVE_SAYERS);
 		}
-		if (name == GameConstants.GAME_END) {
+		else if (name == GameConstants.GAME_END) {
 			God.ShowText (HintsList.GAME_END_YAY);
 		}
     }
@@ -221,8 +221,8 @@ public class Savior: MonoBehaviour
         God.GetStats().cleared();
         God.GetStats().SendData();
 
+		God.CloseText();
         LoadLevel(newLevel, keepCarried);
-        God.CloseText();
         God.IncrementHintLevel();
     }
 

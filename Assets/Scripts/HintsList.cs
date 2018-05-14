@@ -76,7 +76,7 @@ public static class HintsList
 		"Hohoho... Why hello there, my little mouse.",
 		"I see you woke up! But you should stop\nscurrying around, you know?",
 		"I set up a small trap to separate you\nfrom your new feline friend...\nwho you won't be seeing anymore.",
-		"Be a good little girl and let me fix you up...\nThere's no clause for concern.",
+		"Be a good little girl and let me fix you up.\nThere's no claws for concern.",
 		"Huh?! What are you planning on doing to me?",
 		"I'm fixing humeownity one step at a time...",
 		"By turning everyone into cats,\nwe'll never have any problems again!",

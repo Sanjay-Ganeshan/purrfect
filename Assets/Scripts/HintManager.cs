@@ -132,6 +132,8 @@ public class HintManager : MonoBehaviour {
 		int numTexts = textsToShow.Count; // clear queue
 		for (int i = 0; i < numTexts; i++) {
 			textsToShow.Dequeue ();
+			portraitsToShow.Dequeue ();
 		}
+		canGetHint = true;
 	}
 }

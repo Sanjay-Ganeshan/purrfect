@@ -29,6 +29,7 @@ public static class GameConstants
 	public const string BRING_CAT_HINT_LEVEL = "level1_Redo";
 	public const string FIRST_GUARD_LEVEL = "level5_Redo";
 	public const string FINAL_LEVEL = "level9_Redo";
+	public const string GAME_END = "game_end";
 	public const int CAT_SIGHT_RANGE = 300;
 	public const int GUARD_SIGHT_RANGE = 300;
 }

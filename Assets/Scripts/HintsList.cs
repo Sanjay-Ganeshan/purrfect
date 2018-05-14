@@ -89,4 +89,5 @@ public static class HintsList
 		1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1
 	};
 	public const string WITCH_GIVES_KEY = "Ugh, I forgot about that booby trap.\nNever mind, you still can't get past me!";
+	public const string GAME_END_YAY = "I made it! and I even made a new friend, too...";
 }

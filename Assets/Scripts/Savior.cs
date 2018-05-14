@@ -151,6 +151,9 @@ public class Savior: MonoBehaviour
 		if (name == GameConstants.FINAL_LEVEL) {
 			God.ShowTextsMoreSpeakers (HintsList.FINAL_LEVEL_NARRATIVE, HintsList.FINAL_LEVEL_NARRATIVE_SAYERS);
 		}
+		if (name == GameConstants.GAME_END) {
+			God.ShowText (HintsList.GAME_END_YAY);
+		}
     }
     
 

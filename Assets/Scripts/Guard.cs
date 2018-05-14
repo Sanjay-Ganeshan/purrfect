@@ -14,6 +14,7 @@ public class Guard : MonoBehaviour {
 	Optional<Vector2> currentTarget;
 	private bool moving = false;
 	private Rigidbody2D rb;
+	private bool initialized = false;
 
 	void Awake() {
 		rb = GetComponent<Rigidbody2D>();
@@ -31,6 +32,10 @@ public class Guard : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (!initialized) {
+			this.GetComponent<SpriteChanger> ().SetDirectedSprite (baseDirection);
+			initialized = true;
+		}
 		List<Vector2> emissionResults = this.transform.EmitLight (LightType.GUARD_VISION, GameConstants.GUARD_SIGHT_RANGE, currentDirection);
 		Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
 		if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
@@ -60,6 +65,7 @@ public class Guard : MonoBehaviour {
 				{
 					moving = false;
 					rb.velocity = Vector2.zero;
+					this.GetComponent<SpriteChanger> ().SetDirectedSprite (baseDirection);
 					currentDirection = baseDirection;
 					gameObject.transform.position = basePosition;
 				}
@@ -95,13 +101,13 @@ public class Guard : MonoBehaviour {
 	{
 		if(currentTarget.IsPresent())
 		{
-			// do this check to avoid letting the cat see infinitely far through windows
 			if (VectorToTarget ().magnitude < GameConstants.GUARD_SIGHT_RANGE)
 			{
 				rb.velocity = guardSpeed * (VectorToTarget().normalized);
 			}
 		} else {
 			rb.velocity = Vector2.zero;
+			this.GetComponent<SpriteChanger> ().SetDirectedSprite (baseDirection);
 		}
 	}
 

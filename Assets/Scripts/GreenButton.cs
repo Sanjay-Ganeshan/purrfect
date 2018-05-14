@@ -31,6 +31,9 @@ public class GreenButton : MonoBehaviour, IPersistantObject {
 			pressed = true;
 			this.GetComponentInChildren<SpriteRenderer> ().sprite = ButtonPressed;
 			gameChild.SetActive (true);
+			if (character.gameObject.tag == "Witch") {
+				God.ShowTextWithWitch (HintsList.WITCH_GIVES_KEY);
+			}
 		}
 	}
 

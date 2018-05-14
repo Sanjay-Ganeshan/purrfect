@@ -91,6 +91,14 @@ public class HintManager : MonoBehaviour {
 		DialoguePortrait.gameObject.SetActive (true);
 	}
 
+	public void ShowTextWithWitch(string text) {
+		canGetHint = false;
+		DialogueBox.GetComponentInChildren<Text> ().text = text;
+		DialogueBox.gameObject.SetActive (true);
+		WitchPortrait.gameObject.SetActive (true);
+		DialoguePortrait.gameObject.SetActive (false);
+	}
+
 	public void ShowTexts(string[] texts) {
 		canGetHint = false;
 		if (texts.Length > 0) 

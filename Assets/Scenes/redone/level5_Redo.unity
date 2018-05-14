@@ -257,6 +257,10 @@ Prefab:
       propertyPath: m_Name
       value: Guard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4233315012367192, guid: 5b53833491f594c908158effd1b4fb01, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b53833491f594c908158effd1b4fb01, type: 2}
   m_IsPrefabParent: 0
@@ -773,6 +777,10 @@ Prefab:
     - target: {fileID: 4233315012367192, guid: 5b53833491f594c908158effd1b4fb01, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233315012367192, guid: 5b53833491f594c908158effd1b4fb01, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b53833491f594c908158effd1b4fb01, type: 2}

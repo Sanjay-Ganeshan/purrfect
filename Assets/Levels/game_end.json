@@ -1,11 +1,11 @@
 {
   "Contents": {
-    "e902a7c7-cb60-4d2d-addb-3b9ab0f90565": {
+    "1e528152-e24e-4587-a42b-4f57a6750c4a": {
       "type": "CAT",
       "transform": "0.5112175,0.9804957,0,1.2,1.2"
     },
-    "dd1512c9-3323-4a38-bc2f-8a3aca8bc1c3": {
-      "type": "FLOOR",
+    "f7c2621b-81a6-470e-bdf3-e8ac2f8dca20": {
+      "type": "END_SCREEN",
       "transform": "-0.6978846,5.977544,0,0.6,0.6"
     },
     "camera": {

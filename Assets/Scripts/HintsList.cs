@@ -68,10 +68,12 @@ public static class HintsList
 		"Looks like my cat likes chasing yarn...\nMaybe I can get it to go where\nthe laser can't shine?",
 		"When your cat brings the yarn back to you,\ntry using the yarn when your cat\nis appropriately positioned!"
 	};
+	public static bool GUARDS_SAID = false;
 	public static string[] GUARDS = new string[2] {
 		"If those guards see me,\nI'll have to go back to the entrance...",
 		"Maybe I can distract them with my cat\nand sneak around them?"
 	};
+	public static bool FINAL_NARRATIVE_SAID = false;
 	public static string[] FINAL_LEVEL_NARRATIVE = new string[11] {
 		"Hohoho... Why hello there, my little mouse.",
 		"I see you woke up! But you should stop\nscurrying around, you know?",

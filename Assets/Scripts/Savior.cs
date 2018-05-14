@@ -146,10 +146,16 @@ public class Savior: MonoBehaviour
 			God.ShowTexts (HintsList.OPENING_NARRATIVE);
 		}
 		else if (name == GameConstants.FIRST_GUARD_LEVEL) {
-			God.ShowTexts (HintsList.GUARDS);
+			if (!HintsList.GUARDS_SAID) {
+				God.ShowTexts (HintsList.GUARDS);
+				HintsList.GUARDS_SAID = true;
+			}
 		}
 		else if (name == GameConstants.FINAL_LEVEL) {
-			God.ShowTextsMoreSpeakers (HintsList.FINAL_LEVEL_NARRATIVE, HintsList.FINAL_LEVEL_NARRATIVE_SAYERS);
+			if (!HintsList.FINAL_NARRATIVE_SAID) {
+				God.ShowTextsMoreSpeakers (HintsList.FINAL_LEVEL_NARRATIVE, HintsList.FINAL_LEVEL_NARRATIVE_SAYERS);
+				HintsList.FINAL_NARRATIVE_SAID = true;
+			}
 		}
 		else if (name == GameConstants.GAME_END) {
 			God.ShowText (HintsList.GAME_END_YAY);

@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  PType: 17
+  PType: 31
 --- !u!212 &212101463040408728
 SpriteRenderer:
   m_ObjectHideFlags: 1

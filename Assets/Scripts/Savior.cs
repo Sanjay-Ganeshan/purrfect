@@ -144,6 +144,8 @@ public class Savior: MonoBehaviour
         lvl.SaveToPlaythrough();
 		if (name == GameConstants.OPENING_NARRATIVE_LEVEL) {
 			God.ShowTexts (HintsList.OPENING_NARRATIVE);
+		} else if (name == GameConstants.FIRST_MIRROR_LEVEL) {
+			God.ShowText (HintsList.MIRROR_HINT);
 		} else if (name == GameConstants.FIRST_GUARD_LEVEL) {
 			if (!HintsList.GUARDS_SAID) {
 				God.ShowTexts (HintsList.GUARDS);

@@ -104,6 +104,7 @@ public class ToyBall : InventoryItem, IInteractable
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.tag != GameConstants.LBL_CAT) {
 			onWall = true;
+			rb.velocity = Vector2.zero;
 		}
 	}
 		

@@ -66,6 +66,9 @@ public class Door : MonoBehaviour, IInteractable, IPersistantObject {
     }
 
     public void ToggleDoorState() {
+		if (God.GetCurrentLevel () == GameConstants.FIRST_YARN_LEVEL) {
+			God.ShowText (HintsList.NO_YARN_PERSIST);
+		}
         if (IsOpen) CloseDoor();
         else OpenDoor();
     }

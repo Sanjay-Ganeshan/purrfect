@@ -95,4 +95,6 @@ public static class HintsList
 	public const string TWO_DOORS_HINT = "I hope I can figure out which key\nopens which door...";
 	public const string SHOULD_HOLD = "(Hold down the mouse button to\nkeep using the whistle.)";
 	public static bool SHOULD_HOLD_SAID = false;
+	public const string NO_YARN_PERSIST = "I'm almost there!\n...Shoot, this yarn is completely unraveled.\nGuess I'll have to leave it behind.";
+	public const string MIRROR_HINT = "I wonder if I can use that mirror\nin the corner to my advantage?";
 }

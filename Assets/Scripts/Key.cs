@@ -11,7 +11,11 @@ class Key : InventoryItem, IInteractable
 
     public bool CanUnlock(int doorCombo)
     {
-       return this.Combo == doorCombo;
+		if (this.Combo != doorCombo && !HintsList.WRONG_KEY_SAID) {
+			God.ShowText (HintsList.WRONG_KEY);
+			HintsList.WRONG_KEY_SAID = true;
+		}
+        return this.Combo == doorCombo;
     }
 
     public bool Consume() {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ public class ToyBall : InventoryItem, IInteractable
 {
     private Rigidbody2D rb;
 	private bool onWall = false;
+	public bool canInteractWithCat = true;
+	private float catInteractWait = 0.5f;
 
     public bool IsOn;
 
@@ -35,11 +38,16 @@ public class ToyBall : InventoryItem, IInteractable
     void ToggleOn ()
     {
         this.IsOn = !this.IsOn;
+		if (!this.IsOn) {
+			canInteractWithCat = false;
+		}
     }
 
     public override void BeginUse(Vector2 location)
     {
         this.IsOn = true;
+		StartCoroutine (AllowCatPickup ());
+
         // ballSoumd.Play();
         Vector2 direction = location - (Vector2)transform.position;
 
@@ -51,6 +59,11 @@ public class ToyBall : InventoryItem, IInteractable
         // God.GetStats().incrementStat("whistle_uses", 1);
         God.GetStats().SendData();
     }
+
+	IEnumerator AllowCatPickup() {
+		yield return new WaitForSeconds (catInteractWait);
+		canInteractWithCat = true;
+	}
 
     public override void EndUse(Vector2 location)
     {
@@ -74,31 +87,41 @@ public class ToyBall : InventoryItem, IInteractable
 
     public bool Interact(Player p)
     {
-        this.IsOn = false;
-        this.rb.velocity = Vector3.zero;
-        this.rb.simulated = false;
+		if (canInteractWithCat) {
+			this.IsOn = false;
+			canInteractWithCat = false;
+			this.rb.velocity = Vector3.zero;
+			this.rb.simulated = false;
 
-        p.Bag.Add(this);
-		// God.ShowText (HintsList.ON_BALL_PICKUP);
-        return this;
+			p.Bag.Add (this);
+			// God.ShowText (HintsList.ON_BALL_PICKUP);
+			return this;
+		} else {
+			return false;
+		}
     }
 
     public bool Interact(Cat c)
     {
-		if (!HintsList.YARN_SAID) {
-			God.ShowTexts (HintsList.YARN);
-			HintsList.YARN_SAID = true;
-		}
-		this.rb.velocity = c.GetComponent<Rigidbody2D> ().velocity;
-		if (onWall) {
-			this.IsOn = false;
-			this.rb.velocity = Vector3.zero;
-			this.rb.simulated = false;
+		if (canInteractWithCat) {
+			if (!HintsList.YARN_SAID) {
+				God.ShowTexts (HintsList.YARN);
+				HintsList.YARN_SAID = true;
+			}
+			this.rb.velocity = c.GetComponent<Rigidbody2D> ().velocity;
+			if (onWall) {
+				this.IsOn = false;
+				canInteractWithCat = false;
+				this.rb.velocity = Vector3.zero;
+				this.rb.simulated = false;
 
-			c.catInventory.Add(this);
-			onWall = false;
+				c.catInventory.Add (this);
+				onWall = false;
+			}
+			return this;
+		} else {
+			return false;
 		}
-		return this;
     }
 
 	void OnCollisionEnter2D(Collision2D other) {

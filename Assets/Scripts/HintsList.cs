@@ -57,11 +57,13 @@ public static class HintsList
 		"I should get out of here..."
 	};
 	public const string CAT_GOT_KEY = "Awesome! Now I can get the key from the cat.";
-	public static string[] PLAYER_GOT_KEY = new string[2] {
-		"I think I can use this key on the gate!",
-		"Walk up to the gate and press E to use the key."
-	};
+	public static string[] PLAYER_GOT_KEY = new string[1] {
+		"I think I can use this key on the gate!"};
+	public static bool INTERACT_GATE_WITHOUT_KEY_SAID = false;
 	public const string INTERACT_GATE_WITHOUT_KEY = "I need to find a key to unlock this first...";
+	public static bool WRONG_KEY_SAID = false;
+	public const string WRONG_KEY = "Shoot... maybe this key is for the other door?";
+	public static bool CANT_GO_BACK_SAID = false;
 	public const string CANT_GO_BACK = "There's no time to go back!\nI need to get out of here, fast!\nI have homework due tomorrow...";
 	public static bool YARN_SAID = false;
 	public static string[] YARN = new string[2] {

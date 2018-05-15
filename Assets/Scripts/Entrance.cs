@@ -18,7 +18,10 @@ public class Entrance : MonoBehaviour {
 		Debug.Log ("collide");
 		Debug.Log (player.gameObject.tag);
 		if ((transform.position - God.GetPlayer().transform.position).sqrMagnitude < 3) {
-			God.ShowText (HintsList.CANT_GO_BACK);
+			if (!HintsList.CANT_GO_BACK_SAID) {
+				God.ShowText (HintsList.CANT_GO_BACK);
+				HintsList.CANT_GO_BACK_SAID = true;
+			}
 		}
 	}
 }

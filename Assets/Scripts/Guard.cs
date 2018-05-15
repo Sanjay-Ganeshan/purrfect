@@ -40,7 +40,7 @@ public class Guard : MonoBehaviour {
 			initialized = true;
 		}
 		List<Vector2> emissionResults = this.transform.EmitLight (LightType.GUARD_VISION, GameConstants.GUARD_SIGHT_RANGE, currentDirection);
-		Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<BoxCollider2D> ().bounds;
+		Bounds playerBounds = God.GetPlayer ().GetComponentInChildren<CapsuleCollider2D> ().bounds;
 		if (SeeObjectInBounds (playerBounds, emissionResults).IsPresent ()) {
 			God.ShowText (HintsList.GUARD_SEES_PLAYER);
 			StartCoroutine (ResetLevel ());
@@ -48,7 +48,7 @@ public class Guard : MonoBehaviour {
 		if (!moving) {
 			Optional<Cat> cat = God.GetCat (true);
 			if (cat.Get () != null) {
-				Bounds catBounds = God.GetCat ().Get ().GetComponentInChildren<BoxCollider2D> ().bounds;
+				Bounds catBounds = God.GetCat ().Get ().GetComponentInChildren<CapsuleCollider2D> ().bounds;
 				Optional<Vector2> catLoc = SeeObjectInBounds (catBounds, emissionResults);
 				if (catLoc.IsPresent ()) {
 					currentTarget = catLoc;
@@ -105,8 +105,21 @@ public class Guard : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
+//		currentTarget = Optional<Vector2>.Of (basePosition);
+//		currentDirection = (basePosition - (Vector2)this.transform.position).normalized;
+//		Debug.Log ("collide");
+		if (canTurn) {
+			StartCoroutine (CollisionTurn ());
+			canTurn = false;
+		}
+	}
+
+	IEnumerator CollisionTurn()
+	{
+		yield return new WaitForSeconds (guardPause);
 		currentTarget = Optional<Vector2>.Of (basePosition);
 		currentDirection = (basePosition - (Vector2)this.transform.position).normalized;
+		canTurn = true;
 	}
 
 	private Optional<Vector2> SeeObjectInBounds(Bounds bounds, List<Vector2> emissionResults) {

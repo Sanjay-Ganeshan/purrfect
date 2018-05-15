@@ -155,16 +155,20 @@ public class Savior: MonoBehaviour
 			God.ShowText (HintsList.TWO_DOORS_HINT);
 		}
 		else if (name == GameConstants.FINAL_LEVEL) {
-			if (!HintsList.FINAL_NARRATIVE_SAID) {
-				God.ShowTextsMoreSpeakers (HintsList.FINAL_LEVEL_NARRATIVE, HintsList.FINAL_LEVEL_NARRATIVE_SAYERS);
-				HintsList.FINAL_NARRATIVE_SAID = true;
-			}
+			StartCoroutine (FinalNarrative ());
 		}
 		else if (name == GameConstants.GAME_END) {
 			God.ShowText (HintsList.GAME_END_YAY);
 		}
     }
-    
+
+	IEnumerator FinalNarrative() {
+		yield return new WaitForSeconds (1);
+		if (!HintsList.FINAL_NARRATIVE_SAID) {
+			God.ShowTextsMoreSpeakers (HintsList.FINAL_LEVEL_NARRATIVE, HintsList.FINAL_LEVEL_NARRATIVE_SAYERS);
+			HintsList.FINAL_NARRATIVE_SAID = true;
+		}
+	}
 
     void LoadAll()
     {

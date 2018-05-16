@@ -1,0 +1,45 @@
+{
+  "Contents": {
+    "b3236e00-0d25-4e41-84d6-bc13bfa46a97": {
+      "type": "WALL",
+      "transform": "3.04,1.13,90,0.1,3.937503"
+    },
+    "24654716-1c1a-4f97-93f7-1f2afbc23e37": {
+      "type": "WALL",
+      "transform": "-1.99,-1.33,0,0.1,1.870311"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "3.08,-1.1,0,1,1"
+    },
+    "ba55fb34-c21c-488c-abb1-e606122c9116": {
+      "type": "WALL",
+      "transform": "8,-2.5,0,0.1,1"
+    },
+    "2": {
+      "type": "CAT_WHISTLE",
+      "transform": "5.56,-2.26,0,1,1"
+    },
+    "6f5ab36b-7c49-45f2-b423-d272aefc105e": {
+      "type": "WALL",
+      "transform": "2.97,-3.79,90,0.1,3.858747"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "3.05,-1.11,0,1,1"
+    },
+    "d9e68030-d8f1-4f45-a985-45a8b9da4b95": {
+      "type": "CAT",
+      "transform": "0.47,-2.05,0,1,1"
+    },
+    "3ed7516d-f560-4ea6-9740-bd17ca126199": {
+      "Level": "level1",
+      "type": "EXIT",
+      "transform": "8.42,0.04,0,1,2.687501"
+    }
+  },
+  "Name": "level0"
+}

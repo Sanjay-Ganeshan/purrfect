@@ -272,6 +272,14 @@ Prefab:
       propertyPath: WitchPortrait
       value: 
       objectReference: {fileID: 1290976609}
+    - target: {fileID: 1530089205837574, guid: ab34fd067b3631149b6984b07c6d6507, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551802375620584, guid: ab34fd067b3631149b6984b07c6d6507, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab34fd067b3631149b6984b07c6d6507, type: 2}
   m_IsPrefabParent: 0

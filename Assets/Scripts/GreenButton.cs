@@ -32,9 +32,14 @@ public class GreenButton : MonoBehaviour, IPersistantObject {
 			this.GetComponentInChildren<SpriteRenderer> ().sprite = ButtonPressed;
 			gameChild.SetActive (true);
 			if (character.gameObject.tag == "Witch") {
-				God.ShowTextWithWitch (HintsList.WITCH_GIVES_KEY);
+				StartCoroutine (WitchText ());
 			}
 		}
+	}
+
+	IEnumerator WitchText() {
+		yield return new WaitForSeconds (0.5f);
+		God.ShowTextWithWitch (HintsList.WITCH_GIVES_KEY);
 	}
 
 	private bool SearchForChild() {

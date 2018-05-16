@@ -37,7 +37,7 @@
       "transform": "-2,0,0,1,1"
     },
     "player": {
-      "Inventory": "2",
+      "Inventory": "",
       "type": "PLAYER",
       "transform": "-9.92,-0.28,0,1.4,1.4"
     },
@@ -117,9 +117,6 @@
     "1b40a44e-e301-4a7a-8827-66daee6dff23": {
       "type": "FLOOR",
       "transform": "-5.99,-4.52,0,0.6,0.6"
-    },
-    "2": {
-      "type": "CAT_WHISTLE"
     }
   },
   "Name": "level1_Redo"

@@ -244,8 +244,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Created by: \nAngel Alvarez, Sofie Ayala, Sanjay Ganeshan, Joanna Gerr,
     Jason Lam, Femi Oladipupo, Kevin Yang\n\nWith thanks to:\nCMS.611 Instructors
-    Rik Eberhardt, Andrew Grant, Philip Tan, Sara Verilli\n\nSound effects from []\nMusic
-    from []"
+    Rik Eberhardt, Andrew Grant, Philip Tan, Sara Verilli\n\nSound effects from the
+    adam_N, Mattix, and inspectorj on freesound\nMusic: OFELIA'S DREAM - bensound.com"
 --- !u!222 &955048605
 CanvasRenderer:
   m_ObjectHideFlags: 0

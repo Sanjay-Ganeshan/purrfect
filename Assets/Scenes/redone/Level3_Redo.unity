@@ -961,6 +961,12 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 212420032734729324, guid: 5cc8a85d9d9cad5409416b1d1979fd1d,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e359625ef7a778e448dcc1a9e5a2ed95,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5cc8a85d9d9cad5409416b1d1979fd1d, type: 2}
   m_IsPrefabParent: 0

@@ -47,11 +47,13 @@ public class Transitioner : MonoBehaviour, IPersistantObject {
 				for (int i = 0; i < toyBalls.Length; i++) {
 //					Debug.Log ("destroy ball");
 //					Debug.Log ("length" + (toyBalls [i]).GetComponent<ToyBall>().GetOwner ().Items.Count);
-					(toyBalls [i]).GetComponent<ToyBall>().GetOwner ().Items.Remove (toyBalls [i].GetComponent<ToyBall>());
+					if ((toyBalls [i]).GetComponent<ToyBall> ().GetOwner () != null) {
+						(toyBalls [i]).GetComponent<ToyBall> ().GetOwner ().Items.Remove (toyBalls [i].GetComponent<ToyBall> ());
+					}
 //					Debug.Log ("new length" + (toyBalls [i]).GetComponent<ToyBall>().GetOwner ().Items.Count);
 					Destroy (toyBalls [i]);
 				}
-                God.GetSavior().TransitionToNewLevel(LevelToLoad, true);
+				God.GetSavior().TransitionToNewLevel(LevelToLoad, true);
 			}
 			else 
 			{

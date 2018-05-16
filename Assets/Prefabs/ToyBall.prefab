@@ -195,14 +195,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1f6c5645-cc8f-4a55-ab37-a4f008d01081
   ItType: 3
-  Name: Toy Ball
-  Description: Stuff
+  Name: Yarn
+  Description: A ball of yarn!
   isEquippable: 1
   CarryToNextScene: 0
   ZoC: {fileID: 58913437252339806}
   InventoryRenderer: {fileID: 212256313906177346}
   WorldRenderer: {fileID: 212285187947401756}
-  Icon: {fileID: 21300000, guid: e93433d8b8b384e5e889472332aa46bb, type: 3}
+  Icon: {fileID: 21300000, guid: d84a9472485794409ac796eaac42203d, type: 3}
   IsOn: 1
 --- !u!212 &212256313906177346
 SpriteRenderer:

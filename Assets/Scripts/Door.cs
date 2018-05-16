@@ -54,7 +54,10 @@ public class Door : MonoBehaviour, IInteractable, IPersistantObject {
 			}
 			else 
 			{
-				God.ShowText (HintsList.INTERACT_GATE_WITHOUT_KEY);
+				if (!HintsList.INTERACT_GATE_WITHOUT_KEY_SAID) {
+					God.ShowText (HintsList.INTERACT_GATE_WITHOUT_KEY);
+					HintsList.INTERACT_GATE_WITHOUT_KEY_SAID = true;
+				}
 			}
         }
         return false;
@@ -66,6 +69,9 @@ public class Door : MonoBehaviour, IInteractable, IPersistantObject {
     }
 
     public void ToggleDoorState() {
+		if (God.GetCurrentLevel () == GameConstants.FIRST_YARN_LEVEL) {
+			God.ShowText (HintsList.NO_YARN_PERSIST);
+		}
         if (IsOpen) CloseDoor();
         else OpenDoor();
     }

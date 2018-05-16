@@ -1,6 +1,10 @@
 {
   "Contents": {
-    "ddec0379-fb16-4f18-8a5e-6942825a7957": {
+    "26bb3a54-f13c-41b8-ad32-6583b02dbc45": {
+      "type": "CAT",
+      "transform": "200,20,0,1.2,1.2"
+    },
+    "00cd91a7-5cf8-4b3f-9b48-d32ff84fc7dd": {
       "type": "END_SCREEN",
       "transform": "0,0,0,1.5,1.5"
     },
@@ -9,6 +13,11 @@
       "z": "-1",
       "type": "CAMERA",
       "transform": "0,0,0,1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "200,20,0,1.4,1.4"
     }
   },
   "Name": "game_end"

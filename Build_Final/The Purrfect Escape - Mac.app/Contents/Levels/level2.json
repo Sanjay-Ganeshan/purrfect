@@ -1,0 +1,81 @@
+{
+  "Contents": {
+    "1777": {
+      "Combo": "777",
+      "Uses": "1",
+      "type": "KEY",
+      "transform": "3,5.81,0,1,1"
+    },
+    "83623275-a060-47da-ac6a-8bf6e7e4745e": {
+      "type": "WALL",
+      "transform": "-4.6,-2.8,0,0.1,1"
+    },
+    "f732c69c-f79b-4f8f-b88d-effab730247a": {
+      "type": "WALL",
+      "transform": "-7,0,0,0.1,5"
+    },
+    "84cb58f6-0217-4f0a-a977-e1d5de7211d6": {
+      "Combo": "777",
+      "IsOpen": "False",
+      "type": "DOOR",
+      "transform": "-5.8,-4,90,1,1"
+    },
+    "35b5863d-3455-4423-a9e2-3dc04f2d4e5f": {
+      "type": "ENTRANCE",
+      "transform": "-6.002054,-6.73,90,0.1,1"
+    },
+    "4ac27856-e355-4d2b-b529-f48784ae0f72": {
+      "type": "WALL",
+      "transform": "-1.1,6.5,90,0.1,4.6"
+    },
+    "401f0891-c17c-40c4-a1e6-20ea4777b2a7": {
+      "Level": "level3",
+      "type": "EXIT",
+      "transform": "5.582253,6.923198,0,2.999996,1"
+    },
+    "74b20964-a7a8-4b2a-b604-35d2425125a8": {
+      "type": "WALL",
+      "transform": "-2.1,-2.8,0,0.1,1"
+    },
+    "d4743a74-355c-4cf0-9507-b46a7306449c": {
+      "type": "WALL",
+      "transform": "-3.35,-4.05,90,0.1,1"
+    },
+    "09010122-6824-4225-bef6-26cfad3acd2d": {
+      "type": "MIRROR",
+      "transform": "6,-5.4,320,0.1,1"
+    },
+    "a3ea14d1-d127-4a8a-888b-0718964c6a56": {
+      "type": "WINDOW",
+      "transform": "7,0,0,0.1,5"
+    },
+    "camera": {
+      "size": "7.89",
+      "z": "-10",
+      "type": "CAMERA",
+      "transform": "0,0,0,1,1"
+    },
+    "952089a5-f51c-4cc5-a6e8-43cb73b94dfc": {
+      "type": "WALL",
+      "transform": "-3.35,-1.55,90,0.1,1"
+    },
+    "player": {
+      "Inventory": "",
+      "type": "PLAYER",
+      "transform": "-5.97,-5.95,0,1,1"
+    },
+    "9cc53afe-96ed-45a6-b675-2bc27399235b": {
+      "type": "BARS",
+      "transform": "-4.6,-5.2,0,0.1,1"
+    },
+    "c0ad94dd-8c8a-4590-8e1e-3c21eccf8805": {
+      "type": "WINDOW",
+      "transform": "1.1,-6.5,90,0.1,4.6"
+    },
+    "709d4a54-e1d2-4b35-ac98-2bdceb74c229": {
+      "type": "CAT",
+      "transform": "-5.7,-4.8,0,1,1"
+    }
+  },
+  "Name": "level2"
+}

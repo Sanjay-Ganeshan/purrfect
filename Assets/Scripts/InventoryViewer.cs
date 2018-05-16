@@ -161,6 +161,7 @@ public class InventoryViewer : MonoBehaviour {
             {
                 break;
             }
+            this.displayedItems[currIndex].trans.Find("BG").GetComponent<Image>().enabled = item.IsEquipped();
             this.displayedItems[currIndex++].setItem(item).image.sprite = item.GetSpriteOrDefault(defaultSprite);
         }
         while(currIndex < this.displayedItems.Length)

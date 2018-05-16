@@ -215,4 +215,8 @@ public abstract class InventoryItem : MonoBehaviour, IPersistantObject {
     {
         
     }
+
+    public bool IsEquipped() {
+        return isEquipped;
+    }
 }
